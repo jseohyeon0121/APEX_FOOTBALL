@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>APEX FOOTBALL — 에이펙스 풋볼</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+</script>
+</head>
+<body>
+<div id="game-wrap">
+  <div id="scoreboard" style="display:none">
+    <div class="team"><div class="logo" id="home-logo">HOM</div><span id="home-name">HOME</span></div>
+    <div id="score-text">0 - 0</div>
+    <div class="team"><span id="away-name">AWAY</span><div class="logo" id="away-logo">CPU</div></div>
+    <div class="clock"><span id="match-time">00:00</span><span id="half-label">KICK OFF</span></div>
+  </div>
+
+  <div id="stamina-panel" class="glass" style="display:none">
+    <div class="top"><span id="stam-pos">ST</span><span id="stam-name">10번</span></div>
+    <div class="stam-bar"><div id="stam-fill"></div></div>
+    <div id="stam-pct">체력 100%</div>
+  </div>
+
+  <div id="minimap-wrap" style="display:none"><canvas id="minimap" width="600" height="388"></canvas></div>
+
+  <div id="pen-board" style="display:none"></div>
+  <div id="cine"></div>
+  <div id="msg"></div>
+  <div id="setpiece-hint"></div>
+  <div id="setpiece-ui">
+    <div id="setpiece-kick-type">프리킥 조준</div>
+    <div class="power-bar"><div id="setpiece-power-fill"></div></div>
+    <div id="setpiece-info"></div>
+  </div>
+  <div id="goal-dist"></div>
+  <div id="replay-badge">REPLAY</div>
+  <div id="ai-debug"></div>
+
+  <div id="overlay">
+    <div class="ov-card">
+      <div id="overlay-title">전반 종료</div>
+      <div id="overlay-sub"></div>
+      <div id="stats-box"></div>
+      <div id="space-hint">SPACE 를 누르세요</div>
+    </div>
+  </div>
+
+  <div id="menu-root">
+    <nav id="tabbar">
+      <button type="button" data-tab="pm"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.4"/><path d="M2.5 20c.6-4 3.2-6 6.5-6s5.9 2 6.5 6z"/><circle cx="16.5" cy="7" r="2.8" opacity=".7"/><path d="M16 12.6c3 0 5 1.8 5.5 5.4h-4.6c-.3-2-1.1-3.8-2.6-5z" opacity=".7"/></svg><span>선수 관리</span></button>
+      <button type="button" data-tab="squad"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 12h18" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>라인업</span></button>
+      <button type="button" data-tab="store"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="11" height="15" rx="1.5" opacity=".6"/><rect x="8" y="6" width="12" height="15" rx="1.5"/></svg><span>보관함</span></button>
+      <button type="button" data-tab="tactics"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="18" r="2.4"/><path d="M15 4l5 5M20 4l-5 5" stroke="currentColor" stroke-width="2" fill="none"/><path d="M7 8c1 6 4 9 9 9.5" stroke="currentColor" stroke-width="2" fill="none" stroke-dasharray="2 2"/></svg><span>전술</span></button>
+      <button type="button" data-tab="title" class="home"><svg viewBox="0 0 24 24"><path d="M4 3h16v9c0 5-4 8-8 9-4-1-8-4-8-9z"/></svg><span>홈</span></button>
+      <button type="button" data-tab="items"><svg viewBox="0 0 24 24"><path d="M5 8h14l-1 13H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2" fill="none" stroke="currentColor" stroke-width="2"/><rect x="9" y="11" width="6" height="3" rx="1" fill="#0a1024"/></svg><span>아이템</span></button>
+      <button type="button" data-tab="shop"><svg viewBox="0 0 24 24"><path d="M3 4h18l-1.5 6h-15z"/><path d="M5 11h14v9H5z" opacity=".75"/><rect x="10" y="14" width="4" height="6" fill="#0a1024"/></svg><span>상점</span></button>
+      <button type="button" data-tab="market"><svg viewBox="0 0 24 24"><path d="M4 7h11l-3-3 1.4-1.4L19 8l-5.6 5.4L12 12l3-3H4z"/><path d="M20 17H9l3 3-1.4 1.4L5 16l5.6-5.4L12 12l-3 3h11z" opacity=".75"/></svg><span>이적시장</span></button>
+      <button type="button" data-tab="team"><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4"/><path d="M4 21c.8-5 4-7.5 8-7.5s7.2 2.5 8 7.5z"/></svg><span>구단 관리</span></button>
+    </nav>
+    <!-- 인트로 -->
+    <div id="menu-intro" class="intro">
+      <div class="intro-inner">
+        <div class="game-logo big">
+          <div class="gl-top"><span class="gl-ball"></span>APEX</div>
+          <div class="gl-bot">FOOTBALL</div>
+          <div class="gl-ko">에이펙스 풋볼</div>
+        </div>
+        <div class="intro-press">아무 키나 누르거나 화면을 클릭하세요</div>
+      </div>
+    </div>
+
+    <!-- 로그인 -->
+    <div id="menu-login" class="center-wrap" style="display:none">
+      <div class="login-card glass">
+        <div class="game-logo small">
+          <div class="gl-top"><span class="gl-ball"></span>APEX</div>
+          <div class="gl-bot">FOOTBALL</div>
+        </div>
+        <label class="field"><span>아이디</span><input id="login-id" maxlength="12" autocomplete="username" placeholder="2~12자 (한글·영문·숫자)"></label>
+        <label class="field"><span>비밀번호</span><input id="login-pw" type="password" maxlength="32" autocomplete="current-password" placeholder="4자 이상"></label>
+        <div id="login-msg" class="login-msg"></div>
+        <button type="button" class="btn" id="btn-login">로그인</button>
+        <button type="button" class="btn ghost" id="btn-register">새 계정 만들기</button>
+        <p class="login-note">계정과 구단 정보는 이 브라우저에만 저장됩니다.</p>
+      </div>
+    </div>
+
+    <!-- 구단 설정 (처음 로그인 · 구단 관리) -->
+    <div class="sub" id="menu-team" style="display:none">
+      <div class="sub-head"><span class="bar"></span><div class="menu-h" id="club-setup-title">구단 창단</div></div>
+      <p class="menu-p">먼저 팀 컬러를 고르고 구단 이름을 정하세요.</p>
+      <div class="club-setup">
+        <div>
+          <div class="step-label">1. 팀 컬러</div>
+          <div id="color-grid"></div>
+          <div class="step-label" style="margin-top:20px">2. 구단 이름</div>
+          <input id="club-name-input" class="text-in" maxlength="14" placeholder="예: 블루 FC">
+        </div>
+        <div class="crest-preview glass">
+          <svg id="club-crest-preview" viewBox="0 0 64 72" aria-hidden="true"></svg>
+          <strong id="club-name-preview">블루 FC</strong>
+          <div id="club-roster-preview"></div>
+        </div>
+      </div>
+      <div class="nav">
+        <button class="btn ghost" id="btn-team-back">로비로</button>
+        <button class="btn" id="btn-club-save" disabled>구단 창단</button>
+      </div>
+    </div>
+
+    <!-- 메인 로비 -->
+    <div id="menu-title" style="display:none">
+      <div class="lobby-top">
+        <svg class="crest" id="club-crest" viewBox="0 0 64 72" aria-hidden="true"></svg>
+        <div class="club-meta">
+          <strong id="club-name">블루 FC</strong> <span class="lvb" id="club-lv">Lv.1</span>
+          <span>감독 <span class="lg" id="club-user">-</span></span>
+        </div>
+        <nav class="navbar">
+          <button type="button" class="on" data-go="title">홈</button>
+          <button type="button" data-go="team">구단 관리</button>
+          <button type="button" data-go="squad">스쿼드 관리</button>
+          <button type="button" data-go="training">선수 훈련</button>
+          <button type="button" data-go="guide">플레이 가이드</button>
+          <button type="button" data-go="settings">⚙ 설정</button>
+        </nav>
+        <div class="top-icons">
+          <button type="button" data-go="guide" title="플레이 가이드">📖<small>가이드</small></button>
+          <button type="button" data-go="settings" title="설정">⚙<small>설정</small></button>
+          <button type="button" id="btn-logout2" title="로그아웃">⏻<small>로그아웃</small></button>
+        </div>
+        <div class="coin-pill" title="A코인"><span class="coin">A</span><b id="coin-amt">0</b></div>
+      </div>
+
+      <div class="lobby-mid">
+        <div class="mode-col">
+          <div class="game-logo">
+            <div class="gl-top"><span class="gl-ball"></span>APEX</div>
+            <div class="gl-bot">FOOTBALL</div>
+            <div class="gl-ko">에이펙스 풋볼</div>
+          </div>
+          <div class="mode-label">게임 모드</div>
+          <button type="button" class="mode-big" id="btn-game-start">
+            <span class="ico">🏆</span><span><b>리그 경기</b><small>리그를 골라 CPU와 한 경기</small></span>
+          </button>
+          <button type="button" class="mode-big" id="btn-fk">
+            <span class="ico">🎯</span><span><b>프리킥</b><small>수비벽을 넘겨 골문을 노려라 · 무한 연습</small></span>
+          </button>
+          <button type="button" class="mode-big" id="btn-apc">
+            <span class="ico">🏟️</span><span><b>APC 에펙컵</b><small>8팀 토너먼트 · 추첨으로 대진 결정</small></span>
+          </button>
+          <button type="button" class="mode-big" id="btn-pk">
+            <span class="ico">🥅</span><span><b>승부차기</b><small>5명씩 차고 서든데스</small></span>
+          </button>
+          <button type="button" class="mode-big wip" id="btn-live">
+            <span class="ico">⚡</span><span><b>실시간 매치</b><small>다른 감독과 실시간 대결</small></span><span class="mode-wip">제작중</span>
+          </button>
+        </div>
+        <div></div>
+        <div class="side-col">
+          <div class="card glass ev-card">
+            <div class="card-h"><span>이벤트</span><span>🎁</span></div>
+            <div class="card-b ev-body">
+              <div class="ev-ph"><b>시즌 이벤트</b><small>출석 보상 · 기간 한정 미션 · 스페셜 선수팩</small></div>
+              <span class="ev-sticker">제작중</span>
+            </div>
+          </div>
+          <div class="card glass">
+            <div class="card-h"><span>공지사항</span><span>📣</span></div>
+            <div class="card-b">
+              <ul>
+                <li>12개 리그 · 리그 표지 · 아마추어 → APL</li>
+                <li>리그 경기: 리그 선택 → 순위표 · 득점왕 · 라운드 진행</li>
+                <li>APC 에펙컵: 상대 5~10강 · 훈련 10레벨</li>
+                <li>보관함 선수 방출 · 후보 최대 10명</li>
+                <li>연속 강화 · 모든 강화 카드 사용 · 가이드에 육성 방법</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lobby-bottom">
+        <button type="button" class="lb-main" data-go="shop">🛒 상점</button>
+        <button type="button" class="lb-main" data-go="items">🎒 내 아이템</button>
+        <span class="who">👤 <b id="bottom-user">-</b></span>
+        <button type="button" id="btn-logout">로그아웃</button>
+        <span class="ver">APEX FOOTBALL · v4 · 구단 정보 자동 저장</span>
+      </div>
+    </div>
+
+    <!-- 구단 관리 (정보) -->
+    <div class="sub wide" id="menu-club" style="display:none">
+      <div class="sub-head"><span class="bar"></span><div class="menu-h">구단 관리</div></div>
+      <div id="club-body"></div>
+    </div>
+
+    <!-- 선수 관리 (허브) -->
+    <div class="sub wide" id="menu-pm" style="display:none">
+      <div class="sub-head"><span class="bar"></span><div class="menu-h">선수 관리</div></div>
+      <div id="pm-body"></div>
+    </div>
+
+    <!-- 선수 훈련 -->
+    <div class="sub wide" id="menu-train" style="display:none">
+      <div class="sub-head"><span class="bar"></span><div class="menu-h">선수 관리</div>
+        <div class="tr-tabs"><button type="button" class="tr-tab on" data-tab="train">훈련</button><button type="button" class="tr-tab" data-tab="break">훈련 돌파</button><button type="button" class="tr-tab" data-tab="redist">훈련 재분배</button><button type="button" class="tr-tab" data-tab="sp">특훈</button><button type="button" class="tr-tab" data-tab="sprd">특훈 재분배</button><button type="button" class="tr-tab" data-tab="enh">강화</button><button type="button" class="tr-tab" data-tab="lb">한계 돌파</button></div>
+        <div class="coin-pill sm"><span class="coin">A</span><b id="train-coin">0</b></div></div>
+      <div id="train-body"></div>
+      <div class="nav"><button class="btn ghost" id="btn-train-back">선수 관리로</button><span></span></div>
+    </div>
+
+    <!-- 상점 -->
+    <div class="sub" id="menu-shop" style="display:none">
+      <div class="shop-head"><div class="sh-title">상점</div><div class="sh-tabs"><button type="button" class="on">전체 상품</button></div></div>
+      <div class="shop-coins"><span>구매한 상자는 '내 아이템'에서 열 수 있어요.</span><div class="coin-pill sm"><span class="coin">A</span><b id="shop-coin">0</b></div></div>
+      <div id="shop-body"></div>
+      <div class="nav"><button class="btn ghost" id="btn-shop-back">로비로</button><button class="btn" id="btn-shop-items">내 아이템</button></div>
+    </div>
+
+    <!-- 내 아이템 -->
+    <div class="sub" id="menu-market" style="display:none">
+      <div class="sub-head"><span class="bar"></span><div class="menu-h">이적시장</div></div>
+      <p class="menu-p">선수를 눌러 정보와 능력치를 볼 수 있어요.</p>
+      <div id="market-body"></div>
+      <div class="nav"><button class="btn ghost" id="btn-market-back">로비로</button><span></span></div>
+    </div>
+    <div class="sub" id="menu-store" style="display:none">
+      <div class="sub-head"><span class="bar"></span><div class="menu-h">보관함</div></div>
+      <div id="store-body"></div>
+      <div class="nav"><button class="btn ghost" id="btn-store-back">로비로</button><span></span></div>
+    </div>
+    <div class="sub wide" id="menu-tactics" style="display:none">
+      <div class="sub-head"><span class="bar"></span><div class="menu-h">전술</div><span class="tc-note">바꾸면 바로 저장 · 경기에서 AI 동료들이 그대로 움직여요</span></div>
+      <div id="tactics-body"></div>
+      <div class="nav"><button class="btn ghost" id="btn-tactics-back">로비로</button><span></span></div>
+    </div>
+    <div class="sub" id="menu-items" style="display:none">
+      <div class="sub-head"><span class="bar"></span><div class="menu-h">내 아이템</div></div>
+      <div id="items-body"></div>
+      <div class="nav"><button class="btn ghost" id="btn-items-back">로비로</button><button class="btn" id="btn-items-shop">상점</button></div>
+    </div>
+
+    <!-- APC 에펙컵 -->
+    <div class="sub" id="menu-apc" style="display:none">
+      <div class="sub-head"><span class="bar"></span><div class="menu-h">APC 에펙컵</div>
+        <div class="coin-pill sm"><span class="coin">A</span><b id="apc-coin">0</b></div></div>
+      <p class="menu-p">8개 팀이 추첨으로 대진을 정하는 토너먼트예요. 내 경기만 직접 하고 나머지는 시뮬레이션으로 결과가 나와요. 무승부면 바로 승부차기!</p>
+      <div id="apc-body"></div>
+      <div class="apc-msg" id="apc-msg"></div>
+      <div class="nav">
+        <button class="btn ghost" id="btn-apc-back">로비로</button>
+        <button class="btn" id="btn-apc-go">8강 진행</button>
+      </div>
+    </div>
+
+    <!-- 리그 선택 (리그 경기) -->
+    <div class="sub wide" id="menu-league" style="display:none">
+      <div class="sub-head"><span class="bar"></span><div class="menu-h">리그 경기</div></div>
+      <p class="menu-p">8개 구단이 홈·원정 두 번씩 맞붙는 14경기 시즌이에요. 리그가 높을수록 상대가 강하고, 시즌 순위에 따라 A코인을 받아요.</p>
+      <div id="league-chips"></div>
+      <div id="season-body"></div>
+      <div class="nav">
+        <button class="btn ghost" id="btn-league-back">로비로</button>
+        <span class="league-reset"><button type="button" class="btn ghost danger" id="btn-league-reset">리그 초기화</button></span>
+        <button class="btn" id="btn-play-match">1라운드 킥오프</button>
+      </div>
+    </div>
+
+    <!-- 스쿼드 -->
+    <div class="sub" id="menu-squad" style="display:none">
+      <div class="sub-head"><span class="bar"></span><div class="menu-h">라인업</div><span class="sq-savebar"><span id="sq-dirty"></span><button class="btn" id="btn-squad-save" disabled>💾 라인업 저장</button></span></div>
+      <p class="menu-p">포메이션을 고르고 선수 카드를 눌러 보세요. 카드 · 목록을 마우스로 끌어다 놓으면 자리가 바뀌어요 (오버롤은 그 자리 포지션의 주요 능력치 기준).</p>
+      <div id="formation-chips"></div>
+      <div class="squad2">
+        <div id="player-list"></div>
+        <div id="sq-side"></div>
+      </div>
+      <div class="nav">
+        <button class="btn ghost" id="btn-squad-back">로비로</button>
+        <span></span>
+      </div>
+      
+    </div>
+  </div>
+
+  <div id="toast"></div>
+  <div id="sq-confirm"></div><div id="lb-fx"></div>
+  <div id="pinfo"></div>
+  <div id="pmenu"></div>
+  <div id="fkpick"></div>
+  <div id="buy-pop"></div>
+  <div id="box-open"></div>
+  <div id="pack-open"></div>
+  <div id="settle-pop"></div>
+  <div id="trophy-cer"></div>
+  <div id="cup-intro"></div>
+  <div id="redist"></div>
+  <div id="result-pop"></div>
+  <div id="sp-banner"></div>
+  <div id="lineup"></div>
+  <div id="prematch-hint"></div>
+  <div id="pshot"><div class="ps-label">POWER SHOT — 초록에서 <kbd>D</kbd></div><div class="ps-bar"><i id="pshot-mark"></i></div></div>
+  <div id="pen-order"></div>
+  <div id="settings">
+    <div class="set-box glass">
+      <div class="pz-title">설정</div>
+      <div class="set-row"><span>전체 음량</span><input type="range" min="0" max="100" id="set-master"><b id="setv-master">0</b></div>
+      <div class="set-row"><span>배경음악</span><input type="range" min="0" max="100" id="set-bgm"><b id="setv-bgm">0</b></div>
+      <div class="set-row"><span>효과음 (공·휘슬·그물)</span><input type="range" min="0" max="100" id="set-sfx"><b id="setv-sfx">0</b></div>
+      <div class="set-row"><span>관중 (함성·북·나팔)</span><input type="range" min="0" max="100" id="set-crowd"><b id="setv-crowd">0</b></div>
+      <div class="set-row aspect"><span>게임 화면 비율</span><select id="set-aspect">
+        <option value="16:9">16:9 (기본 · 권장)</option><option value="16:10">16:10</option><option value="21:9">21:9 (와이드)</option><option value="4:3">4:3</option><option value="fill">화면 꽉 채우기</option></select><b></b></div>
+      <div class="set-sub">조작 키 <small>버튼을 누르고 바꿀 키를 누르세요 (Esc 취소)</small></div>
+      <div class="set-keys" id="set-keys"></div>
+      <div class="set-held">지금 눌려 있는 키: <b id="set-held">없음</b></div>
+      <div class="set-note" id="set-keymsg"></div>
+      <div class="set-note">키보드에 따라 여러 키를 동시에 누르면 일부 키가 컴퓨터로 안 들어가요 (예: → + ↑ + D). 위 칸에 실제로 다 보이는지 눌러서 확인하고, 안 보이면 그 키를 다른 키로 바꾸세요.</div>
+      <div class="set-btns"><button type="button" class="btn ghost" id="btn-keys-reset">키 기본값</button><button type="button" class="btn ghost" id="btn-set-test">소리 테스트</button><button type="button" class="btn" id="btn-set-close">닫기</button></div>
+    </div>
+  </div>
+  <div id="pause">
+    <div class="pz-box glass">
+      <div class="pz-title">일시정지</div>
+      <div class="pz-sub" id="pause-sub"></div>
+      <div id="pause-main">
+        <button type="button" class="btn" id="btn-resume">계속하기</button>
+        <button type="button" class="btn ghost" id="btn-pause-guide">플레이 가이드</button>
+        <button type="button" class="btn ghost" id="btn-pause-settings">설정 (음량)</button>
+        <button type="button" class="btn ghost pz-danger" id="btn-abort">경기 중단하기</button>
+      </div>
+      <div id="pause-confirm" style="display:none">
+        <div class="pz-warn">경기를 중단하고 로비로 나갈까요?<br><small>지금 경기 결과는 기록되지 않아요.</small></div>
+        <button type="button" class="btn pz-danger-solid" id="btn-abort-yes">중단하고 로비로</button>
+        <button type="button" class="btn ghost" id="btn-abort-no">돌아가기</button>
+      </div>
+      <div class="pz-hint">Esc 계속하기</div>
+    </div>
+  </div>
+  <div id="guide">
+    <div class="box glass">
+      <div class="card-h"><span>플레이 가이드</span><span class="g-tabs"><button type="button" class="on" data-gt="ctl">조작법</button><button type="button" data-gt="grow">육성 방법</button></span><button type="button" class="btn ghost" id="btn-guide-close" style="padding:4px 12px">닫기</button></div>
+      <div class="card-b g-grow" style="display:none">
+        <div class="g-sec">① 선수 모으기</div>
+        <table>
+          <tr><td>BS 랜덤 선수팩</td><td>상점에서 구매 → '아이템'에서 개봉. 8구단 · 이적시장 모든 선수가 같은 확률로 나오고 <b>보관함</b>으로 들어가요</td></tr>
+          <tr><td>보관함</td><td>라인업에 넣기 · 후보로 추가(최대 10명) · 선수 방출(여러 장 선택 · 포지션/오버롤 필터)</td></tr>
+          <tr><td>라인업 · 전술</td><td>선발 11 · 교체 7 · 후보 10까지. 골키퍼 자리는 골키퍼끼리만 교체. 전술 탭에서 포메이션 · 스타일 · 선수별 역할</td></tr>
+        </table>
+        <div class="g-sec">② 훈련 <small>훈련박스 → EXP 카드</small></div>
+        <table>
+          <tr><td>훈련</td><td>EXP 카드 + A코인으로 훈련 레벨 ↑. 레벨마다 포지션 주요 능력치 중 랜덤 +1 × 2번 (기본 최대 5레벨)</td></tr>
+          <tr><td>훈련 돌파</td><td>돌파권 + A코인으로 최대 훈련 레벨 +1 (최대 10레벨). 실패할 때마다 다음 확률 +1%</td></tr>
+          <tr><td>훈련 재분배</td><td>훈련 재분배권 1개로 훈련으로 오른 능력치를 고른 능력치에 다시 나눔 (기존/새 결과 중 선택)</td></tr>
+        </table>
+        <div class="g-sec">③ 특훈 <small>훈련 10레벨 달성 후</small></div>
+        <table>
+          <tr><td>특훈</td><td>능력치 1개를 고르면 +1~3, 다른 능력치 2개가 +1~2. 첫 특훈은 무료</td></tr>
+          <tr><td>특훈 재분배</td><td>특훈 재분배권 1개로 다시 뽑고 기존/새 결과 중 고르기</td></tr>
+        </table>
+        <div class="g-sec">④ 강화 · 한계 돌파 <small>강화 박스 → 강화 카드</small></div>
+        <table>
+          <tr><td>강화</td><td>강화 카드 최대 5장 · 목표 단계 이상 카드 장당 40% · 한 단계 아래 20% · 더 낮은 카드도 사용 가능(10 · 5 · 3 · 2 · 1%). 실패하면 카드만 사라짐. 강화 단계마다 <b>전체 능력치</b> 상승 (10강 +27)</td></tr>
+          <tr><td>연속 강화</td><td>목표 단계를 정하면 카드를 자동으로 채워 반복 (카드 부족 · 상한 · 중지 시 멈춤)</td></tr>
+          <tr><td>한계 돌파</td><td>기본 강화 상한은 5강. 같은 선수 · 시즌 · 종류 카드(EXP 1000)나 한계 돌파 카드로 EXP 1000마다 상한 +1강 (최대 5회 → 10강). 라인업에 등록된 카드는 재료로 못 씀</td></tr>
+        </table>
+        <div class="g-sec">⑤ 재화 모으기</div>
+        <table>
+          <tr><td>리그 경기</td><td>승리 · 득점 · 경기 내용 + 시즌 순위 보상. 높은 리그일수록 보상 배율 ↑ (아마추어 ×1 → APL ×4)</td></tr>
+          <tr><td>APC 에펙컵</td><td>8팀 토너먼트 · 상대는 5~10강 · 훈련 10레벨 · 보상 ×1.6</td></tr>
+          <tr><td>구단 레벨</td><td>레벨마다 훈련박스 · 훈련돌파박스, 5레벨마다 재분배권, 10레벨마다 특훈 재분배권</td></tr>
+        </table>
+        <p style="margin-top:10px;color:var(--muted);font-size:0.78rem">추천 순서: 주전 11명 훈련 → 훈련 돌파로 10레벨 → 특훈 → 강화 5강 → 같은 선수 카드를 모아 한계 돌파 → 10강</p>
+      </div>
+      <div class="card-b g-ctl">
+        <div class="g-sec">이동 · 공 다루기</div>
+        <table>
+          <tr><td><kbd>←</kbd><kbd>↑</kbd><kbd>↓</kbd><kbd>→</kbd></td><td>선수 이동 (공을 갖고 있으면 드리블)</td></tr>
+          <tr><td><kbd>E</kbd> / <kbd>Shift</kbd> (누른 채로)</td><td>스프린트 — 빠르지만 체력이 빨리 닳음</td></tr>
+          <tr><td><kbd>Tab</kbd></td><td>공에 가장 가까운 선수로 교체 (공을 몰고 있을 땐 안 됨)</td></tr>
+          <tr><td><kbd>N</kbd></td><td>선수 이름표 표시 전환 — 조작 선수만 ↔ 전체 선수</td></tr>
+        </table>
+        <div class="g-sec">패스 · 슛 <small>누르고 있는 시간(게이지) = 세기 · 거리 · 방향키 = 받을 동료 쪽</small></div>
+        <table>
+          <tr><td><kbd>S</kbd></td><td>짧은 패스 — 방향키 쪽 동료에게 땅볼 (거리 제한 없음, 멀리 줄수록 게이지를 길게)</td></tr>
+          <tr><td><kbd>Z</kbd> + <kbd>S</kbd></td><td>긴 패스 — 멀리 있는 동료 쪽으로 강한 땅볼 (게이지 = 거리)</td></tr>
+          <tr><td><kbd>A</kbd></td><td>로빙 패스 — 동료 쪽으로 띄움, 게이지만큼 멀리 (노란 원 = 낙하지점) · 측면에서는 박스 안 공격수에게 크로스</td></tr>
+          <tr><td><kbd>W</kbd></td><td>스루패스 — 침투하는 선수가 달려가 받을 앞 공간으로</td></tr>
+          <tr><td><kbd>Q</kbd> + <kbd>W</kbd></td><td>로빙 스루패스 — 수비 라인 뒤 공간으로 띄워서</td></tr>
+          <tr><td><kbd>D</kbd></td><td>슛 — 누른 만큼 높이 뜸 (게이지 4칸 중 ~2.8칸까지 골문 안 · 3칸 넘으면 위로 벗어남) · ↑↓로 구석 · 달리면서도 OK</td></tr>
+          <tr><td><kbd>Z</kbd> + <kbd>D</kbd></td><td>감아차기 — 먼 쪽 구석 바깥을 보고 차서 안쪽으로 휘어 들어감 (↑↓로 구석 선택, 누르는 시간 = 높이). 커브 능력이 높을수록 크게 휘어 키퍼가 막기 어려움</td></tr>
+          <tr><td><kbd>F</kbd> + <kbd>D</kbd></td><td>파워 슛 — F를 누른 채 D로 시작 (몸 방향은 그때 보던 쪽으로 고정, <kbd>S</kbd> = 취소) · 화면이 살짝 당겨지고 게이지가 지나감 → <b style="color:#4ade80">초록</b>에서 <kbd>D</kbd>를 다시 누르면 강하고 정확한 슛. <b style="color:#fde047">노랑</b>은 살짝 빗나가고, <b style="color:#f87171">빨강</b>은 크게 뜨거나 옆으로</td></tr>
+          <tr><td>공중볼 + <kbd>D</kbd></td><td>헤딩 슛</td></tr>
+        </table>
+        <div class="g-sec">수비</div>
+        <table>
+          <tr><td>선입력 (다이렉트)</td><td>패스가 오는 중에 슛 · 패스 키를 미리 눌렀다 떼면 받자마자 바로 찬다. 다이렉트 슛은 잡고 찰 때보다 덜 정확 (발리슛 능력치가 좋을수록 정확)</td></tr>
+          <tr><td><kbd>S</kbd> (수비 중)</td><td>스탠딩 태클 — 짧고 정확, 실패하면 잠깐 다시 못 함</td></tr>
+          <tr><td><kbd>D</kbd> (수비 중)</td><td>슬라이딩 태클 — 멀리 닿지만 실패하면 넘어지고 뒤에서 하면 파울 위험</td></tr>
+          <tr><td>정면에서 붙기</td><td>공 가진 상대 앞쪽으로 붙으면 공을 뺏음 (뒤에서는 못 뺏고 파울 위험)</td></tr>
+          <tr><td><kbd>E</kbd> + 방향키</td><td>빠르게 따라붙기</td></tr>
+        </table>
+        <div class="g-sec">세트피스 · 경기 진행</div>
+        <table>
+          <tr><td>킥오프</td><td><kbd>S</kbd> <kbd>A</kbd> <kbd>W</kbd> 로 패스하면 시작</td></tr>
+          <tr><td>프리킥 · 코너킥</td><td><kbd>←</kbd><kbd>→</kbd> 조준 · <kbd>↑</kbd><kbd>↓</kbd> 높이 · <kbd>C</kbd> 킥 종류(인사이드 커브 / 아웃사이드 / 무회전 / 드롭) · <kbd>Tab</kbd> 키커 변경 → <kbd>D</kbd> 슛 / <kbd>A</kbd> 띄우기 / <kbd>S</kbd> 패스. 점선이 실제로 날아갈 궤적</td></tr>
+          <tr><td>후반전</td><td>진영이 바뀌어 중계 카메라가 반대편에서 비춤 — 방향키는 화면 기준 그대로</td></tr>
+          <tr><td>스로인</td><td>방향키로 받을 선수 → <kbd>S</kbd> 짧게 / <kbd>A</kbd> 길게</td></tr>
+          <tr><td>페널티킥</td><td><kbd>←</kbd><kbd>→</kbd> 노란 조준점 이동 → <kbd>D</kbd> 누르는 시간 = 높이 (너무 길게 누르면 크로스바 위로). 구석·높이 노릴수록, 골 결정력이 낮을수록 빗나갈 확률 ↑</td></tr>
+          <tr><td>승부차기 키퍼</td><td>상대가 찰 땐 내가 키퍼 — <kbd>←</kbd><kbd>→</kbd> 골문 가운데 범위 안에서 이동 · 키커가 찬 뒤 <kbd>←</kbd>/<kbd>→</kbd> 누르며 <kbd>D</kbd> 그쪽으로 다이빙 · 그냥 <kbd>D</kbd> 제자리 점프 (한 번만). 몸 근처로 온 공은 자동으로 막거나 쳐냄</td></tr>
+          <tr><td><kbd>Space</kbd></td><td>리플레이 건너뛰기 · 하프타임/종료 화면 넘기기</td></tr>
+          <tr><td><kbd>Esc</kbd></td><td>프리킥 연습에서 로비로</td></tr>
+        </table>
+        <p style="margin-top:10px;color:var(--muted);font-size:0.78rem">체력이 90% 아래로 내려갈수록 모든 능력치가 깎입니다. 스프린트는 아껴 쓰세요.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="file-warn" style="display:none;position:fixed;inset:0;z-index:9999;background:#050816;color:#e2e8f0;font-family:system-ui,sans-serif;place-items:center;text-align:center;padding:24px">
+  <div><h2 style="margin:0 0 12px">게임을 서버로 열어 주세요</h2>
+  <p style="line-height:1.7;color:#94a3b8">파일을 나눈 버전은 브라우저 보안 때문에 index.html을 직접 열면 실행되지 않아요.<br>
+  같은 폴더의 <b style="color:#fde047">start.bat</b>(Windows)을 더블클릭하면 게임이 열려요.<br>
+  macOS: start.command · VS Code: Live Server 확장으로 index.html 열기</p></div>
+</div>
+<script>if (location.protocol === 'file:') document.getElementById('file-warn').style.display = 'grid';</script>
+<script type="module" src="main.js"></script>
+</body>
+</html>
