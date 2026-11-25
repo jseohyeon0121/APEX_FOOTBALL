@@ -1,6 +1,6 @@
 # APEX FOOTBALL (에이펙스 풋볼) — Claude Code 작업 안내
 
-Three.js(r160)로 만든 브라우저 3D 축구 게임. 빌드 도구 없음 — 정적 파일 4개를 그대로 서빙해서 실행한다.
+Three.js(r160)로 만든 브라우저 3D 축구 게임. 빌드 도구 없음 — 정적 파일 4개(+ photos 폴더)를 그대로 서빙해서 실행한다.
 사용자는 한국어로 대화하며, 게임 기획을 직접 정하고 Claude가 구현한다.
 
 ## 작업 규칙 (사용자가 정한 것 — 반드시 지킬 것)
@@ -13,7 +13,7 @@ Three.js(r160)로 만든 브라우저 3D 축구 게임. 빌드 도구 없음 —
 - 3D 실사 선수 모델은 **보류** 상태 — 요청 전까지 건드리지 말 것.
 
 ## 실행 · 테스트
-- `start.bat`(Windows, PowerShell HttpListener: server.ps1) / `start.command`(macOS) / `python3 -m http.server 8080`.
+- GitHub Pages(웹) · VS Code Live Server · `python3 -m http.server 8080`. (start.bat · server.ps1 · start.command는 사용자 요청으로 삭제함)
 - ES 모듈 + `fetch('players.json')` 때문에 `file://`로는 실행 불가 (index.html이 안내 화면을 띄움).
 - 저장: `localStorage` — `apexFootball.accounts.v1`(계정 · 구단 전체), `apexFootball.lastUser`, `apexFootball.settings.v2`(볼륨 · 키 배치).
   `ACCOUNT_RESET_V`(main.js)를 올리면 다음 실행 때 모든 계정이 한 번 초기화됨 (현재 1).
@@ -26,7 +26,14 @@ Three.js(r160)로 만든 브라우저 3D 축구 게임. 빌드 도구 없음 —
 | index.html | 화면 구조 (모든 메뉴 패널 · 오버레이 div). importmap으로 three를 CDN에서 로드 |
 | style.css | 전체 스타일 (CSS 변수 `--navy --panel --line --muted` 등) |
 | main.js | 게임 전체 코드 (~11,900줄, 단일 ES 모듈, top-level await로 players.json 로드) |
-| players.json | 선수 190명. 배열 순서 = tid. ovr은 저장 안 함(능력치로 자동 계산) |
+| players.json | 선수 190명. 배열 순서 = tid. ovr은 저장 안 함(능력치로 자동 계산). `photo` = 사진 파일 이름(photos 폴더 기준, 빈 칸이면 없음) |
+| photos/ | 선수 사진 폴더 (현재 비어 있음, README.txt만). `playerPhotoUrl(tid)`(main.js)로 주소를 얻음 — 화면 표시는 아직 없음 |
+| tools/format_players.py | players.json 정리 스크립트 (값 유지, 모양만 맞춤) |
+
+### players.json 저장 형식 (사용자가 정한 것 — 항상 이 모양 유지)
+- 선수 1명 = 기본 정보 1줄(`tid … weight, photo`) + `"fo"` 능력치 5줄(FO_COLS와 같은 묶음 7·7·7·8·5개).
+- 구단 사이 빈 줄 없음 · 숫자 세로 정렬 없음.
+- players.json을 고친 뒤에는 반드시 `python3 tools/format_players.py`를 실행해 이 모양으로 저장할 것.
 
 ## main.js 지도 (섹션 주석 `// =====` 기준)
 - 상수 · Three.js · 경기장 · 선수 모델 · 공 · 심판 · 상태

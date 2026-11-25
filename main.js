@@ -10266,7 +10266,7 @@ const CARD_SEASON = "'26", CARD_TYPE = 'BS';
 // 선수 데이터는 players.json 에서 불러옴 (오버롤 ovr은 능력치 fo로 자동 계산)
 const PLAYER_JSON = await fetch(new URL('./players.json', import.meta.url), { cache: 'no-cache' })
   .then(r => { if (!r.ok) throw new Error(`players.json ${r.status}`); return r.json(); })
-  .catch(e => { document.body.insertAdjacentHTML('beforeend', `<div style="position:fixed;inset:0;z-index:9999;background:#050816;color:#fca5a5;display:grid;place-items:center;font:700 18px system-ui">players.json을 불러오지 못했어요 (${e.message}) — start.bat으로 실행해 주세요</div>`); throw e; });
+  .catch(e => { document.body.insertAdjacentHTML('beforeend', `<div style="position:fixed;inset:0;z-index:9999;background:#050816;color:#fca5a5;display:grid;place-items:center;font:700 18px system-ui">players.json을 불러오지 못했어요 (${e.message}) — 웹 서버(GitHub Pages · Live Server 등)로 열어 주세요</div>`); throw e; });
 const CLUB_SUFFIX = { blue: 'FC', red: '유나이티드', white: '시티', black: '로버스', green: '애슬레틱', orange: '원더러스', yellow: '레인저스', cyan: '알비온' };
 const clubName = colorId => { const c = TEAM_COLORS.find(t => t.id === colorId); return c ? `${c.name} ${CLUB_SUFFIX[c.id] || 'FC'}` : '자유계약'; };
 let PLAYER_DB = null;
@@ -10277,6 +10277,9 @@ function playerDb() {
   return (PLAYER_DB = db);
 }
 const tplOf = tid => playerDb()[tid] || playerDb()[0];
+// 선수 사진: players.json의 "photo" 칸(photos 폴더 안 파일 이름)을 실제 주소로 바꿔 줌. 빈 칸이면 null
+const PHOTO_DIR = './photos/';
+const playerPhotoUrl = tid => { const f = tplOf(tid).photo; return f ? new URL(PHOTO_DIR + f, import.meta.url).href : null; };
 const clubPlayers = colorId => playerDb().filter(t => t.club === colorId);
 
 // ----- 내 선수 카드: roster[r] = { uid, tid, season, type } · 훈련/강화/한계돌파는 train[r] -----
