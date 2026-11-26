@@ -1304,14 +1304,6 @@ function setKickCone(fromX, fromZ, dirX, dirZ, len, spread = 0.16) {
   kickCone.geometry = geo;
 }
 
-function setpieceKickLabel(action) {
-  if (action === 'lob') return '띄워 차기';
-  if (action === 'shoot') return '파워 슛 (드롭)';
-  if (action === 'through') return '스루패스';
-  if (action === 'ground') return '짧은 패스';
-  return '프리킥 조준';
-}
-
 function syncSetpieceUi() {
   const aimed = phase === 'setpiece' && setpiece &&
     (setpiece.type === 'corner' || setpiece.type === 'freekick') && setpiece.teamBlue;
@@ -1650,10 +1642,6 @@ function emptyBoosts() {
   const o = {};
   for (const d of STAT_DEFS) o[d.key] = 0;
   return o;
-}
-
-function statsForRole(isGk) {
-  return STAT_DEFS.filter(d => d.roles === 'all' || d.roles === (isGk ? 'gk' : 'outfield'));
 }
 
 const userSetup = {
@@ -2532,17 +2520,6 @@ function applyScoreboardColors() {
   if (awayName) awayName.textContent = teamName(false);
 }
 
-function showKickoffWait() {
-  phase = 'kickoff';
-  thirdPersonCam = false;
-  clockPaused = true;
-  overlay.classList.remove('show');
-  statsBox.style.display = 'none';
-  setMatchHudVisible(true);
-  setpieceHint.style.display = 'block';
-  setpieceHint.textContent = '킥오프 대기 — SPACE로 경기 시작';
-}
-
 function startKickoff() {
   overlay.classList.remove('show');
   beginKickoff(true);
@@ -2924,45 +2901,6 @@ function nearestTeammate(from, team = teamA) {
   return best;
 }
 
-function findPassTarget(from) {
-  const [dirX, dirZ] = getInputDir();
-  const vision = statMul(from, 'vision');
-  const maxDist = 48 + vision * 22;
-  let best = null, bestScore = -Infinity;
-  for (const t of teamA) {
-    if (t === from || t.sentOff) continue;
-    const isGk = t.role === 'GK';
-    if (isGk && !(dirX || dirZ)) continue; // 키퍼에게는 방향키로 키퍼 쪽을 눌렀을 때만 (실수로 백패스 방지)
-    const d = dist2(from, t);
-    if (d < 1.5 || d > maxDist) continue;
-    const [tx, tz] = norm2(t.x - from.x, t.z - from.z);
-    if (isGk && tx * dirX + tz * dirZ < 0.8) continue;
-    let s = 80 - d * (1.05 - vision * 0.25) - (isGk ? 12 : 0);
-    if (dirX || dirZ) {
-      const dot = tx * dirX + tz * dirZ;
-      if (dot < 0.05) continue;
-      s += dot * (48 + vision * 12);
-    } else {
-      s += (t.x - from.x) * 0.45;
-      s += (1 / (d + 1)) * 25;
-      s += vision * 8;
-    }
-    if (s > bestScore) { bestScore = s; best = t; }
-  }
-  return best || nearestTeammate(from);
-}
-
-function passLeadPoint(from, target, power) {
-  const d = dist2(from, target);
-  const lead = 0.45 + power * 0.85;
-  const [fx, fz] = norm2(target.faceX || target.vx || 0.01, target.faceZ || target.vz || 0);
-  return {
-    x: target.x + fx * lead,
-    z: target.z + fz * lead,
-    power: clamp(0.26 + d * 0.018 + power * 0.22, 0.38, 1.0),
-  };
-}
-
 /** 스루패스 목표: 받는 선수 '앞의 빈 공간'. 선수가 전력으로 뛰어 도착하는 시간에 공도 도착하게 */
 /** 스루패스 목표 = 받는 선수 '앞의 빈 공간'.
  *  · 수비 라인이 앞에 있으면 그 뒤 공간으로 찌른다
@@ -3041,24 +2979,6 @@ function throwIn(p, t, long, power = 0.5) {
     t.lobLand = { x: tx, z: tz, ttl: Math.ceil(T + 20) }; // 낙하 지점에서 기다림
     ball.throwTo = t; ball.throwTtl = Math.ceil(T + 6); // 날아가는 동안 상대는 못 끊음
   }
-}
-
-function findThroughTarget(from) {
-  const [dirX, dirZ] = getInputDir();
-  let best = null, bestScore = -Infinity;
-  for (const t of teamA) {
-    if (t === from || t.role === 'GK' || t.role === 'CB' || t.sentOff) continue;
-    if (t.x < from.x - 1) continue;
-    let s = (t.role === 'ST' || t.role === 'WG' ? 22 : 8) + (t.x - from.x);
-    if (dirX || dirZ) {
-      const [tx, tz] = norm2(t.x - from.x, t.z - from.z);
-      const dot = tx * dirX + tz * dirZ;
-      if (dot < 0.05) continue;
-      s += dot * 30;
-    }
-    if (s > bestScore) { bestScore = s; best = t; }
-  }
-  return best || findPassTarget(from);
 }
 
 /** 오프사이드: 패스 순간 리시버가 상대 진영에서 공·두 번째 마지막 수비수보다 골에 가까우면 */
@@ -6021,42 +5941,6 @@ function skillMult(p) { return 1; }
 /** 슛/패스 흔들림용 피로도 (0~0.47). 스탯 감소량에 비례 */
 function staminaFatigue(p) { return staminaPenalty(p) / 60; }
 
-function applyPassInaccuracy(from, tx, tz, power) {
-  const fatigue = staminaFatigue(from);
-  const skill = skillMult(from);
-  const vision = statMul(from, 'vision');
-  const missAmp = Math.min(0.45, (1.02 - skill) * 0.55) * clamp(1.35 - vision * 0.4, 0.55, 1.25);
-  let ox = (Math.random() - 0.5) * missAmp;
-  let oz = (Math.random() - 0.5) * missAmp;
-  let vy = 0;
-  let lift = 0;
-  let powerMult = 1;
-  let overMiss = false;
-
-  if (power > 0.92) {
-    const over = (power - 0.92) / 0.08;
-    overMiss = Math.random() < 0.25 + over * 0.3;
-    const side = Math.sign(oz || (Math.random() - 0.5));
-    oz += side * (0.35 + over * 1.0);
-    ox += (Math.random() - 0.5) * (0.3 + over * 0.7);
-    if (Math.random() < 0.15 + over * 0.2) {
-      vy = 0.06 + over * 0.12;
-      lift = 0.04 + over * 0.08;
-      powerMult = 1.03 + over * 0.08;
-    } else {
-      powerMult = 1.04 + over * 0.1;
-    }
-  } else if (power > 0.8) {
-    const hot = (power - 0.8) / 0.12;
-    powerMult = 1 + hot * 0.05;
-    oz += (Math.random() - 0.5) * hot * 0.3;
-  }
-
-  ox += (Math.random() - 0.5) * fatigue * 0.18;
-  oz += (Math.random() - 0.5) * fatigue * 0.18;
-  return { x: tx + ox, z: tz + oz, vy, lift, powerMult, overMiss };
-}
-
 function updateStamina(p, dtSec, isSprinting, isControlled) {
   if (fkMode) { p.stamina = 100; return; } // 프리킥 모드: 체력 소모 없음
   const regen = statMul(p, 'staminaRegen');
@@ -6951,35 +6835,10 @@ function sndCheer(power = 1) {
   crowdShout({ n: 40, dur: 4.2 * Math.min(1.2, power), gain: 0.55 * power, rise: 1.3, fall: 0.8 });
   crowdShout({ n: 20, dur: 3.2, gain: 0.3 * power, pitchLo: 260, pitchHi: 520, t: 0.15 }); // 높은 목소리 (환호)
 }
-function sndCheerOld(power = 1) {
-  if (!sfxOk()) return;
-  const ctx = AU.ctx, t0 = ctx.currentTime;
-  for (const [f, q, g] of [[700, 0.7, 0.5], [1500, 0.9, 0.3], [300, 0.8, 0.35]]) {
-    const s = ctx.createBufferSource(); s.buffer = AU.noise; s.loop = true;
-    const fl = ctx.createBiquadFilter(); fl.type = 'bandpass'; fl.frequency.value = f; fl.Q.value = q;
-    const gg = ctx.createGain(); gg.gain.setValueAtTime(0.0001, t0);
-    gg.gain.exponentialRampToValueAtTime(g * power, t0 + 0.35);
-    gg.gain.setValueAtTime(g * power, t0 + 1.6);
-    gg.gain.exponentialRampToValueAtTime(0.0001, t0 + 4.5);
-    s.connect(fl); fl.connect(gg); gg.connect(AU.crowd); s.start(t0, Math.random()); s.stop(t0 + 4.6);
-  }
-}
 /** 관중 탄식·놀라는 소리 "오오~" */
 function sndOoh(power = 1) {
   if (!sfxOk()) return;
   crowdShout({ n: 30, dur: 1.9, from: [420, 820, 2400], to: [460, 760, 2300], pitchLo: 150, pitchHi: 340, rise: 1.15, fall: 0.62, gain: 0.5 * power, spread: 0.2 });
-}
-function sndOohOld(power = 1) {
-  if (!sfxOk()) return;
-  const ctx = AU.ctx, t0 = ctx.currentTime;
-  const s = ctx.createBufferSource(); s.buffer = AU.noise; s.loop = true;
-  const f1 = ctx.createBiquadFilter(); f1.type = 'bandpass'; f1.Q.value = 4;
-  f1.frequency.setValueAtTime(520, t0); f1.frequency.linearRampToValueAtTime(380, t0 + 1.4);
-  const f2 = ctx.createBiquadFilter(); f2.type = 'lowpass'; f2.frequency.value = 1400;
-  const g = ctx.createGain(); g.gain.setValueAtTime(0.0001, t0);
-  g.gain.exponentialRampToValueAtTime(0.9 * power, t0 + 0.25);
-  g.gain.exponentialRampToValueAtTime(0.0001, t0 + 1.7);
-  s.connect(f1); f1.connect(f2); f2.connect(g); g.connect(AU.crowd); s.start(t0, Math.random()); s.stop(t0 + 1.8);
 }
 /** 서포터 큰북: 여러 명이 함께 치는 깊고 웅장한 소리 (+ 경기장 울림) */
 function sndDrum(t = 0, g = 0.5) {
@@ -7503,19 +7362,6 @@ function startEtSecond() {
   overlay.classList.remove('show');
   beginKickoff(false);
   showMsg('연장전 후반!');
-  updateHud();
-}
-
-function offerExtraTime() {
-  phase = 'et_offer';
-  clockPaused = true;
-  matchMinute = 90;
-  overlayTitle.textContent = '정규시간 종료';
-  overlaySub.textContent = '무승부 — 연장전(15+15) 진행';
-  spaceHint.textContent = 'SPACE — 연장전 시작';
-  spaceHint.style.display = 'block';
-  statsBox.style.display = 'none';
-  overlay.classList.add('show');
   updateHud();
 }
 
@@ -10333,7 +10179,6 @@ const cardTpl = r => tplOf(ensureRoster()[r]?.tid ?? 0);
 const xiR = i => (ensureRoster(), userSetup.lineup.xi[i]);
 /** 경기용: 선발 11자리의 등번호 */
 function ensurePids() { ensureRoster(); return userSetup.lineup.xi.map(r => cardTpl(r).num); }
-const pnum = r => cardTpl(r).num;
 const pname = r => cardTpl(r).name;
 function placeOf(r) {
   const L = (ensureRoster(), userSetup.lineup);
@@ -10378,12 +10223,6 @@ const OLD2FO = { speed: 'sprint', pass: 'shortPass', defense: 'standTackle', sta
 function migrateFo(obj) {
   const o = {};
   for (const [k, n] of Object.entries(obj || {})) { const nk = FO_LABEL[k] ? k : OLD2FO[k]; if (nk && n > 0) o[nk] = (o[nk] || 0) + Math.floor(n); }
-  return o;
-}
-/** 기본 능력치: 자기 포지션 주요 능력치 90 · 나머지 80 (필드 선수의 GK 능력치 20, 키퍼의 필드 능력치 70) */
-function foBase(pos) {
-  const keys = new Set(posKeys(pos)), gk = pos === 'GK', o = {};
-  for (const k of FO_KEYS) o[k] = keys.has(k) ? STAT_BASE : gk ? (GK_FO.has(k) ? STAT_BASE : 70) : (GK_FO.has(k) ? 20 : 80);
   return o;
 }
 /** 34개 능력치 → 실제 경기 계산용 능력치 */
@@ -10442,16 +10281,6 @@ function openShop() {
   phase = 'shop';
   showMenuPanel('shop');
   renderShop();
-}
-function buyItem(id) {
-  const it = SHOP.find(s => s.id === id);
-  const v = ensureInv();
-  if ((userSetup.coins || 0) < it.price) { toast('A코인이 부족해요'); return; }
-  userSetup.coins -= it.price;
-  v[id]++;
-  saveSetup();
-  renderShop();
-  toast(`${it.name} 구매 완료!`);
 }
 
 // ----- 내 아이템 -----
