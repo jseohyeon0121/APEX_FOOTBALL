@@ -2,10 +2,11 @@
 # 사용법 (APEX_FOOTBALL 폴더에서):  python3 tools/format_players.py
 # 모양: 선수 1명 = 기본 정보 1줄 + 능력치(fo) 5줄 (게임 능력치 화면 5열 FO_COLS와 같은 묶음 7·7·7·8·5)
 # "photo"(사진 파일 이름, photos 폴더 기준)가 없는 선수에는 빈 칸 ""을 넣는다.
+# "weakFoot" = 약발 수치 1~5 (주발은 foot, 5면 양발잡이).
 import json, os, sys
 
 PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'players.json')
-BASE_KEYS = ['tid', 'name', 'nation', 'club', 'grp', 'pos', 'num', 'age', 'foot', 'height', 'weight', 'photo']
+BASE_KEYS = ['tid', 'name', 'nation', 'club', 'grp', 'pos', 'num', 'age', 'foot', 'weakFoot', 'height', 'weight', 'photo']
 FO_ROWS = [
     ['sprint', 'accel', 'finishing', 'shotPower', 'longShots', 'positioning', 'volleys'],
     ['penalty', 'shortPass', 'vision', 'crossing', 'longPass', 'freekick', 'curve'],

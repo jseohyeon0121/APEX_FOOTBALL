@@ -1019,8 +1019,8 @@ const BODY = {
 const BONE_DEF = [
   ['root', -1, [0, 0, 0]], ['hips', 0, [0, 0.95, 0]], ['spine', 1, [0, 1.12, 0]], ['chest', 2, [0, 1.3, 0]],
   ['neck', 3, [0, 1.5, 0]], ['head', 4, [0, 1.62, 0]],
-  ['armL', 3, [-0.215, 1.44, 0]], ['foreL', 6, [-0.215, 1.16, 0]], ['armR', 3, [0.215, 1.44, 0]], ['foreR', 8, [0.215, 1.16, 0]],
-  ['legL', 1, [-0.095, 0.95, 0]], ['shinL', 10, [-0.095, 0.51, 0]], ['legR', 1, [0.095, 0.95, 0]], ['shinR', 12, [0.095, 0.51, 0]],
+  ['armL', 3, [0.215, 1.44, 0]], ['foreL', 6, [0.215, 1.16, 0]], ['armR', 3, [-0.215, 1.44, 0]], ['foreR', 8, [-0.215, 1.16, 0]], // +z를 볼 때 몸 왼쪽 = +x
+  ['legL', 1, [0.095, 0.95, 0]], ['shinL', 10, [0.095, 0.51, 0]], ['legR', 1, [-0.095, 0.95, 0]], ['shinR', 12, [-0.095, 0.51, 0]],
 ];
 const BI = Object.fromEntries(BONE_DEF.map((d, i) => [d[0], i]));
 const MI = { shirt: 0, shorts: 1, socks: 2, skin: 3, hair: 4, boot: 5, glove: 6, trim: 7 }; // 재질 순서
@@ -1046,7 +1046,7 @@ function buildBodyGeometry(isGk) {
   add((() => { const g = new THREE.TorusGeometry(0.068, 0.014, 4, 14); g.rotateX(Math.PI / 2); g.scale(1.15, 1, 0.9); g.translate(0, 1.515, 0.005); return g; })(), MI.trim, BI.chest); // 칼라
   // 반바지: 골반 + 양쪽 다리통 (다리통은 허벅지를 따라 움직임)
   add(lathe([[0, 0.845], [0.12, 0.85], [0.165, 0.9], [0.163, 0.98], [0.153, 1.03], [0, 1.04]], 12, 0, 0, 1.12, 0.78), MI.shorts, BI.hips);
-  for (const [sd, leg, shin] of [[-1, BI.legL, BI.shinL], [1, BI.legR, BI.shinR]]) {
+  for (const [sd, leg, shin] of [[1, BI.legL, BI.shinL], [-1, BI.legR, BI.shinR]]) {
     const x = sd * 0.095;
     add(lathe([[0.112, 0.73], [0.115, 0.8], [0.112, 0.9], [0.1, 0.95]], 10, x, 0), MI.shorts, leg);
     add(lathe([[0.052, 0.49], [0.062, 0.56], [0.075, 0.64], [0.086, 0.74], [0.09, 0.8]], 8, x, 0.005), MI.skin, leg); // 허벅지
@@ -1055,7 +1055,7 @@ function buildBodyGeometry(isGk) {
     add((() => { const g = new THREE.CapsuleGeometry(0.047, 0.17, 3, 8); g.rotateX(Math.PI / 2); g.scale(0.95, 0.72, 1); g.translate(x, 0.045, 0.045); return g; })(), MI.boot, shin); // 축구화
   }
   // 팔: 어깨(소매) → 위팔 → 팔꿈치 → 아래팔 → 손
-  for (const [sd, arm, fore] of [[-1, BI.armL, BI.foreL], [1, BI.armR, BI.foreR]]) {
+  for (const [sd, arm, fore] of [[1, BI.armL, BI.foreL], [-1, BI.armR, BI.foreR]]) {
     const x = sd * 0.215;
     add(sphere(0.074, x, 1.44, 0, 1, 1, 1.05, 10, 7), MI.shirt, arm);
     add(lathe([[0.071, 1.3], [0.074, 1.37], [0.07, 1.44]], 10, x, 0), MI.shirt, arm);
@@ -1127,7 +1127,7 @@ function buildHuman(mats, isGk, body) {
   mesh.frustumCulled = false; // 다이빙 · 쓰러짐 자세에서 잘못 잘리지 않게 (22명이라 부담 없음)
   rig.add(mesh);
   const B = Object.fromEntries(bones.map(b => [b.name, b]));
-  B.armL.rotation.z = -0.12; B.armR.rotation.z = 0.12;
+  B.armL.rotation.z = 0.12; B.armR.rotation.z = -0.12;
   return { group, rig, skin: mesh, bones: B, legL: B.legL, legR: B.legR, armL: B.armL, armR: B.armR };
 }
 const PGEO_NUMBER = new THREE.PlaneGeometry(0.24, 0.24);
@@ -1258,6 +1258,46 @@ function updatePlayerGauge(p, gauge, show) {
   u.tex.needsUpdate = true;
 }
 
+// ----- 공을 손으로 드는 장면 (세트피스 키커 · 승부차기 키커 · 스로인 · 키퍼) -----
+// 그릴 때마다 실제 두 손(뼈대) 위치를 계산해서 공을 정확히 두 손 사이에 둠
+const CARRY_POSE = {          // arm: 팔을 앞으로 드는 각도 · elbow: 팔꿈치 · inward: 두 손을 모으는 각도 (라디안)
+  front: { arm: -1.05, elbow: -0.55, inward: -0.08 }, // 허리 앞에 들고 걸어옴 (공이 커서 두 손을 살짝 벌림)
+  over: { arm: -2.85, elbow: -0.55, inward: -0.09 },  // 스로인: 머리 위
+  chest: { arm: -1.15, elbow: -0.85, inward: -0.07 }, // 키퍼: 가슴 앞에 안음
+  place: { arm: -0.35, elbow: -0.2 },                // 쪼그려 내려놓을 때 (손이 바닥 쪽)
+};
+const SPI_T = { carry: 125, place: 140 }, PEN_T = { carry: 36, place: 58 }; // 들고 오기 · 내려놓기 끝 프레임
+/** 지금 공을 손에 들고 있는 방식 (없으면 null) */
+function carryOf(p) {
+  if (!p || p.isReferee) return null;
+  if (phase === 'sp_intro' && spIntro?.taker === p) return spIntro.t <= SPI_T.carry ? 'front' : spIntro.t <= SPI_T.place ? 'place' : null;
+  if (phase === 'setpiece' && setpiece?.taker === p) {
+    if (setpiece.cut) return setpiece.cut.t <= PEN_T.carry ? 'front' : setpiece.cut.t <= PEN_T.place ? 'place' : null;
+    if (setpiece.type === 'throw') return 'over';
+  }
+  if (ball.holdByGk === p) return 'chest';
+  return null;
+}
+/** 내려놓는 중 공이 아직 손에 있나 (쪼그려 가장 낮아질 때 놓음) */
+function ballInHands(p) {
+  const c = carryOf(p);
+  if (!c) return false;
+  if (c !== 'place') return true;
+  const k = spIntro?.taker === p ? (spIntro.t - SPI_T.carry) / (SPI_T.place - SPI_T.carry) : (setpiece.cut.t - PEN_T.carry) / (PEN_T.place - PEN_T.carry);
+  return k < 0.5;
+}
+const _hL = new THREE.Vector3(), _hR = new THREE.Vector3();
+/** 두 손 가운데 (월드 좌표) → p.handMid 에 저장 */
+function updateHandMid(p) {
+  const B = p.mesh.userData.bones;
+  if (!B) return null;
+  p.mesh.updateMatrixWorld(true);
+  B.foreL.localToWorld(_hL.set(0, -0.28, 0.005));
+  B.foreR.localToWorld(_hR.set(0, -0.28, 0.005));
+  p.handMid = { x: (_hL.x + _hR.x) / 2, y: (_hL.y + _hR.y) / 2, z: (_hL.z + _hR.z) / 2 };
+  return p.handMid;
+}
+
 // ----- 선수 동작 설정값 -----
 const ANIM = {
   kneeWalk: 0.55,   // 걸을 때 무릎 굽힘 (다리 흔드는 폭에 곱함)
@@ -1279,7 +1319,7 @@ function animatePlayer(p) {
   u.legR.rotation.x = -s * amp;
   u.armL.rotation.x = -s * amp * 0.8;
   u.armR.rotation.x = s * amp * 0.8;
-  if (p.role !== 'GK') { u.armL.rotation.z = -0.12; u.armR.rotation.z = 0.12; }
+  if (p.role !== 'GK') { u.armL.rotation.z = 0.12; u.armR.rotation.z = -0.12; }
   // 무릎: 다리가 뒤에서 앞으로 넘어오는 동안 가장 많이 굽힘 (q = 그 다리의 위상)
   const knee = q => amp * (0.15 + (ANIM.kneeWalk + ANIM.kneeRun * runK) * Math.max(0, Math.sin(q - Math.PI / 4)));
   let kneeL = knee(ph), kneeR = knee(ph + Math.PI);
@@ -1287,12 +1327,24 @@ function animatePlayer(p) {
   let lean = 0.03 + ANIM.leanRun * runK;
   const tw = -s * amp * ANIM.twist;
   if (p.shake > 0) u.armR.rotation.x = -1.15; // 악수
-  if (p.whistle) { u.armR.rotation.x = -2.6; u.armR.rotation.z = 0.25; } // 휘슬 불며 팔을 들어 지점 가리킴
-  else if (p.isReferee) u.armR.rotation.z = 0.12;
-  if (phase === 'sp_intro' && spIntro && spIntro.taker === p && spIntro.t <= 132) { u.armL.rotation.x = -1.2; u.armR.rotation.x = -1.2; elbow = -0.5; } // 공을 두 손으로 듦
+  if (p.whistle) { u.armR.rotation.x = -2.6; u.armR.rotation.z = -0.25; } // 휘슬 불며 팔을 들어 지점 가리킴
+  else if (p.isReferee) u.armR.rotation.z = -0.12;
+  const carry = carryOf(p);
+  let carryIn = 0;
+  if (carry) { // 공을 두 손으로 듦: 앞 · 머리 위(스로인) · 가슴(키퍼) · 내려놓기
+    const P = CARRY_POSE[carry === 'place' ? 'front' : carry];
+    u.armL.rotation.x = u.armR.rotation.x = P.arm; elbow = P.elbow; carryIn = P.inward;
+  }
+  if (p.touchAnim > 0 && !(p.kickAnim > 0)) {
+    // 드리블 터치: 주발을 짧게 앞으로 툭 (무릎은 살짝 굽힌 채)
+    const t = 1 - p.touchAnim / DRIBBLE.touchAnimF, left = p.kickLeft ?? (p.preferredFoot === 'left');
+    const sw = Math.sin(t * Math.PI);
+    (left ? u.legL : u.legR).rotation.x = lerp((left ? u.legL : u.legR).rotation.x, -0.55 - amp * 0.3, sw);
+    if (left) kneeL = lerp(kneeL, 0.35, sw); else kneeR = lerp(kneeR, 0.35, sw);
+  }
   if (p.kickAnim > 0) {
     // 차기: 뒤로 끌어올림(무릎 접힘) → 앞으로 휘둘러 뻗음 · 반대 팔은 옆으로 벌려 균형
-    const t = 1 - p.kickAnim / 14, left = p.preferredFoot === 'left';
+    const t = 1 - p.kickAnim / 14, left = p.kickLeft ?? (p.preferredFoot === 'left');
     const th = left ? u.legL : u.legR;
     let kk;
     if (t < 0.35) { const k = t / 0.35; th.rotation.x = 0.75 * k; kk = 1.5 * k; }
@@ -1300,7 +1352,7 @@ function animatePlayer(p) {
     if (left) { kneeL = kk; kneeR = 0.3; } else { kneeR = kk; kneeL = 0.3; }
     (left ? u.legR : u.legL).rotation.x = 0.1;
     const armO = left ? u.armR : u.armL;
-    armO.rotation.x = -0.5; armO.rotation.z = left ? 0.85 : -0.85;
+    armO.rotation.x = -0.5; armO.rotation.z = left ? -0.85 : 0.85;
     lean -= 0.18 * Math.sin(t * Math.PI);
   }
   // 키퍼 다이빙: 몸을 옆으로 날리며 두 팔을 머리 위(날아가는 쪽)로 쭉 뻗음 · 높은 공은 덜 눕고 더 높이
@@ -1308,10 +1360,10 @@ function animatePlayer(p) {
   if (p.role === 'GK') {
     if (p.gkPoseT > 0) p.gkPoseT--; else p.gkPose = null;
     const spread = p.gkPose === 'spread', up = p.gkPose === 'up';
-    u.armL.rotation.z = lerp(u.armL.rotation.z, spread ? -1.35 : up ? -0.15 : -0.12, 0.35);
-    u.armR.rotation.z = lerp(u.armR.rotation.z, spread ? 1.35 : up ? 0.15 : 0.12, 0.35);
-    u.legL.rotation.z = lerp(u.legL.rotation.z, spread ? -0.45 : 0, 0.35);
-    u.legR.rotation.z = lerp(u.legR.rotation.z, spread ? 0.45 : 0, 0.35);
+    u.armL.rotation.z = lerp(u.armL.rotation.z, spread ? 1.35 : up ? 0.15 : 0.12, 0.35);
+    u.armR.rotation.z = lerp(u.armR.rotation.z, spread ? -1.35 : up ? -0.15 : -0.12, 0.35);
+    u.legL.rotation.z = lerp(u.legL.rotation.z, spread ? 0.45 : 0, 0.35);
+    u.legR.rotation.z = lerp(u.legR.rotation.z, spread ? -0.45 : 0, 0.35);
     if (up) { u.armL.rotation.x = u.armR.rotation.x = -3.05; armsUp = true; }
     if (spread) { u.armL.rotation.x = u.armR.rotation.x = -0.3; elbow = -0.25; kneeL = Math.max(kneeL, 0.35); kneeR = Math.max(kneeR, 0.35); }
   }
@@ -1352,11 +1404,13 @@ function animatePlayer(p) {
     u.rig.position.y -= p.crouch * 0.42;
     u.rig.rotation.x = p.crouch * 0.55;
     u.legL.rotation.x = u.legR.rotation.x = -p.crouch * 1.1;
-    u.armL.rotation.x = u.armR.rotation.x = -p.crouch * 1.3;
+    u.armL.rotation.x = u.armR.rotation.x = carry ? lerp(CARRY_POSE.front.arm, CARRY_POSE.place.arm, p.crouch) : -p.crouch * 1.3;
+    if (carry) elbow = lerp(CARRY_POSE.front.elbow, CARRY_POSE.place.elbow, p.crouch);
     kneeL = kneeR = p.crouch * 2.0; // 무릎을 접어 쪼그려 앉음
   } else if (u.rig.rotation.x) u.rig.rotation.x *= 0.7;
   if (!B) return;
-  if (armsUp) elbow = -0.1; // 팔을 들 땐 쭉 뻗음
+  if (armsUp && !carry) elbow = -0.1; // 팔을 들 땐 쭉 뻗음
+  if (carry) { u.armL.rotation.z = -carryIn; u.armR.rotation.z = carryIn; } // 두 손을 공 크기만큼 모음
   B.shinL.rotation.x = kneeL;
   B.shinR.rotation.x = kneeR;
   B.foreL.rotation.x = elbow;
@@ -1771,7 +1825,7 @@ function clubXI(colorId, formation, lg) {
   return {
     stats: pick.map(p => gameStats(p.x.fo, p.f.role === 'GK')),
     pids: pick.map(p => p.x.t.num),
-    bodies: pick.map(p => ({ height: p.x.t.height, weight: p.x.t.weight })),
+    bodies: pick.map(p => ({ height: p.x.t.height, weight: p.x.t.weight, foot: p.x.t.foot, weakFoot: p.x.t.weakFoot })),
     names: pick.map(p => p.x.t.name),
     ovr: Math.round(pick.reduce((a, p) => a + p.ovrF, 0) / pick.length),
   };
@@ -2225,7 +2279,8 @@ function makeTeam(isHome, side, opts = {}) {
       currentAction: 'HOLD_POSITION',
       actionLock: 0,
       actionScores: {},
-      preferredFoot: f.foot || 'right',
+      preferredFoot: opts.bodies?.[i]?.foot || f.foot || 'right', // 선수 실제 주발 (players.json) · 없으면 자리별 발
+      weakFoot: clamp(Math.round(opts.bodies?.[i]?.weakFoot ?? 3), 1, 5),
       playerAttributes: scaleAttrs(attrsFor(f.position), (opts.statBase ?? STAT_BASE) / STAT_BASE),
       customStats: opts.homeStats?.[i] ? { ...opts.homeStats[i] } : buildCustomStats(b, opts.statBase ?? STAT_BASE),
       tacticalInstructions: {
@@ -2709,7 +2764,7 @@ function rebuildTeamsFromSetup() {
     formation: activeFormation,
     homeStats: Array.from({ length: 11 }, (_, i) => slotStats(i).o),
     pids: ensurePids(),
-    bodies: Array.from({ length: 11 }, (_, i) => { const t = cardTpl(xiR(i)); return { height: t.height, weight: t.weight }; }),
+    bodies: Array.from({ length: 11 }, (_, i) => { const t = cardTpl(xiR(i)); return { height: t.height, weight: t.weight, foot: t.foot, weakFoot: t.weakFoot }; }),
     roles: Array.from({ length: 11 }, (_, i) => tacRoleOf(i)),
   });
   teamB = makeTeam(false, 'right', {
@@ -3342,12 +3397,43 @@ function makeLaunch(ox, oz, y, dx, dz, spd, vy, spin) {
   return { x: ox, z: oz, y, vx: dx * spd, vz: dz * spd, vy, ...w, inGoal: 0 };
 }
 
-/** 감아차기 기본 방향: 오른발 인사이드 → 왼쪽으로 휨 (+1) */
+/** 감아차기 기본 방향: 오른발 인사이드 → 왼쪽으로 휨 (+1) · 이번 킥에 쓰는 발 기준 */
 function curlSignFor(p) {
   if (!p) return 1;
-  const base = p.preferredFoot === 'left' ? -1 : 1;
-  return base;
+  const left = p.kickFoot && simFrame - p.kickFoot.f <= 1 ? p.kickFoot.left : p.preferredFoot === 'left';
+  return left ? -1 : 1;
 }
+
+// ===================== 주발 · 약발 설정값 (숫자는 여기서 바꾸면 됨) =====================
+const WEAK_FOOT = {
+  err: [1, 3.0, 2.3, 1.7, 1.3, 1.0],    // 약발 수치(1~5)별 오차 배율 (약발로 찰 때만)
+  pow: [1, 0.85, 0.90, 0.94, 0.97, 1.0], // 약발 수치(1~5)별 공 세기
+  angle: 60,      // 몸 방향에서 주발 쪽으로 이 각도(°)보다 많이 꺾어 차면 약발
+  ballSide: 0.2,  // 다이렉트 킥: 공이 몸 중심에서 약발 쪽으로 이 거리(m)보다 멀면 약발
+};
+/** 이번 킥에 쓸 발 정하기 → p.kickFoot = { left, weak, errMul, powMul, f } (kickFrom에서 쓰고 지움)
+ *  needLeft: 감아차기처럼 휘는 방향 때문에 써야 하는 발이 정해진 경우 (true = 왼발 · false = 오른발) */
+function decideKickFoot(p, tx, tz, needLeft = null) {
+  const mainLeft = p.preferredFoot === 'left';
+  const keep = { left: mainLeft, weak: false, errMul: 1, powMul: 1, f: simFrame };
+  if (phase === 'setpiece' || ball.holdByGk === p) return (p.kickFoot = keep); // 세트피스 · 키퍼 킥은 항상 주발
+  let weak;
+  if (needLeft !== null) weak = needLeft !== mainLeft;
+  else {
+    const [fx, fz] = norm2(p.faceX || 0, p.faceZ || 1);
+    const [dx, dz] = norm2(tx - p.x, tz - p.z);
+    const rx = -fz, rz = fx;                      // 몸 오른쪽 방향
+    const ms = mainLeft ? -1 : 1;                  // 주발 쪽 = +
+    const ang = Math.atan2(ms * (dx * rx + dz * rz), dx * fx + dz * fz) * 180 / Math.PI;
+    weak = ang > WEAK_FOOT.angle;                  // 주발 쪽으로 너무 꺾어 참 → 반대발 인사이드가 자연스러움
+    if (!weak && directKick) weak = ms * ((ball.x - p.x) * rx + (ball.z - p.z) * rz) < -WEAK_FOOT.ballSide; // 공이 약발 쪽으로 옴
+  }
+  if (!weak) return (p.kickFoot = keep);
+  const w = clamp(Math.round(p.weakFoot ?? 3), 1, 5);
+  return (p.kickFoot = { left: !mainLeft, weak: true, errMul: WEAK_FOOT.err[w], powMul: WEAK_FOOT.pow[w], f: simFrame });
+}
+/** 지금 킥의 약발 오차 배율 (주발이면 1) */
+const footErr = p => (p.kickFoot && simFrame - p.kickFoot.f <= 1 ? p.kickFoot.errMul : 1);
 
 /** (dx,dz)로 찬 공이 (wantX,wantZ) 쪽으로 휘려면 side 부호가 무엇인지 */
 function curlToward(dx, dz, wantX, wantZ) {
@@ -3363,6 +3449,10 @@ function kickFrom(owner, power, tx, tz, opts = {}) {
   const startX = fromSet ? ball.x : owner.x + dx * 0.9;
   const startZ = fromSet ? ball.z : owner.z + dz * 0.9;
   const startY = (wasThrow ? 2.0 : BALL_R) + (opts.lift || 0);
+  const kf = owner.kickFoot && simFrame - owner.kickFoot.f <= 1 && !fromSet ? owner.kickFoot : null;
+  if (kf && !opts.footScaled) power *= kf.powMul; // 약발: 공 세기 약간 감소
+  owner.kickLeft = kf ? kf.left : owner.preferredFoot === 'left'; // 킥 동작에 쓸 발
+  owner.kickFoot = null;
   if (opts.isShot) power *= SHOT_SPEED_SCALE; // 슛 속도 전체적으로 낮춤
   ball.knuckle = !!opts.knuckle;
   lastKickRec = recTotal;
@@ -3528,7 +3618,7 @@ function keepersFaceForward() {
 /** 프리킥 도움닫기: 몇 걸음 달려와 발이 공에 닿는 순간 킥 */
 function startFkRun(p, k) {
   const [dx, dz] = norm2(k.tx - ball.x, k.tz - ball.z);
-  const side = p.foot === 'left' ? 1 : -1;
+  const side = p.preferredFoot === 'left' ? 1 : -1;
   fkRun = {
     p, k, t: 0, T: 38, fx: p.x, fz: p.z,
     // 디딤발 자리: 공 바로 뒤 옆
@@ -3859,7 +3949,7 @@ function passError(p, kind, d, align, power, aiExtra = 0) {
   const dirK = 1 + TUNE.dirErr * (1 - clamp(align, 0, 1));
   const fat = 1 + staminaFatigue(p) * 1.5;
   const over = power > 0.92 ? 1 + (power - 0.92) * 20 : 1; // 너무 세게 = 크게 빗나감
-  return (c.err + d * c.errPerM) * skill * mv * dirK * fat * over * (1 + aiExtra);
+  return (c.err + d * c.errPerM) * skill * mv * dirK * fat * over * (1 + aiExtra) * footErr(p);
 }
 function jitter(x, z, dx, dz, amp) {
   const lat = (Math.random() - 0.5) * 2 * amp, lon = (Math.random() - 0.5) * 1.4 * amp;
@@ -3926,6 +4016,7 @@ function doPass(p, kind, power = 0.5, opts = {}) {
   if (!t && !opts.target) t = selectPassTarget(p, 'short', dir, false) || nearestTeammate(p, p.isBlue ? teamA : teamB);
   if (!t) return null;
   if (phase === 'play' && isOffsideAtPass(p, t)) { callOffside(p, t); return null; }
+  decideKickFoot(p, t.x, t.z);
 
   const sx = phase === 'setpiece' ? ball.x : p.x, sz = phase === 'setpiece' ? ball.z : p.z;
   const off = phase === 'setpiece' ? 0 : 0.9;
@@ -4233,6 +4324,7 @@ function releaseAction(action, power) {
     if (phase === 'setpiece' && setpiece?.type === 'throw') return;
     if (phase === 'setpiece' && setpiece?.type === 'penalty') { startPenRun(p, power, penAimZ); return; }
     const goalX = p.isBlue ? FIELD_W / 2 : -FIELD_W / 2;
+    decideKickFoot(p, goalX, 0);
     const skill = skillMult(p);
     const fatigue = staminaFatigue(p);
     const edge = powerRange(0.12, 0.72, power) * (1.05 + (1 - skill) * 0.55);
@@ -4249,7 +4341,7 @@ function releaseAction(action, power) {
     else goalZ = (Math.random() - 0.5) * GOAL_W * fatigue * 0.35;
     if (!penalty) goalZ *= camSideNow(); // 후반엔 화면 위 = 경기장 반대쪽
 
-    const dE = directErr(p); // 다이렉트 슛은 덜 정확
+    const dE = directErr(p) * footErr(p); // 다이렉트 슛 · 약발은 덜 정확
     goalZ += (Math.random() - 0.5) * GOAL_W * (0.04 + fatigue * 0.42) * dE;
 
     const shotPow = statMul(p, 'shotPower');
@@ -4273,14 +4365,14 @@ function releaseAction(action, power) {
       else if (keys.ArrowDown) ty *= 0.5;
     }
     let spd = powerRange(0.85, 1.55, Math.min(power, 0.85)) * (0.9 + 0.1 * skill);
-    spd *= 0.88 + shotPow * 0.2;
+    spd *= (0.88 + shotPow * 0.2) * (p.kickFoot?.powMul ?? 1);
     goalZ *= clamp(1.55 - finish * 0.55, 0.55, 1.35);
     goalZ += (Math.random() - 0.5) * GOAL_W * (0.08 + fatigue * 0.2) * clamp(1.4 - finish, 0.35, 1.2) * dE;
     if (power > G.barMax) goalZ += Math.sign(goalZ || (Math.random() - 0.5)) * GOAL_W * (power - G.barMax) * 0.8; // 너무 세면 옆으로도 조금
     const top = 0.3 + Math.min(power, 0.8) * 0.55; // 탑스핀 (궤적은 아래 계산에 포함)
     const spin = { side: 0, top };
     const sol = solveShot(p, goalX, goalZ, Math.max(0.15, ty), spd, 0.12, spin);
-    kickFrom(p, spd, goalX, sol.aimZ, { vy: sol.vy, isShot: true, spin });
+    kickFrom(p, spd, goalX, sol.aimZ, { vy: sol.vy, isShot: true, spin, footScaled: true });
     if (setpiece?.type !== 'goalkick') stats.shots[0]++;
     pendingReceiver = null;
   }
@@ -4322,10 +4414,11 @@ function finesseShot(p, power) {
   const [ddx, ddz] = norm2(goalX - p.x, tz - p.z);
   const sideMag = 0.2 + curve * 0.55;
   const side = curlToward(ddx, ddz, 0, -sgn) * sideMag;
+  decideKickFoot(p, goalX, tz, side < 0); // 안쪽으로 휘게 하려면 그 방향으로 감기는 발로 참 (약발이면 부정확)
   const spin = { side, top: 0.15 };
   const sol = solveShot(p, goalX, tz, ty, spd, 0.16 + power * 0.12, spin);
   // 실수: 결정력·커브·체력 + 너무 세게 누르면 뜸
-  const err = (0.15 + Math.max(0, 1 - finish) * 2.2 + Math.max(0, 1 - curve) * 1.6 + fatigue * 1.0) * directErr(p);
+  const err = (0.15 + Math.max(0, 1 - finish) * 2.2 + Math.max(0, 1 - curve) * 1.6 + fatigue * 1.0) * directErr(p) * footErr(p);
   let aimZ = sol.aimZ + gauss() * err;
   let vy = sol.vy + gauss() * err * 0.012 + (power > 0.88 ? (power - 0.88) * 0.9 : 0);
   kickFrom(p, spd, goalX, aimZ, { vy, isShot: true, spin, curl: Math.min(1, sideMag * curve * 1.4) });
@@ -4392,7 +4485,8 @@ function firePowerShot(queued) {
   let tz = (keys.ArrowUp ? -GOAL_W * 0.33 : keys.ArrowDown ? GOAL_W * 0.33 : keys.ArrowLeft ? -GOAL_W * 0.18 : keys.ArrowRight ? GOAL_W * 0.18 : (Math.random() - 0.5) * GOAL_W * 0.4) * camSideNow();
   let ty = 0.9 + Math.random() * 0.8;
   const side = Math.random() < 0.5 ? -1 : 1;
-  const dE = directErr(p);
+  decideKickFoot(p, goalX, tz);
+  const dE = directErr(p) * footErr(p);
   if (zone === 'green') {
     tz += gauss() * (0.12 + (1 - finish) * 0.6) * dE;
     ty += gauss() * 0.15 * dE;
@@ -5689,7 +5783,8 @@ function aiTryShot(p, force = false) {
   let side = gk ? (gk.z > 0.3 ? -1 : gk.z < -0.3 ? 1 : (Math.random() < 0.5 ? -1 : 1)) : (Math.random() < 0.5 ? -1 : 1);
   if (Math.abs(p.z) > 6) side = -Math.sign(p.z);
   let aimZ = side * (GOAL_W / 2 - 0.75);
-  const err = GOAL_W * (0.26 - finish * 0.15 + fatigue * 0.22 + dist * 0.004 + dumb(p) * 0.22);
+  decideKickFoot(p, goalX, aimZ);
+  const err = GOAL_W * (0.26 - finish * 0.15 + fatigue * 0.22 + dist * 0.004 + dumb(p) * 0.22) * footErr(p);
   aimZ += (Math.random() - 0.5) * 2 * err;
   const spd = clamp(1.0 + dist * 0.012, 1.0, 1.45) * (0.88 + shotPow * 0.2);
   const low = Math.random() < 0.55;
@@ -6084,11 +6179,43 @@ function updateDribble() {
     return;
   }
   ball.trap = null;
-  ball.x = footX;
-  ball.z = footZ;
+  // 드리블: 주발로 공을 툭 쳐서 앞으로 내보내고 → 몸이 따라잡으면 다시 터치 (실제 공 위치가 움직임 · 판정도 이 위치 기준)
+  const D = DRIBBLE, spd = Math.hypot(owner.vx, owner.vz);
+  const ms = owner.preferredFoot === 'left' ? -1 : 1;  // 주발 쪽 (몸 오른쪽 = (-fz, fx))
+  let ahead;
+  if (spd < D.moveMin) { owner.drib = null; ahead = D.standAhead; }
+  else {
+    const sk = clamp((spd - WALK) / (SPRINT - WALK), 0, 1); // 0 = 천천히 · 1 = 전력 질주
+    let dr = owner.drib;
+    if (!dr || dr.t >= dr.T) {
+      dr = owner.drib = { t: 0, T: Math.round(lerp(D.touchSlow, D.touchSprint, sk)), far: lerp(D.farSlow, D.farSprint, sk) };
+      if (!(owner.kickAnim > 0)) { owner.touchAnim = D.touchAnimF; owner.kickLeft = owner.preferredFoot === 'left'; } // 주발로 터치하는 다리 동작
+    }
+    dr.t++;
+    const k = dr.t / dr.T;
+    const out = k < D.pushK ? 1 - (1 - k / D.pushK) ** 2 : 1 - (k - D.pushK) / (1 - D.pushK); // 빨리 밀려 나갔다가 천천히 따라잡힘
+    ahead = D.near + (dr.far - D.near) * out;
+  }
+  const tx = owner.x + fx * ahead - fz * ms * D.side, tz = owner.z + fz * ahead + fx * ms * D.side;
+  ball.x += owner.vx; ball.z += owner.vz;                   // 같이 굴러가다가
+  ball.x += (tx - ball.x) * D.follow; ball.z += (tz - ball.z) * D.follow; // 방향을 틀면 공이 부드럽게 따라옴
   ball.y = BALL_R;
   ball.vx = owner.vx; ball.vz = owner.vz; ball.vy = 0;
 }
+// ===================== 드리블 설정값 (숫자는 여기서 바꾸면 됨) =====================
+const DRIBBLE = {
+  touchSlow: 27,     // 천천히 몰 때 터치 간격 (프레임, 60 = 1초) ≈ 0.45초
+  touchSprint: 45,   // 전력 질주 때 터치 간격 ≈ 0.75초
+  near: 0.5,         // 터치 직전 공과 몸 사이 거리(m) (따라잡았을 때)
+  farSlow: 0.95,     // 천천히 몰 때 공이 가장 멀리 나가는 거리(m)
+  farSprint: 1.6,    // 전력 질주 때 공이 가장 멀리 나가는 거리(m)
+  pushK: 0.3,        // 터치 후 이 비율까지는 공이 밀려 나가고, 그 뒤로 몸이 따라잡음
+  side: 0.12,        // 공이 주발 쪽으로 치우친 거리(m)
+  standAhead: 0.6,   // 서 있을 때 공 위치(m)
+  moveMin: 0.03,     // 이보다 느리면 터치 없이 발 앞에 둠
+  follow: 0.45,      // 방향을 틀 때 공이 새 자리로 따라가는 빠르기 (0~1)
+  touchAnimF: 9,     // 터치 다리 동작 길이(프레임)
+};
 
 // 체력에 따른 저하는 statMul(스탯 감소)에서 처리하므로 여기서는 추가 감속 없음
 function sprintMult(p) { return 1; }
@@ -6228,6 +6355,7 @@ function updatePlayer(p, isActive, dtSec) {
   if (p.tackleCd > 0) p.tackleCd--;
   if (p.dispossessCd > 0) p.dispossessCd--;
   if (p.kickAnim > 0) p.kickAnim--;
+  if (p.touchAnim > 0) p.touchAnim--;
   if (p.dive > 0) p.dive--;
   if (p.dive <= 0 && p.role === 'GK' && !p.penDive && p.jumpY > 0) p.jumpY = Math.max(0, p.jumpY - 0.05);
   p.sprinting = false;
@@ -6762,7 +6890,7 @@ function beginSetpiece(type, teamBlue, x, z, opts = {}) {
     if (type === 'freekick') setpiece.wall = buildFreeKickWall(teamBlue, ball.x, ball.z);
     if (type === 'freekick' && teamBlue) {
       const [ux, uz] = norm2(ball.x - goalSign * (FIELD_W / 2), ball.z); // 공 → 내 쪽
-      const side = taker.foot === 'left' ? 1 : -1;
+      const side = taker.preferredFoot === 'left' ? 1 : -1;
       taker.x = ball.x + ux * 3.0 + uz * side * 1.5;
       taker.z = ball.z + uz * 3.0 - ux * side * 1.5;
       [taker.faceX, taker.faceZ] = norm2(ball.x - taker.x, ball.z - taker.z);
@@ -7274,9 +7402,8 @@ function updateSpIntro() {
   } else if (S.t <= T3) { // 공을 내려놓음
     p.vx = p.vz = 0;
     const k = (S.t - T2) / (T3 - T2);
-    ball.x = lerp(ball.x, S.spot.x, 0.3); ball.z = lerp(ball.z, S.spot.z, 0.3);
-    ball.y = lerp(1.0, BALL_R, k);
     p.crouch = Math.sin(k * Math.PI);
+    placeBallDown(p, k, S.spot);
   } else { // 자리로 물러남
     p.crouch = 0;
     ball.x = S.spot.x; ball.z = S.spot.z; ball.y = BALL_R;
@@ -7288,9 +7415,17 @@ function updateSpIntro() {
   ball.vx = ball.vz = ball.vy = 0;
 }
 function holdBallInHands(p) {
+  const h = p.handMid; // 직전 화면에서 잰 두 손 위치
+  if (h && Math.hypot(h.x - p.x, h.z - p.z) < 1.2) { ball.x = h.x; ball.z = h.z; ball.y = h.y; return; }
   ball.x = p.x + (p.faceX || 0) * 0.42;
   ball.z = p.z + (p.faceZ || 0) * 0.42;
   ball.y = 1.05;
+}
+/** 내려놓기: 손이 가장 낮아질 때까지는 손에 들고, 그 뒤 지점으로 살짝 떨어뜨림 */
+function placeBallDown(p, k, spot) {
+  if (k < 0.5) { holdBallInHands(p); return; }
+  ball.x = lerp(ball.x, spot.x, 0.35); ball.z = lerp(ball.z, spot.z, 0.35);
+  ball.y = Math.max(BALL_R, ball.y - 0.06 - (k - 0.5) * 0.2);
 }
 function endSpIntro() {
   const S = spIntro;
@@ -7789,16 +7924,13 @@ function updatePenCut() {
   if (c.t <= 36) {                                   // 공을 들고 걸어옴
     walk(c.from, c.place, c.t / 36);
     [p.faceX, p.faceZ] = norm2(c.place.x - c.from.x, c.place.z - c.from.z);
-    ball.x = p.x + p.faceX * 0.32; ball.z = p.z + p.faceZ * 0.32; ball.y = 1.05;
+    holdBallInHands(p);
   } else if (c.t <= 58) {                            // 쭈그려 앉아 공을 내려놓음
     p.vx = p.vz = 0;
     const k = (c.t - 36) / 22;
     p.crouch = Math.sin(Math.PI * k);
     [p.faceX, p.faceZ] = norm2(c.spot.x - p.x, c.spot.z - p.z);
-    const down = clamp(k * 1.8, 0, 1);
-    ball.x = lerp(p.x + p.faceX * 0.32, c.spot.x, down);
-    ball.z = lerp(p.z + p.faceZ * 0.32, c.spot.z, down);
-    ball.y = lerp(1.05, BALL_R, down);
+    placeBallDown(p, k, c.spot);
   } else if (c.t <= c.T) {                           // 뒷걸음으로 도움닫기 자리로
     p.crouch = 0;
     walk(c.place, c.back, (c.t - 58) / (c.T - 58));
@@ -8396,6 +8528,9 @@ function syncMeshes() {
   ballMesh.userData.prev = { x: bxr, z: bzr };
   ballMesh.position.set(bxr, byr, bzr);
   ballShadow.position.set(bxr, 0.03, bzr);
+  // 손에 든 공: 실제 두 손 사이에 그림
+  const carrier = allPlayers().find(p => !p.sentOff && ballInHands(p));
+  if (carrier) { const h = updateHandMid(carrier); if (h) { ballMesh.position.set(h.x, h.y, h.z); ballShadow.position.set(h.x, 0.03, h.z); } }
   const h = Math.max(0, byr - BALL_R);
   ballShadow.scale.setScalar(1 + h * 0.18);
   ballShadow.material.opacity = clamp(0.38 - h * 0.035, 0.1, 0.38);
@@ -9608,7 +9743,7 @@ function openMarketInfo(id) {
   const keySet = new Set(posKeys(m.pos));
   const cols = FO_COLS.map(col => col.filter(k => pdTab === 'all' || keySet.has(k))).filter(c => c.length);
   const statCols = cols.map(col => `<div class="pdc">${col.map(k => `<div class="pdc-r ${keySet.has(k) ? 'key' : ''}"><span>${FO_LABEL[k]}</span><b style="color:${statColor(m.fo[k])}">${m.fo[k]}</b></div>`).join('')}</div>`).join('');
-  const info = [['소속', clubName(m.club)], ['국적', m.nation], ['나이', `${m.age}세`], ['키', `${m.height}cm`], ['몸무게', `${m.weight}kg`], ['주발', m.foot === 'left' ? '왼발' : '오른발'], ['카드', `${CARD_TYPE} ${CARD_SEASON}`], ['보유', `${ownedCount(m.tid)}장`]];
+  const info = [['소속', clubName(m.club)], ['국적', m.nation], ['나이', `${m.age}세`], ['키', `${m.height}cm`], ['몸무게', `${m.weight}kg`], ['주발 · 약발', footText(m)], ['카드', `${CARD_TYPE} ${CARD_SEASON}`], ['보유', `${ownedCount(m.tid)}장`]];
   el.innerHTML = `<div class="pd-box">
     <button type="button" class="pd-x" id="pd-x">✕</button>
     <div class="pd-l">${dexCard(m, 'big')}<div class="mk-info">${info.map(([a, b]) => `<div><small>${a}</small><b>${b}</b></div>`).join('')}</div></div>
@@ -10016,6 +10151,31 @@ function renderLeagueChips() {
   box.querySelectorAll('[data-lg]').forEach(b => b.addEventListener('click', () => {
     const lg = leagueById(b.dataset.lg);
     if (busy && userSetup.leagueId !== lg.id) { toast('🔒 시즌이 끝날 때까지 다른 리그를 고를 수 없어요 (리그 화면 아래 「리그 초기화」)', 2600); return; }
+    confirmLeague(lg);
+  }));
+}
+/** 리그 선택 확인 창: [선택] → 리그 확정 후 리그 화면 · [취소] / Esc / 바깥 클릭 → 리그 선택 화면 그대로 */
+function confirmLeague(lg) {
+  const el = $('settle-pop');
+  if (!el) return;
+  const idx = LEAGUES.indexOf(lg);
+  const name = lg.tier === 'apl' ? 'APL <small>Apex Premier League</small>' : escapeHtml(lg.name);
+  el.innerHTML = `<div class="stl-box lgc">
+    <div class="lgc-emb">${leagueEmblem(lg)}</div>
+    <div class="lgc-name">${name}</div>
+    <div class="lgc-q">이 리그를 선택하시겠습니까?</div>
+    <div class="lgc-spec"><span>상대 평균 OVR <b>${lg.base}</b></span><span>${lg.enh}강 · 훈련 ${lg.tr}</span><span>보상 <b>×${LEAGUE_MULT[idx]}</b></span></div>
+    <div class="lgc-note">🔒 한 번 고르면 「리그 초기화」 전까지 바꿀 수 없어요 (초기화하면 시즌 기록이 지워져요)</div>
+    <div class="lgc-btns"><button type="button" class="btn ghost" id="lgc-no">취소</button><button type="button" class="btn" id="lgc-yes">선택</button></div>
+  </div>`;
+  el.classList.add('show');
+  const close = () => { el.classList.remove('show'); el.onclick = null; window.removeEventListener('keydown', onKey, true); };
+  const onKey = ev => { if (ev.code === 'Escape') { ev.preventDefault(); ev.stopImmediatePropagation(); close(); } };
+  window.addEventListener('keydown', onKey, true);
+  el.onclick = ev => { if (ev.target === el) close(); };
+  $('lgc-no')?.addEventListener('click', close);
+  $('lgc-yes')?.addEventListener('click', () => {
+    close();
     if (userSetup.leagueId !== lg.id || !userSetup.season || userSetup.season.leagueId !== lg.id) { userSetup.leagueId = lg.id; newSeason(); }
     userSetup.leaguePicked = true;
     saveSetup();
@@ -10023,7 +10183,7 @@ function renderLeagueChips() {
     renderLeagueChips();
     renderSeason();
     panelEnter($('menu-league'));
-  }));
+  });
 }
 
 function renderFormationChips() {
@@ -10181,7 +10341,7 @@ function renderStatEditor() {
   const grp = (title, kind, arr, labelFn) => `<div class="sq-grp"><span>${title}</span><small>${arr.length}명</small></div>${arr.map((r, k) => row(r, `${kind}:${k}`, labelFn(r, k))).join('')}`;
   el.innerHTML = `
     <div class="sq-head">
-      <div><div class="sq-hn">${badgeHtml()} ${pname(i)}</div><div class="sq-ho"><span>${labelOf(i)}</span> <b>${s.ovr}</b> <small class="sq-pl">${PLACE_NAME[placeOf(i).kind]} · 원래 ${s.nat}</small></div><div class="sq-hm">${escapeHtml(teamName(true))} · ${s.slot.foot === 'left' ? '왼발' : '오른발'}</div></div>
+      <div><div class="sq-hn">${badgeHtml()} ${pname(i)}</div><div class="sq-ho"><span>${labelOf(i)}</span> <b>${s.ovr}</b> <small class="sq-pl">${PLACE_NAME[placeOf(i).kind]} · 원래 ${s.nat}</small></div><div class="sq-hm">${escapeHtml(teamName(true))} · ${footText(s.slot)}</div></div>
       <div class="sq-hface">${faceImg()}</div>
     </div>
     <div class="sq-groups">${foGroups(s.fo, s.isGk).map(([n, v]) => `<div><small>${n}</small><b style="color:${statColor(v)}">${v}</b></div>`).join('')}</div>
@@ -10280,6 +10440,8 @@ function playerDb() {
   return (PLAYER_DB = db);
 }
 const tplOf = tid => playerDb()[tid] || playerDb()[0];
+/** 주발 · 약발 표시: 주발이 먼저 — "오른발 5 · 왼발 3" (weakFoot 5 = 양발잡이) */
+const footText = t => { const w = clamp(Math.round(t?.weakFoot ?? 3), 1, 5); return t?.foot === 'left' ? `왼발 5 · 오른발 ${w}` : `오른발 5 · 왼발 ${w}`; };
 // 선수 사진: players.json의 "photo" 칸(photos 폴더 안 파일 이름)을 실제 주소로 바꿔 줌. 빈 칸이면 null
 const PHOTO_DIR = './photos/';
 const playerPhotoUrl = tid => { const f = tplOf(tid).photo; return f ? new URL(PHOTO_DIR + f, import.meta.url).href : null; };
@@ -10415,7 +10577,7 @@ function rStats(r, slot = null) {
   const keys = posKeys(pos);
   const ovr = Math.round(keys.reduce((a, k) => a + fo[k], 0) / keys.length);
   const isGk = pos === 'GK';
-  const sl = Object.assign({}, slot || { label: nat, position: nat, role: nat === 'GK' ? 'GK' : '' }, { foot: me.foot });
+  const sl = Object.assign({}, slot || { label: nat, position: nat, role: nat === 'GK' ? 'GK' : '' }, { foot: me.foot, weakFoot: me.weakFoot });
   return { r, tpl: me, slot: sl, isGk, pos, nat, t, base, fo, keys, ovr, enh, o: gameStats(fo, isGk) };
 }
 function slotStats(i) { return rStats(xiR(i), getFormationSlots(userSetup.formation)[i]); }
@@ -11328,7 +11490,7 @@ function openPlayerInfo(i, showBd = false) {
       <div class="pd-nav"><button type="button" id="pd-prev">«</button><span>${rosterOrder().indexOf(i) + 1} / ${rosterOrder().length}</span><button type="button" id="pd-next">»</button></div>
     </div>
     <div class="pd-r">
-      <div class="pd-head">${badgeHtml()}<span class="nm">${pname(i)}</span><span style="color:#94a3b8;font-weight:700">${escapeHtml(teamName(true))} · ${s.slot.foot === 'left' ? '왼발' : '오른발'}</span><span class="ps">${s.slot.label}</span></div>
+      <div class="pd-head">${badgeHtml()}<span class="nm">${pname(i)}</span><span style="color:#94a3b8;font-weight:700">${escapeHtml(teamName(true))} · ${footText(s.slot)}</span><span class="ps">${s.slot.label}</span></div>
       ${row('훈련', t.lv, `<span class="pd-bar"><i style="width:${t.lv / full * 100}%"></i><em>${t.lv >= trainMax(t) ? 'MAX' : `${t.lv} / ${trainMax(t)}`}</em></span>`)}
       <div class="pd-two">
         ${row('훈련 돌파', t.brk, `<span class="pd-pips">${Array.from({ length: BREAK_MAX }, (_, k) => `<i class="${k < t.brk ? 'on' : ''}"></i>`).join('')}</span>`)}
@@ -11727,7 +11889,7 @@ function openPackFx(tids) {
       <div class="pkb-l"><b class="pkb-ovr">${T.ovr}</b><small>${T.pos} · ${escapeHtml(T.nation)}</small><em>${escapeHtml(clubName(T.club))}</em></div>
       <div class="pkb-card ${packTier(T.ovr)}">${dexCard(T, 'big')}</div>
       <div class="pkb-r"><b class="pkb-ovr">${T.ovr}</b><div class="pkb-st">${g.map(([n, v]) => `<div><small>${n}</small><b>${v}</b></div>`).join('')}</div></div>
-      <div class="pkb-name"><span>BS ${escapeHtml(T.name)}</span><small>${T.pos} · ${escapeHtml(T.nation)} · ${escapeHtml(clubName(T.club))} → 보관함</small></div>`;
+      <div class="pkb-name"><span>BS ${escapeHtml(T.name)}</span><small>${T.pos} · ${footText(T)} · ${escapeHtml(T.nation)} · ${escapeHtml(clubName(T.club))} → 보관함</small></div>`;
     el.querySelectorAll('.pk-mini').forEach(b => b.classList.toggle('on', Number(b.dataset.k) === k));
   };
   showMain(0);

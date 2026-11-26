@@ -23,7 +23,7 @@ players 배열의 순서가 선수 번호(tid)예요. 순서를 바꾸거나 중
 이미 뽑은 카드가 다른 선수로 바뀌니, 고칠 땐 값만 바꾸고 새 선수는 맨 뒤에 추가하세요.
   name 이름 · nation 국적 · club 구단(blue/red/white/black/green/orange/yellow/cyan, 이적시장은 null)
   grp 구단 내 자리(xi 선발 · subs 교체 · res 후보 · fa 이적시장) · pos 포지션 · num 등번호
-  age 나이 · foot 주발(left/right) · height 키(cm) · weight 몸무게(kg)
+  age 나이 · foot 주발(left/right) · weakFoot 약발 1~5(5 = 양발잡이) · height 키(cm) · weight 몸무게(kg)
   fo 능력치 34개 (오버롤은 포지션 주요 능력치 평균으로 자동 계산)
   photo 사진 파일 이름 (photos 폴더 기준, 빈 칸 ""이면 사진 없음 — photos/README.txt 참고)
 

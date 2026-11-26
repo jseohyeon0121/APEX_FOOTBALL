@@ -2,7 +2,7 @@
   "season": "'26",
   "type": "BS",
   "players": [
-    {"tid": 0, "name": "이시우", "nation": "대한민국", "club": "blue", "grp": "xi", "pos": "GK", "num": 1, "age": 18, "foot": "right", "height": 195, "weight": 95, "photo": "",
+    {"tid": 0, "name": "이시우", "nation": "대한민국", "club": "blue", "grp": "xi", "pos": "GK", "num": 1, "age": 18, "foot": "right", "weakFoot": 3, "height": 195, "weight": 95, "photo": "",
      "fo": {
        "sprint": 51, "accel": 48, "finishing": 45, "shotPower": 39, "longShots": 38, "positioning": 48, "volleys": 46,
        "penalty": 38, "shortPass": 43, "vision": 39, "crossing": 40, "longPass": 37, "freekick": 40, "curve": 46,
@@ -10,7 +10,7 @@
        "interceptions": 40, "heading": 47, "slideTackle": 37, "strength": 39, "stamina": 51, "aggression": 41, "jump": 45, "composure": 41,
        "gkDiving": 66, "gkHandling": 63, "gkKick": 66, "gkReflex": 65, "gkPos": 62
      }},
-    {"tid": 1, "name": "이시윤", "nation": "대한민국", "club": "blue", "grp": "xi", "pos": "LB", "num": 2, "age": 28, "foot": "left", "height": 183, "weight": 79, "photo": "",
+    {"tid": 1, "name": "이시윤", "nation": "대한민국", "club": "blue", "grp": "xi", "pos": "LB", "num": 2, "age": 28, "foot": "left", "weakFoot": 2, "height": 183, "weight": 79, "photo": "",
      "fo": {
        "sprint": 62, "accel": 59, "finishing": 55, "shotPower": 50, "longShots": 54, "positioning": 51, "volleys": 56,
        "penalty": 47, "shortPass": 65, "vision": 55, "crossing": 57, "longPass": 57, "freekick": 47, "curve": 59,
@@ -18,7 +18,7 @@
        "interceptions": 60, "heading": 57, "slideTackle": 65, "strength": 59, "stamina": 66, "aggression": 59, "jump": 46, "composure": 58,
        "gkDiving": 14, "gkHandling": 15, "gkKick": 17, "gkReflex": 13, "gkPos": 9
      }},
-    {"tid": 2, "name": "율리안 슈미트", "nation": "독일", "club": "blue", "grp": "xi", "pos": "CB", "num": 3, "age": 27, "foot": "right", "height": 193, "weight": 89, "photo": "",
+    {"tid": 2, "name": "율리안 슈미트", "nation": "독일", "club": "blue", "grp": "xi", "pos": "CB", "num": 3, "age": 27, "foot": "right", "weakFoot": 5, "height": 193, "weight": 89, "photo": "",
      "fo": {
        "sprint": 65, "accel": 47, "finishing": 52, "shotPower": 54, "longShots": 55, "positioning": 50, "volleys": 52,
        "penalty": 49, "shortPass": 62, "vision": 61, "crossing": 50, "longPass": 57, "freekick": 54, "curve": 59,
@@ -26,7 +26,7 @@
        "interceptions": 66, "heading": 60, "slideTackle": 60, "strength": 67, "stamina": 49, "aggression": 63, "jump": 69, "composure": 52,
        "gkDiving": 12, "gkHandling": 18, "gkKick": 8, "gkReflex": 18, "gkPos": 17
      }},
-    {"tid": 3, "name": "하야토 다카하시", "nation": "일본", "club": "blue", "grp": "xi", "pos": "CB", "num": 4, "age": 22, "foot": "right", "height": 190, "weight": 88, "photo": "",
+    {"tid": 3, "name": "하야토 다카하시", "nation": "일본", "club": "blue", "grp": "xi", "pos": "CB", "num": 4, "age": 22, "foot": "right", "weakFoot": 4, "height": 190, "weight": 88, "photo": "",
      "fo": {
        "sprint": 63, "accel": 56, "finishing": 60, "shotPower": 60, "longShots": 58, "positioning": 48, "volleys": 53,
        "penalty": 56, "shortPass": 60, "vision": 51, "crossing": 48, "longPass": 59, "freekick": 61, "curve": 57,
@@ -34,7 +34,7 @@
        "interceptions": 65, "heading": 60, "slideTackle": 68, "strength": 70, "stamina": 60, "aggression": 64, "jump": 66, "composure": 48,
        "gkDiving": 17, "gkHandling": 11, "gkKick": 13, "gkReflex": 18, "gkPos": 12
      }},
-    {"tid": 4, "name": "이예준", "nation": "대한민국", "club": "blue", "grp": "xi", "pos": "RB", "num": 5, "age": 26, "foot": "left", "height": 172, "weight": 61, "photo": "",
+    {"tid": 4, "name": "이예준", "nation": "대한민국", "club": "blue", "grp": "xi", "pos": "RB", "num": 5, "age": 26, "foot": "left", "weakFoot": 2, "height": 172, "weight": 61, "photo": "",
      "fo": {
        "sprint": 68, "accel": 61, "finishing": 56, "shotPower": 61, "longShots": 56, "positioning": 60, "volleys": 56,
        "penalty": 55, "shortPass": 68, "vision": 61, "crossing": 67, "longPass": 58, "freekick": 50, "curve": 61,
@@ -42,7 +42,7 @@
        "interceptions": 64, "heading": 59, "slideTackle": 63, "strength": 53, "stamina": 68, "aggression": 59, "jump": 54, "composure": 48,
        "gkDiving": 13, "gkHandling": 12, "gkKick": 18, "gkReflex": 16, "gkPos": 18
      }},
-    {"tid": 5, "name": "루크 데 용", "nation": "네덜란드", "club": "blue", "grp": "xi", "pos": "CDM", "num": 6, "age": 21, "foot": "right", "height": 179, "weight": 76, "photo": "",
+    {"tid": 5, "name": "루크 데 용", "nation": "네덜란드", "club": "blue", "grp": "xi", "pos": "CDM", "num": 6, "age": 21, "foot": "right", "weakFoot": 3, "height": 179, "weight": 76, "photo": "",
      "fo": {
        "sprint": 49, "accel": 60, "finishing": 61, "shotPower": 62, "longShots": 55, "positioning": 56, "volleys": 50,
        "penalty": 50, "shortPass": 66, "vision": 63, "crossing": 59, "longPass": 70, "freekick": 52, "curve": 58,
@@ -50,7 +50,7 @@
        "interceptions": 67, "heading": 60, "slideTackle": 71, "strength": 64, "stamina": 65, "aggression": 68, "jump": 56, "composure": 50,
        "gkDiving": 11, "gkHandling": 13, "gkKick": 9, "gkReflex": 8, "gkPos": 11
      }},
-    {"tid": 6, "name": "얀 리샤르", "nation": "프랑스", "club": "blue", "grp": "xi", "pos": "CM", "num": 7, "age": 23, "foot": "right", "height": 188, "weight": 85, "photo": "",
+    {"tid": 6, "name": "얀 리샤르", "nation": "프랑스", "club": "blue", "grp": "xi", "pos": "CM", "num": 7, "age": 23, "foot": "right", "weakFoot": 2, "height": 188, "weight": 85, "photo": "",
      "fo": {
        "sprint": 50, "accel": 56, "finishing": 71, "shotPower": 56, "longShots": 61, "positioning": 63, "volleys": 60,
        "penalty": 56, "shortPass": 68, "vision": 66, "crossing": 53, "longPass": 69, "freekick": 52, "curve": 59,
@@ -58,7 +58,7 @@
        "interceptions": 68, "heading": 52, "slideTackle": 50, "strength": 54, "stamina": 72, "aggression": 52, "jump": 53, "composure": 58,
        "gkDiving": 9, "gkHandling": 13, "gkKick": 13, "gkReflex": 13, "gkPos": 11
      }},
-    {"tid": 7, "name": "윤정우", "nation": "대한민국", "club": "blue", "grp": "xi", "pos": "CM", "num": 8, "age": 34, "foot": "right", "height": 184, "weight": 84, "photo": "",
+    {"tid": 7, "name": "윤정우", "nation": "대한민국", "club": "blue", "grp": "xi", "pos": "CM", "num": 8, "age": 34, "foot": "right", "weakFoot": 3, "height": 184, "weight": 84, "photo": "",
      "fo": {
        "sprint": 50, "accel": 48, "finishing": 58, "shotPower": 57, "longShots": 62, "positioning": 65, "volleys": 52,
        "penalty": 49, "shortPass": 66, "vision": 58, "crossing": 49, "longPass": 59, "freekick": 48, "curve": 53,
@@ -66,7 +66,7 @@
        "interceptions": 62, "heading": 56, "slideTackle": 54, "strength": 57, "stamina": 58, "aggression": 48, "jump": 48, "composure": 59,
        "gkDiving": 10, "gkHandling": 9, "gkKick": 11, "gkReflex": 11, "gkPos": 9
      }},
-    {"tid": 8, "name": "김서준", "nation": "대한민국", "club": "blue", "grp": "xi", "pos": "LW", "num": 9, "age": 23, "foot": "left", "height": 170, "weight": 61, "photo": "",
+    {"tid": 8, "name": "김서준", "nation": "대한민국", "club": "blue", "grp": "xi", "pos": "LW", "num": 9, "age": 23, "foot": "left", "weakFoot": 3, "height": 170, "weight": 61, "photo": "",
      "fo": {
        "sprint": 64, "accel": 64, "finishing": 63, "shotPower": 50, "longShots": 61, "positioning": 69, "volleys": 54,
        "penalty": 47, "shortPass": 66, "vision": 61, "crossing": 67, "longPass": 56, "freekick": 51, "curve": 53,
@@ -74,7 +74,7 @@
        "interceptions": 57, "heading": 55, "slideTackle": 54, "strength": 47, "stamina": 55, "aggression": 56, "jump": 60, "composure": 58,
        "gkDiving": 16, "gkHandling": 18, "gkKick": 11, "gkReflex": 16, "gkPos": 18
      }},
-    {"tid": 9, "name": "브루노 페헤이라", "nation": "브라질", "club": "blue", "grp": "xi", "pos": "ST", "num": 10, "age": 23, "foot": "right", "height": 182, "weight": 74, "photo": "",
+    {"tid": 9, "name": "브루노 페헤이라", "nation": "브라질", "club": "blue", "grp": "xi", "pos": "ST", "num": 10, "age": 23, "foot": "right", "weakFoot": 2, "height": 182, "weight": 74, "photo": "",
      "fo": {
        "sprint": 69, "accel": 64, "finishing": 68, "shotPower": 68, "longShots": 68, "positioning": 65, "volleys": 69,
        "penalty": 61, "shortPass": 66, "vision": 58, "crossing": 59, "longPass": 52, "freekick": 58, "curve": 60,
@@ -82,7 +82,7 @@
        "interceptions": 55, "heading": 66, "slideTackle": 61, "strength": 67, "stamina": 58, "aggression": 59, "jump": 64, "composure": 53,
        "gkDiving": 18, "gkHandling": 17, "gkKick": 9, "gkReflex": 11, "gkPos": 11
      }},
-    {"tid": 10, "name": "닐스 베버", "nation": "독일", "club": "blue", "grp": "xi", "pos": "RW", "num": 11, "age": 18, "foot": "right", "height": 178, "weight": 73, "photo": "",
+    {"tid": 10, "name": "닐스 베버", "nation": "독일", "club": "blue", "grp": "xi", "pos": "RW", "num": 11, "age": 18, "foot": "right", "weakFoot": 4, "height": 178, "weight": 73, "photo": "",
      "fo": {
        "sprint": 70, "accel": 66, "finishing": 63, "shotPower": 51, "longShots": 66, "positioning": 62, "volleys": 61,
        "penalty": 61, "shortPass": 67, "vision": 70, "crossing": 62, "longPass": 56, "freekick": 58, "curve": 51,
@@ -90,7 +90,7 @@
        "interceptions": 57, "heading": 51, "slideTackle": 60, "strength": 49, "stamina": 56, "aggression": 60, "jump": 54, "composure": 60,
        "gkDiving": 15, "gkHandling": 11, "gkKick": 10, "gkReflex": 8, "gkPos": 13
      }},
-    {"tid": 11, "name": "강서준", "nation": "대한민국", "club": "blue", "grp": "subs", "pos": "GK", "num": 12, "age": 18, "foot": "right", "height": 196, "weight": 99, "photo": "",
+    {"tid": 11, "name": "강서준", "nation": "대한민국", "club": "blue", "grp": "subs", "pos": "GK", "num": 12, "age": 18, "foot": "right", "weakFoot": 4, "height": 196, "weight": 99, "photo": "",
      "fo": {
        "sprint": 39, "accel": 41, "finishing": 33, "shotPower": 41, "longShots": 36, "positioning": 39, "volleys": 45,
        "penalty": 40, "shortPass": 37, "vision": 42, "crossing": 37, "longPass": 46, "freekick": 41, "curve": 34,
@@ -98,7 +98,7 @@
        "interceptions": 35, "heading": 46, "slideTackle": 34, "strength": 45, "stamina": 35, "aggression": 46, "jump": 37, "composure": 35,
        "gkDiving": 65, "gkHandling": 55, "gkKick": 57, "gkReflex": 63, "gkPos": 59
      }},
-    {"tid": 12, "name": "유토 이토", "nation": "일본", "club": "blue", "grp": "subs", "pos": "CB", "num": 13, "age": 34, "foot": "left", "height": 194, "weight": 90, "photo": "",
+    {"tid": 12, "name": "유토 이토", "nation": "일본", "club": "blue", "grp": "subs", "pos": "CB", "num": 13, "age": 34, "foot": "left", "weakFoot": 2, "height": 194, "weight": 90, "photo": "",
      "fo": {
        "sprint": 56, "accel": 50, "finishing": 48, "shotPower": 42, "longShots": 52, "positioning": 48, "volleys": 48,
        "penalty": 44, "shortPass": 63, "vision": 48, "crossing": 50, "longPass": 53, "freekick": 49, "curve": 47,
@@ -106,7 +106,7 @@
        "interceptions": 64, "heading": 55, "slideTackle": 58, "strength": 54, "stamina": 51, "aggression": 60, "jump": 57, "composure": 44,
        "gkDiving": 16, "gkHandling": 9, "gkKick": 9, "gkReflex": 9, "gkPos": 10
      }},
-    {"tid": 13, "name": "루이스 산체스", "nation": "스페인", "club": "blue", "grp": "subs", "pos": "RB", "num": 14, "age": 26, "foot": "right", "height": 174, "weight": 77, "photo": "",
+    {"tid": 13, "name": "루이스 산체스", "nation": "스페인", "club": "blue", "grp": "subs", "pos": "RB", "num": 14, "age": 26, "foot": "right", "weakFoot": 3, "height": 174, "weight": 77, "photo": "",
      "fo": {
        "sprint": 55, "accel": 60, "finishing": 53, "shotPower": 55, "longShots": 51, "positioning": 55, "volleys": 43,
        "penalty": 50, "shortPass": 60, "vision": 47, "crossing": 61, "longPass": 43, "freekick": 51, "curve": 41,
@@ -114,7 +114,7 @@
        "interceptions": 57, "heading": 62, "slideTackle": 61, "strength": 50, "stamina": 59, "aggression": 44, "jump": 42, "composure": 45,
        "gkDiving": 16, "gkHandling": 14, "gkKick": 14, "gkReflex": 15, "gkPos": 17
      }},
-    {"tid": 14, "name": "곤살로 로페스", "nation": "스페인", "club": "blue", "grp": "subs", "pos": "CM", "num": 15, "age": 18, "foot": "left", "height": 175, "weight": 68, "photo": "",
+    {"tid": 14, "name": "곤살로 로페스", "nation": "스페인", "club": "blue", "grp": "subs", "pos": "CM", "num": 15, "age": 18, "foot": "left", "weakFoot": 2, "height": 175, "weight": 68, "photo": "",
      "fo": {
        "sprint": 54, "accel": 48, "finishing": 60, "shotPower": 49, "longShots": 57, "positioning": 56, "volleys": 48,
        "penalty": 45, "shortPass": 57, "vision": 57, "crossing": 44, "longPass": 55, "freekick": 53, "curve": 51,
@@ -122,7 +122,7 @@
        "interceptions": 55, "heading": 44, "slideTackle": 49, "strength": 47, "stamina": 65, "aggression": 56, "jump": 47, "composure": 45,
        "gkDiving": 16, "gkHandling": 15, "gkKick": 17, "gkReflex": 8, "gkPos": 8
      }},
-    {"tid": 15, "name": "닐스 뮐러", "nation": "독일", "club": "blue", "grp": "subs", "pos": "CAM", "num": 16, "age": 33, "foot": "right", "height": 179, "weight": 68, "photo": "",
+    {"tid": 15, "name": "닐스 뮐러", "nation": "독일", "club": "blue", "grp": "subs", "pos": "CAM", "num": 16, "age": 33, "foot": "right", "weakFoot": 3, "height": 179, "weight": 68, "photo": "",
      "fo": {
        "sprint": 59, "accel": 59, "finishing": 69, "shotPower": 46, "longShots": 67, "positioning": 59, "volleys": 50,
        "penalty": 51, "shortPass": 61, "vision": 61, "crossing": 53, "longPass": 60, "freekick": 48, "curve": 60,
@@ -130,7 +130,7 @@
        "interceptions": 57, "heading": 46, "slideTackle": 54, "strength": 59, "stamina": 58, "aggression": 48, "jump": 58, "composure": 53,
        "gkDiving": 12, "gkHandling": 8, "gkKick": 10, "gkReflex": 14, "gkPos": 14
      }},
-    {"tid": 16, "name": "제임스 브라운", "nation": "잉글랜드", "club": "blue", "grp": "subs", "pos": "LW", "num": 17, "age": 18, "foot": "right", "height": 167, "weight": 60, "photo": "",
+    {"tid": 16, "name": "제임스 브라운", "nation": "잉글랜드", "club": "blue", "grp": "subs", "pos": "LW", "num": 17, "age": 18, "foot": "right", "weakFoot": 5, "height": 167, "weight": 60, "photo": "",
      "fo": {
        "sprint": 60, "accel": 64, "finishing": 65, "shotPower": 48, "longShots": 69, "positioning": 68, "volleys": 51,
        "penalty": 54, "shortPass": 62, "vision": 62, "crossing": 66, "longPass": 52, "freekick": 51, "curve": 54,
@@ -138,7 +138,7 @@
        "interceptions": 48, "heading": 53, "slideTackle": 50, "strength": 58, "stamina": 55, "aggression": 49, "jump": 59, "composure": 50,
        "gkDiving": 11, "gkHandling": 9, "gkKick": 13, "gkReflex": 15, "gkPos": 10
      }},
-    {"tid": 17, "name": "파쿤도 로드리게스", "nation": "아르헨티나", "club": "blue", "grp": "subs", "pos": "ST", "num": 18, "age": 23, "foot": "right", "height": 176, "weight": 71, "photo": "",
+    {"tid": 17, "name": "파쿤도 로드리게스", "nation": "아르헨티나", "club": "blue", "grp": "subs", "pos": "ST", "num": 18, "age": 23, "foot": "right", "weakFoot": 2, "height": 176, "weight": 71, "photo": "",
      "fo": {
        "sprint": 59, "accel": 58, "finishing": 65, "shotPower": 66, "longShots": 56, "positioning": 59, "volleys": 57,
        "penalty": 51, "shortPass": 57, "vision": 47, "crossing": 55, "longPass": 48, "freekick": 44, "curve": 56,
@@ -146,7 +146,7 @@
        "interceptions": 49, "heading": 63, "slideTackle": 57, "strength": 59, "stamina": 51, "aggression": 49, "jump": 55, "composure": 54,
        "gkDiving": 14, "gkHandling": 15, "gkKick": 15, "gkReflex": 18, "gkPos": 18
      }},
-    {"tid": 18, "name": "엔조 토마", "nation": "프랑스", "club": "blue", "grp": "res", "pos": "LB", "num": 19, "age": 29, "foot": "left", "height": 185, "weight": 77, "photo": "",
+    {"tid": 18, "name": "엔조 토마", "nation": "프랑스", "club": "blue", "grp": "res", "pos": "LB", "num": 19, "age": 29, "foot": "left", "weakFoot": 4, "height": 185, "weight": 77, "photo": "",
      "fo": {
        "sprint": 59, "accel": 53, "finishing": 49, "shotPower": 45, "longShots": 48, "positioning": 48, "volleys": 48,
        "penalty": 45, "shortPass": 58, "vision": 44, "crossing": 55, "longPass": 50, "freekick": 48, "curve": 51,
@@ -154,7 +154,7 @@
        "interceptions": 59, "heading": 58, "slideTackle": 51, "strength": 53, "stamina": 57, "aggression": 46, "jump": 43, "composure": 43,
        "gkDiving": 15, "gkHandling": 16, "gkKick": 13, "gkReflex": 15, "gkPos": 9
      }},
-    {"tid": 19, "name": "이준서", "nation": "대한민국", "club": "blue", "grp": "res", "pos": "CDM", "num": 20, "age": 20, "foot": "right", "height": 185, "weight": 87, "photo": "",
+    {"tid": 19, "name": "이준서", "nation": "대한민국", "club": "blue", "grp": "res", "pos": "CDM", "num": 20, "age": 20, "foot": "right", "weakFoot": 3, "height": 185, "weight": 87, "photo": "",
      "fo": {
        "sprint": 52, "accel": 47, "finishing": 42, "shotPower": 51, "longShots": 41, "positioning": 39, "volleys": 50,
        "penalty": 38, "shortPass": 49, "vision": 58, "crossing": 46, "longPass": 54, "freekick": 39, "curve": 51,
@@ -162,7 +162,7 @@
        "interceptions": 55, "heading": 40, "slideTackle": 55, "strength": 59, "stamina": 57, "aggression": 53, "jump": 51, "composure": 46,
        "gkDiving": 16, "gkHandling": 11, "gkKick": 17, "gkReflex": 14, "gkPos": 12
      }},
-    {"tid": 20, "name": "메이슨 휴즈", "nation": "잉글랜드", "club": "red", "grp": "xi", "pos": "GK", "num": 1, "age": 33, "foot": "right", "height": 188, "weight": 79, "photo": "",
+    {"tid": 20, "name": "메이슨 휴즈", "nation": "잉글랜드", "club": "red", "grp": "xi", "pos": "GK", "num": 1, "age": 33, "foot": "right", "weakFoot": 3, "height": 188, "weight": 79, "photo": "",
      "fo": {
        "sprint": 40, "accel": 50, "finishing": 45, "shotPower": 39, "longShots": 43, "positioning": 45, "volleys": 49,
        "penalty": 39, "shortPass": 47, "vision": 42, "crossing": 41, "longPass": 36, "freekick": 38, "curve": 45,
@@ -170,7 +170,7 @@
        "interceptions": 47, "heading": 48, "slideTackle": 46, "strength": 39, "stamina": 48, "aggression": 42, "jump": 36, "composure": 43,
        "gkDiving": 58, "gkHandling": 65, "gkKick": 69, "gkReflex": 66, "gkPos": 60
      }},
-    {"tid": 21, "name": "렌 와타나베", "nation": "일본", "club": "red", "grp": "xi", "pos": "LB", "num": 2, "age": 21, "foot": "right", "height": 176, "weight": 69, "photo": "",
+    {"tid": 21, "name": "렌 와타나베", "nation": "일본", "club": "red", "grp": "xi", "pos": "LB", "num": 2, "age": 21, "foot": "right", "weakFoot": 3, "height": 176, "weight": 69, "photo": "",
      "fo": {
        "sprint": 63, "accel": 67, "finishing": 49, "shotPower": 58, "longShots": 59, "positioning": 61, "volleys": 57,
        "penalty": 48, "shortPass": 64, "vision": 57, "crossing": 63, "longPass": 48, "freekick": 54, "curve": 53,
@@ -178,7 +178,7 @@
        "interceptions": 69, "heading": 65, "slideTackle": 60, "strength": 55, "stamina": 67, "aggression": 56, "jump": 55, "composure": 55,
        "gkDiving": 18, "gkHandling": 13, "gkKick": 17, "gkReflex": 18, "gkPos": 8
      }},
-    {"tid": 22, "name": "이성민", "nation": "대한민국", "club": "red", "grp": "xi", "pos": "CB", "num": 3, "age": 24, "foot": "left", "height": 188, "weight": 81, "photo": "",
+    {"tid": 22, "name": "이성민", "nation": "대한민국", "club": "red", "grp": "xi", "pos": "CB", "num": 3, "age": 24, "foot": "left", "weakFoot": 4, "height": 188, "weight": 81, "photo": "",
      "fo": {
        "sprint": 60, "accel": 53, "finishing": 56, "shotPower": 53, "longShots": 59, "positioning": 54, "volleys": 51,
        "penalty": 55, "shortPass": 60, "vision": 56, "crossing": 48, "longPass": 60, "freekick": 60, "curve": 47,
@@ -186,7 +186,7 @@
        "interceptions": 63, "heading": 59, "slideTackle": 68, "strength": 69, "stamina": 51, "aggression": 62, "jump": 59, "composure": 49,
        "gkDiving": 13, "gkHandling": 10, "gkKick": 17, "gkReflex": 13, "gkPos": 16
      }},
-    {"tid": 23, "name": "브람 스밋", "nation": "네덜란드", "club": "red", "grp": "xi", "pos": "CB", "num": 4, "age": 21, "foot": "right", "height": 184, "weight": 83, "photo": "",
+    {"tid": 23, "name": "브람 스밋", "nation": "네덜란드", "club": "red", "grp": "xi", "pos": "CB", "num": 4, "age": 21, "foot": "right", "weakFoot": 4, "height": 184, "weight": 83, "photo": "",
      "fo": {
        "sprint": 61, "accel": 51, "finishing": 59, "shotPower": 49, "longShots": 48, "positioning": 50, "volleys": 51,
        "penalty": 61, "shortPass": 66, "vision": 56, "crossing": 53, "longPass": 53, "freekick": 58, "curve": 62,
@@ -194,7 +194,7 @@
        "interceptions": 67, "heading": 59, "slideTackle": 60, "strength": 61, "stamina": 62, "aggression": 69, "jump": 69, "composure": 54,
        "gkDiving": 9, "gkHandling": 10, "gkKick": 17, "gkReflex": 11, "gkPos": 14
      }},
-    {"tid": 24, "name": "알바로 나바로", "nation": "스페인", "club": "red", "grp": "xi", "pos": "RB", "num": 5, "age": 31, "foot": "right", "height": 182, "weight": 84, "photo": "",
+    {"tid": 24, "name": "알바로 나바로", "nation": "스페인", "club": "red", "grp": "xi", "pos": "RB", "num": 5, "age": 31, "foot": "right", "weakFoot": 4, "height": 182, "weight": 84, "photo": "",
      "fo": {
        "sprint": 66, "accel": 65, "finishing": 55, "shotPower": 58, "longShots": 53, "positioning": 58, "volleys": 53,
        "penalty": 48, "shortPass": 65, "vision": 49, "crossing": 64, "longPass": 53, "freekick": 59, "curve": 54,
@@ -202,7 +202,7 @@
        "interceptions": 59, "heading": 61, "slideTackle": 64, "strength": 48, "stamina": 63, "aggression": 48, "jump": 59, "composure": 58,
        "gkDiving": 16, "gkHandling": 18, "gkKick": 11, "gkReflex": 12, "gkPos": 16
      }},
-    {"tid": 25, "name": "조재윤", "nation": "대한민국", "club": "red", "grp": "xi", "pos": "CDM", "num": 6, "age": 20, "foot": "right", "height": 172, "weight": 66, "photo": "",
+    {"tid": 25, "name": "조재윤", "nation": "대한민국", "club": "red", "grp": "xi", "pos": "CDM", "num": 6, "age": 20, "foot": "right", "weakFoot": 2, "height": 172, "weight": 66, "photo": "",
      "fo": {
        "sprint": 49, "accel": 53, "finishing": 62, "shotPower": 54, "longShots": 51, "positioning": 55, "volleys": 53,
        "penalty": 52, "shortPass": 68, "vision": 65, "crossing": 49, "longPass": 71, "freekick": 52, "curve": 57,
@@ -210,7 +210,7 @@
        "interceptions": 62, "heading": 55, "slideTackle": 62, "strength": 63, "stamina": 63, "aggression": 65, "jump": 50, "composure": 60,
        "gkDiving": 17, "gkHandling": 17, "gkKick": 10, "gkReflex": 17, "gkPos": 17
      }},
-    {"tid": 26, "name": "장하준", "nation": "대한민국", "club": "red", "grp": "xi", "pos": "CM", "num": 7, "age": 31, "foot": "left", "height": 188, "weight": 83, "photo": "",
+    {"tid": 26, "name": "장하준", "nation": "대한민국", "club": "red", "grp": "xi", "pos": "CM", "num": 7, "age": 31, "foot": "left", "weakFoot": 3, "height": 188, "weight": 83, "photo": "",
      "fo": {
        "sprint": 62, "accel": 59, "finishing": 70, "shotPower": 60, "longShots": 69, "positioning": 63, "volleys": 64,
        "penalty": 54, "shortPass": 72, "vision": 65, "crossing": 53, "longPass": 69, "freekick": 54, "curve": 65,
@@ -218,7 +218,7 @@
        "interceptions": 64, "heading": 59, "slideTackle": 58, "strength": 56, "stamina": 73, "aggression": 52, "jump": 62, "composure": 59,
        "gkDiving": 9, "gkHandling": 9, "gkKick": 13, "gkReflex": 8, "gkPos": 13
      }},
-    {"tid": 27, "name": "송지환", "nation": "대한민국", "club": "red", "grp": "xi", "pos": "CM", "num": 8, "age": 27, "foot": "right", "height": 183, "weight": 76, "photo": "",
+    {"tid": 27, "name": "송지환", "nation": "대한민국", "club": "red", "grp": "xi", "pos": "CM", "num": 8, "age": 27, "foot": "right", "weakFoot": 1, "height": 183, "weight": 76, "photo": "",
      "fo": {
        "sprint": 60, "accel": 54, "finishing": 58, "shotPower": 58, "longShots": 62, "positioning": 61, "volleys": 47,
        "penalty": 53, "shortPass": 67, "vision": 66, "crossing": 58, "longPass": 68, "freekick": 55, "curve": 55,
@@ -226,7 +226,7 @@
        "interceptions": 60, "heading": 61, "slideTackle": 52, "strength": 52, "stamina": 67, "aggression": 52, "jump": 56, "composure": 57,
        "gkDiving": 16, "gkHandling": 12, "gkKick": 16, "gkReflex": 12, "gkPos": 11
      }},
-    {"tid": 28, "name": "정예준", "nation": "대한민국", "club": "red", "grp": "xi", "pos": "LW", "num": 9, "age": 22, "foot": "left", "height": 174, "weight": 69, "photo": "",
+    {"tid": 28, "name": "정예준", "nation": "대한민국", "club": "red", "grp": "xi", "pos": "LW", "num": 9, "age": 22, "foot": "left", "weakFoot": 3, "height": 174, "weight": 69, "photo": "",
      "fo": {
        "sprint": 63, "accel": 64, "finishing": 63, "shotPower": 57, "longShots": 66, "positioning": 64, "volleys": 47,
        "penalty": 54, "shortPass": 66, "vision": 60, "crossing": 59, "longPass": 55, "freekick": 52, "curve": 48,
@@ -234,7 +234,7 @@
        "interceptions": 49, "heading": 46, "slideTackle": 57, "strength": 49, "stamina": 56, "aggression": 57, "jump": 49, "composure": 54,
        "gkDiving": 17, "gkHandling": 14, "gkKick": 16, "gkReflex": 9, "gkPos": 18
      }},
-    {"tid": 29, "name": "정현우", "nation": "대한민국", "club": "red", "grp": "xi", "pos": "ST", "num": 10, "age": 23, "foot": "right", "height": 190, "weight": 90, "photo": "",
+    {"tid": 29, "name": "정현우", "nation": "대한민국", "club": "red", "grp": "xi", "pos": "ST", "num": 10, "age": 23, "foot": "right", "weakFoot": 4, "height": 190, "weight": 90, "photo": "",
      "fo": {
        "sprint": 64, "accel": 66, "finishing": 64, "shotPower": 70, "longShots": 66, "positioning": 67, "volleys": 73,
        "penalty": 55, "shortPass": 65, "vision": 58, "crossing": 54, "longPass": 50, "freekick": 52, "curve": 58,
@@ -242,7 +242,7 @@
        "interceptions": 56, "heading": 67, "slideTackle": 59, "strength": 65, "stamina": 52, "aggression": 54, "jump": 50, "composure": 63,
        "gkDiving": 18, "gkHandling": 8, "gkKick": 15, "gkReflex": 14, "gkPos": 10
      }},
-    {"tid": 30, "name": "박시윤", "nation": "대한민국", "club": "red", "grp": "xi", "pos": "RW", "num": 11, "age": 21, "foot": "right", "height": 176, "weight": 79, "photo": "",
+    {"tid": 30, "name": "박시윤", "nation": "대한민국", "club": "red", "grp": "xi", "pos": "RW", "num": 11, "age": 21, "foot": "right", "weakFoot": 3, "height": 176, "weight": 79, "photo": "",
      "fo": {
        "sprint": 68, "accel": 60, "finishing": 67, "shotPower": 46, "longShots": 61, "positioning": 65, "volleys": 47,
        "penalty": 53, "shortPass": 66, "vision": 60, "crossing": 59, "longPass": 47, "freekick": 60, "curve": 46,
@@ -250,7 +250,7 @@
        "interceptions": 54, "heading": 56, "slideTackle": 46, "strength": 58, "stamina": 53, "aggression": 48, "jump": 52, "composure": 47,
        "gkDiving": 14, "gkHandling": 12, "gkKick": 14, "gkReflex": 18, "gkPos": 18
      }},
-    {"tid": 31, "name": "레비 판 데이크", "nation": "네덜란드", "club": "red", "grp": "subs", "pos": "GK", "num": 12, "age": 21, "foot": "right", "height": 197, "weight": 95, "photo": "",
+    {"tid": 31, "name": "레비 판 데이크", "nation": "네덜란드", "club": "red", "grp": "subs", "pos": "GK", "num": 12, "age": 21, "foot": "right", "weakFoot": 2, "height": 197, "weight": 95, "photo": "",
      "fo": {
        "sprint": 34, "accel": 46, "finishing": 45, "shotPower": 46, "longShots": 41, "positioning": 32, "volleys": 44,
        "penalty": 37, "shortPass": 39, "vision": 37, "crossing": 33, "longPass": 41, "freekick": 46, "curve": 46,
@@ -258,7 +258,7 @@
        "interceptions": 32, "heading": 38, "slideTackle": 46, "strength": 35, "stamina": 43, "aggression": 46, "jump": 37, "composure": 42,
        "gkDiving": 66, "gkHandling": 58, "gkKick": 56, "gkReflex": 61, "gkPos": 57
      }},
-    {"tid": 32, "name": "마테우스 소우자", "nation": "브라질", "club": "red", "grp": "subs", "pos": "CB", "num": 13, "age": 21, "foot": "right", "height": 182, "weight": 74, "photo": "",
+    {"tid": 32, "name": "마테우스 소우자", "nation": "브라질", "club": "red", "grp": "subs", "pos": "CB", "num": 13, "age": 21, "foot": "right", "weakFoot": 1, "height": 182, "weight": 74, "photo": "",
      "fo": {
        "sprint": 54, "accel": 47, "finishing": 48, "shotPower": 51, "longShots": 54, "positioning": 46, "volleys": 50,
        "penalty": 50, "shortPass": 63, "vision": 44, "crossing": 47, "longPass": 46, "freekick": 43, "curve": 55,
@@ -266,7 +266,7 @@
        "interceptions": 60, "heading": 56, "slideTackle": 60, "strength": 63, "stamina": 56, "aggression": 58, "jump": 61, "composure": 56,
        "gkDiving": 12, "gkHandling": 18, "gkKick": 11, "gkReflex": 10, "gkPos": 15
      }},
-    {"tid": 33, "name": "찰리 로빈슨", "nation": "잉글랜드", "club": "red", "grp": "subs", "pos": "RB", "num": 14, "age": 23, "foot": "right", "height": 180, "weight": 83, "photo": "",
+    {"tid": 33, "name": "찰리 로빈슨", "nation": "잉글랜드", "club": "red", "grp": "subs", "pos": "RB", "num": 14, "age": 23, "foot": "right", "weakFoot": 2, "height": 180, "weight": 83, "photo": "",
      "fo": {
        "sprint": 58, "accel": 58, "finishing": 58, "shotPower": 46, "longShots": 59, "positioning": 54, "volleys": 52,
        "penalty": 45, "shortPass": 58, "vision": 54, "crossing": 62, "longPass": 54, "freekick": 57, "curve": 55,
@@ -274,7 +274,7 @@
        "interceptions": 64, "heading": 63, "slideTackle": 64, "strength": 55, "stamina": 66, "aggression": 56, "jump": 54, "composure": 50,
        "gkDiving": 12, "gkHandling": 13, "gkKick": 16, "gkReflex": 12, "gkPos": 11
      }},
-    {"tid": 34, "name": "장건우", "nation": "대한민국", "club": "red", "grp": "subs", "pos": "CM", "num": 15, "age": 29, "foot": "right", "height": 178, "weight": 67, "photo": "",
+    {"tid": 34, "name": "장건우", "nation": "대한민국", "club": "red", "grp": "subs", "pos": "CM", "num": 15, "age": 29, "foot": "right", "weakFoot": 4, "height": 178, "weight": 67, "photo": "",
      "fo": {
        "sprint": 48, "accel": 60, "finishing": 58, "shotPower": 60, "longShots": 65, "positioning": 64, "volleys": 49,
        "penalty": 49, "shortPass": 64, "vision": 63, "crossing": 60, "longPass": 60, "freekick": 56, "curve": 52,
@@ -282,7 +282,7 @@
        "interceptions": 65, "heading": 57, "slideTackle": 46, "strength": 56, "stamina": 62, "aggression": 47, "jump": 58, "composure": 55,
        "gkDiving": 17, "gkHandling": 13, "gkKick": 12, "gkReflex": 15, "gkPos": 14
      }},
-    {"tid": 35, "name": "페드루 카르발류", "nation": "브라질", "club": "red", "grp": "subs", "pos": "CAM", "num": 16, "age": 22, "foot": "right", "height": 179, "weight": 82, "photo": "",
+    {"tid": 35, "name": "페드루 카르발류", "nation": "브라질", "club": "red", "grp": "subs", "pos": "CAM", "num": 16, "age": 22, "foot": "right", "weakFoot": 1, "height": 179, "weight": 82, "photo": "",
      "fo": {
        "sprint": 59, "accel": 64, "finishing": 66, "shotPower": 49, "longShots": 59, "positioning": 63, "volleys": 57,
        "penalty": 45, "shortPass": 63, "vision": 65, "crossing": 49, "longPass": 62, "freekick": 58, "curve": 59,
@@ -290,7 +290,7 @@
        "interceptions": 53, "heading": 56, "slideTackle": 50, "strength": 53, "stamina": 58, "aggression": 50, "jump": 50, "composure": 53,
        "gkDiving": 18, "gkHandling": 13, "gkKick": 13, "gkReflex": 8, "gkPos": 18
      }},
-    {"tid": 36, "name": "조지훈", "nation": "대한민국", "club": "red", "grp": "subs", "pos": "LW", "num": 17, "age": 25, "foot": "left", "height": 181, "weight": 77, "photo": "",
+    {"tid": 36, "name": "조지훈", "nation": "대한민국", "club": "red", "grp": "subs", "pos": "LW", "num": 17, "age": 25, "foot": "left", "weakFoot": 1, "height": 181, "weight": 77, "photo": "",
      "fo": {
        "sprint": 66, "accel": 59, "finishing": 63, "shotPower": 54, "longShots": 59, "positioning": 62, "volleys": 49,
        "penalty": 52, "shortPass": 61, "vision": 58, "crossing": 59, "longPass": 56, "freekick": 50, "curve": 45,
@@ -298,7 +298,7 @@
        "interceptions": 52, "heading": 46, "slideTackle": 47, "strength": 57, "stamina": 52, "aggression": 47, "jump": 45, "composure": 51,
        "gkDiving": 16, "gkHandling": 14, "gkKick": 12, "gkReflex": 17, "gkPos": 9
      }},
-    {"tid": 37, "name": "권민준", "nation": "대한민국", "club": "red", "grp": "subs", "pos": "ST", "num": 18, "age": 23, "foot": "right", "height": 175, "weight": 65, "photo": "",
+    {"tid": 37, "name": "권민준", "nation": "대한민국", "club": "red", "grp": "subs", "pos": "ST", "num": 18, "age": 23, "foot": "right", "weakFoot": 4, "height": 175, "weight": 65, "photo": "",
      "fo": {
        "sprint": 63, "accel": 68, "finishing": 64, "shotPower": 58, "longShots": 62, "positioning": 64, "volleys": 69,
        "penalty": 57, "shortPass": 60, "vision": 50, "crossing": 49, "longPass": 50, "freekick": 52, "curve": 56,
@@ -306,7 +306,7 @@
        "interceptions": 60, "heading": 60, "slideTackle": 59, "strength": 65, "stamina": 61, "aggression": 50, "jump": 51, "composure": 61,
        "gkDiving": 16, "gkHandling": 17, "gkKick": 12, "gkReflex": 11, "gkPos": 14
      }},
-    {"tid": 38, "name": "권동현", "nation": "대한민국", "club": "red", "grp": "res", "pos": "LB", "num": 19, "age": 34, "foot": "left", "height": 181, "weight": 74, "photo": "",
+    {"tid": 38, "name": "권동현", "nation": "대한민국", "club": "red", "grp": "res", "pos": "LB", "num": 19, "age": 34, "foot": "left", "weakFoot": 3, "height": 181, "weight": 74, "photo": "",
      "fo": {
        "sprint": 58, "accel": 56, "finishing": 41, "shotPower": 51, "longShots": 44, "positioning": 44, "volleys": 49,
        "penalty": 49, "shortPass": 59, "vision": 54, "crossing": 59, "longPass": 48, "freekick": 43, "curve": 46,
@@ -314,7 +314,7 @@
        "interceptions": 54, "heading": 55, "slideTackle": 52, "strength": 51, "stamina": 56, "aggression": 46, "jump": 45, "composure": 42,
        "gkDiving": 9, "gkHandling": 12, "gkKick": 16, "gkReflex": 16, "gkPos": 12
      }},
-    {"tid": 39, "name": "류연우", "nation": "대한민국", "club": "red", "grp": "res", "pos": "CDM", "num": 20, "age": 18, "foot": "right", "height": 172, "weight": 67, "photo": "",
+    {"tid": 39, "name": "류연우", "nation": "대한민국", "club": "red", "grp": "res", "pos": "CDM", "num": 20, "age": 18, "foot": "right", "weakFoot": 2, "height": 172, "weight": 67, "photo": "",
      "fo": {
        "sprint": 49, "accel": 48, "finishing": 51, "shotPower": 55, "longShots": 54, "positioning": 46, "volleys": 52,
        "penalty": 46, "shortPass": 53, "vision": 60, "crossing": 43, "longPass": 58, "freekick": 42, "curve": 42,
@@ -322,7 +322,7 @@
        "interceptions": 57, "heading": 54, "slideTackle": 63, "strength": 63, "stamina": 54, "aggression": 64, "jump": 55, "composure": 49,
        "gkDiving": 18, "gkHandling": 8, "gkKick": 12, "gkReflex": 13, "gkPos": 18
      }},
-    {"tid": 40, "name": "소타 와타나베", "nation": "일본", "club": "white", "grp": "xi", "pos": "GK", "num": 1, "age": 29, "foot": "right", "height": 192, "weight": 95, "photo": "",
+    {"tid": 40, "name": "소타 와타나베", "nation": "일본", "club": "white", "grp": "xi", "pos": "GK", "num": 1, "age": 29, "foot": "right", "weakFoot": 3, "height": 192, "weight": 95, "photo": "",
      "fo": {
        "sprint": 44, "accel": 41, "finishing": 38, "shotPower": 37, "longShots": 41, "positioning": 44, "volleys": 48,
        "penalty": 44, "shortPass": 44, "vision": 40, "crossing": 49, "longPass": 42, "freekick": 48, "curve": 47,
@@ -330,7 +330,7 @@
        "interceptions": 43, "heading": 38, "slideTackle": 35, "strength": 43, "stamina": 39, "aggression": 45, "jump": 38, "composure": 44,
        "gkDiving": 60, "gkHandling": 66, "gkKick": 62, "gkReflex": 66, "gkPos": 66
      }},
-    {"tid": 41, "name": "얀 프티", "nation": "프랑스", "club": "white", "grp": "xi", "pos": "LB", "num": 2, "age": 34, "foot": "left", "height": 182, "weight": 81, "photo": "",
+    {"tid": 41, "name": "얀 프티", "nation": "프랑스", "club": "white", "grp": "xi", "pos": "LB", "num": 2, "age": 34, "foot": "left", "weakFoot": 1, "height": 182, "weight": 81, "photo": "",
      "fo": {
        "sprint": 65, "accel": 60, "finishing": 54, "shotPower": 57, "longShots": 57, "positioning": 59, "volleys": 59,
        "penalty": 54, "shortPass": 69, "vision": 60, "crossing": 61, "longPass": 50, "freekick": 48, "curve": 59,
@@ -338,7 +338,7 @@
        "interceptions": 60, "heading": 69, "slideTackle": 61, "strength": 60, "stamina": 67, "aggression": 50, "jump": 54, "composure": 47,
        "gkDiving": 9, "gkHandling": 12, "gkKick": 12, "gkReflex": 15, "gkPos": 14
      }},
-    {"tid": 42, "name": "오하준", "nation": "대한민국", "club": "white", "grp": "xi", "pos": "CB", "num": 3, "age": 20, "foot": "right", "height": 184, "weight": 84, "photo": "",
+    {"tid": 42, "name": "오하준", "nation": "대한민국", "club": "white", "grp": "xi", "pos": "CB", "num": 3, "age": 20, "foot": "right", "weakFoot": 4, "height": 184, "weight": 84, "photo": "",
      "fo": {
        "sprint": 67, "accel": 58, "finishing": 55, "shotPower": 50, "longShots": 52, "positioning": 64, "volleys": 50,
        "penalty": 57, "shortPass": 70, "vision": 62, "crossing": 51, "longPass": 50, "freekick": 52, "curve": 50,
@@ -346,7 +346,7 @@
        "interceptions": 66, "heading": 65, "slideTackle": 68, "strength": 62, "stamina": 64, "aggression": 70, "jump": 65, "composure": 51,
        "gkDiving": 17, "gkHandling": 10, "gkKick": 13, "gkReflex": 14, "gkPos": 14
      }},
-    {"tid": 43, "name": "권시윤", "nation": "대한민국", "club": "white", "grp": "xi", "pos": "CB", "num": 4, "age": 19, "foot": "left", "height": 191, "weight": 93, "photo": "",
+    {"tid": 43, "name": "권시윤", "nation": "대한민국", "club": "white", "grp": "xi", "pos": "CB", "num": 4, "age": 19, "foot": "left", "weakFoot": 4, "height": 191, "weight": 93, "photo": "",
      "fo": {
        "sprint": 66, "accel": 61, "finishing": 63, "shotPower": 63, "longShots": 58, "positioning": 54, "volleys": 60,
        "penalty": 54, "shortPass": 64, "vision": 62, "crossing": 57, "longPass": 56, "freekick": 61, "curve": 60,
@@ -354,7 +354,7 @@
        "interceptions": 69, "heading": 71, "slideTackle": 70, "strength": 63, "stamina": 49, "aggression": 71, "jump": 63, "composure": 61,
        "gkDiving": 10, "gkHandling": 15, "gkKick": 18, "gkReflex": 11, "gkPos": 17
      }},
-    {"tid": 44, "name": "오유준", "nation": "대한민국", "club": "white", "grp": "xi", "pos": "RB", "num": 5, "age": 20, "foot": "left", "height": 182, "weight": 78, "photo": "",
+    {"tid": 44, "name": "오유준", "nation": "대한민국", "club": "white", "grp": "xi", "pos": "RB", "num": 5, "age": 20, "foot": "left", "weakFoot": 3, "height": 182, "weight": 78, "photo": "",
      "fo": {
        "sprint": 64, "accel": 65, "finishing": 61, "shotPower": 58, "longShots": 48, "positioning": 51, "volleys": 60,
        "penalty": 61, "shortPass": 63, "vision": 59, "crossing": 63, "longPass": 53, "freekick": 50, "curve": 62,
@@ -362,7 +362,7 @@
        "interceptions": 65, "heading": 62, "slideTackle": 63, "strength": 60, "stamina": 68, "aggression": 62, "jump": 50, "composure": 50,
        "gkDiving": 16, "gkHandling": 17, "gkKick": 8, "gkReflex": 14, "gkPos": 18
      }},
-    {"tid": 45, "name": "케빈 슈미트", "nation": "독일", "club": "white", "grp": "xi", "pos": "CDM", "num": 6, "age": 19, "foot": "right", "height": 182, "weight": 85, "photo": "",
+    {"tid": 45, "name": "케빈 슈미트", "nation": "독일", "club": "white", "grp": "xi", "pos": "CDM", "num": 6, "age": 19, "foot": "right", "weakFoot": 2, "height": 182, "weight": 85, "photo": "",
      "fo": {
        "sprint": 50, "accel": 48, "finishing": 58, "shotPower": 48, "longShots": 56, "positioning": 58, "volleys": 58,
        "penalty": 57, "shortPass": 64, "vision": 69, "crossing": 55, "longPass": 68, "freekick": 58, "curve": 50,
@@ -370,7 +370,7 @@
        "interceptions": 70, "heading": 59, "slideTackle": 63, "strength": 64, "stamina": 64, "aggression": 65, "jump": 50, "composure": 57,
        "gkDiving": 9, "gkHandling": 8, "gkKick": 12, "gkReflex": 17, "gkPos": 18
      }},
-    {"tid": 46, "name": "위고 모로", "nation": "프랑스", "club": "white", "grp": "xi", "pos": "CM", "num": 7, "age": 26, "foot": "right", "height": 183, "weight": 72, "photo": "",
+    {"tid": 46, "name": "위고 모로", "nation": "프랑스", "club": "white", "grp": "xi", "pos": "CM", "num": 7, "age": 26, "foot": "right", "weakFoot": 3, "height": 183, "weight": 72, "photo": "",
      "fo": {
        "sprint": 55, "accel": 49, "finishing": 65, "shotPower": 55, "longShots": 62, "positioning": 68, "volleys": 56,
        "penalty": 50, "shortPass": 65, "vision": 64, "crossing": 53, "longPass": 60, "freekick": 51, "curve": 56,
@@ -378,7 +378,7 @@
        "interceptions": 62, "heading": 48, "slideTackle": 51, "strength": 52, "stamina": 68, "aggression": 50, "jump": 49, "composure": 54,
        "gkDiving": 17, "gkHandling": 14, "gkKick": 11, "gkReflex": 9, "gkPos": 12
      }},
-    {"tid": 47, "name": "마테우스 호드리게스", "nation": "브라질", "club": "white", "grp": "xi", "pos": "CM", "num": 8, "age": 33, "foot": "right", "height": 183, "weight": 83, "photo": "",
+    {"tid": 47, "name": "마테우스 호드리게스", "nation": "브라질", "club": "white", "grp": "xi", "pos": "CM", "num": 8, "age": 33, "foot": "right", "weakFoot": 5, "height": 183, "weight": 83, "photo": "",
      "fo": {
        "sprint": 52, "accel": 48, "finishing": 67, "shotPower": 52, "longShots": 64, "positioning": 62, "volleys": 57,
        "penalty": 58, "shortPass": 62, "vision": 59, "crossing": 52, "longPass": 69, "freekick": 50, "curve": 50,
@@ -386,7 +386,7 @@
        "interceptions": 62, "heading": 53, "slideTackle": 51, "strength": 60, "stamina": 60, "aggression": 48, "jump": 56, "composure": 55,
        "gkDiving": 9, "gkHandling": 15, "gkKick": 17, "gkReflex": 14, "gkPos": 18
      }},
-    {"tid": 48, "name": "찰리 워커", "nation": "잉글랜드", "club": "white", "grp": "xi", "pos": "LW", "num": 9, "age": 21, "foot": "left", "height": 175, "weight": 64, "photo": "",
+    {"tid": 48, "name": "찰리 워커", "nation": "잉글랜드", "club": "white", "grp": "xi", "pos": "LW", "num": 9, "age": 21, "foot": "left", "weakFoot": 3, "height": 175, "weight": 64, "photo": "",
      "fo": {
        "sprint": 60, "accel": 64, "finishing": 64, "shotPower": 55, "longShots": 68, "positioning": 66, "volleys": 52,
        "penalty": 58, "shortPass": 64, "vision": 69, "crossing": 68, "longPass": 50, "freekick": 55, "curve": 57,
@@ -394,7 +394,7 @@
        "interceptions": 57, "heading": 61, "slideTackle": 53, "strength": 56, "stamina": 54, "aggression": 50, "jump": 51, "composure": 60,
        "gkDiving": 12, "gkHandling": 10, "gkKick": 14, "gkReflex": 15, "gkPos": 10
      }},
-    {"tid": 49, "name": "브람 데 용", "nation": "네덜란드", "club": "white", "grp": "xi", "pos": "ST", "num": 10, "age": 21, "foot": "right", "height": 181, "weight": 71, "photo": "",
+    {"tid": 49, "name": "브람 데 용", "nation": "네덜란드", "club": "white", "grp": "xi", "pos": "ST", "num": 10, "age": 21, "foot": "right", "weakFoot": 2, "height": 181, "weight": 71, "photo": "",
      "fo": {
        "sprint": 70, "accel": 72, "finishing": 64, "shotPower": 64, "longShots": 65, "positioning": 70, "volleys": 66,
        "penalty": 62, "shortPass": 64, "vision": 57, "crossing": 50, "longPass": 63, "freekick": 60, "curve": 55,
@@ -402,7 +402,7 @@
        "interceptions": 57, "heading": 62, "slideTackle": 55, "strength": 70, "stamina": 64, "aggression": 52, "jump": 61, "composure": 53,
        "gkDiving": 17, "gkHandling": 10, "gkKick": 10, "gkReflex": 17, "gkPos": 9
      }},
-    {"tid": 50, "name": "프란체스코 비안키", "nation": "이탈리아", "club": "white", "grp": "xi", "pos": "RW", "num": 11, "age": 30, "foot": "left", "height": 178, "weight": 70, "photo": "",
+    {"tid": 50, "name": "프란체스코 비안키", "nation": "이탈리아", "club": "white", "grp": "xi", "pos": "RW", "num": 11, "age": 30, "foot": "left", "weakFoot": 2, "height": 178, "weight": 70, "photo": "",
      "fo": {
        "sprint": 70, "accel": 63, "finishing": 73, "shotPower": 58, "longShots": 66, "positioning": 68, "volleys": 51,
        "penalty": 59, "shortPass": 63, "vision": 66, "crossing": 63, "longPass": 54, "freekick": 55, "curve": 50,
@@ -410,7 +410,7 @@
        "interceptions": 58, "heading": 54, "slideTackle": 50, "strength": 54, "stamina": 50, "aggression": 62, "jump": 52, "composure": 52,
        "gkDiving": 9, "gkHandling": 18, "gkKick": 11, "gkReflex": 16, "gkPos": 10
      }},
-    {"tid": 51, "name": "노아 로베르", "nation": "프랑스", "club": "white", "grp": "subs", "pos": "GK", "num": 12, "age": 26, "foot": "right", "height": 195, "weight": 92, "photo": "",
+    {"tid": 51, "name": "노아 로베르", "nation": "프랑스", "club": "white", "grp": "subs", "pos": "GK", "num": 12, "age": 26, "foot": "right", "weakFoot": 3, "height": 195, "weight": 92, "photo": "",
      "fo": {
        "sprint": 47, "accel": 43, "finishing": 46, "shotPower": 36, "longShots": 42, "positioning": 43, "volleys": 42,
        "penalty": 39, "shortPass": 41, "vision": 35, "crossing": 45, "longPass": 41, "freekick": 42, "curve": 39,
@@ -418,7 +418,7 @@
        "interceptions": 41, "heading": 33, "slideTackle": 33, "strength": 33, "stamina": 33, "aggression": 38, "jump": 40, "composure": 34,
        "gkDiving": 61, "gkHandling": 62, "gkKick": 64, "gkReflex": 57, "gkPos": 61
      }},
-    {"tid": 52, "name": "잔루카 비안키", "nation": "이탈리아", "club": "white", "grp": "subs", "pos": "CB", "num": 13, "age": 26, "foot": "right", "height": 188, "weight": 83, "photo": "",
+    {"tid": 52, "name": "잔루카 비안키", "nation": "이탈리아", "club": "white", "grp": "subs", "pos": "CB", "num": 13, "age": 26, "foot": "right", "weakFoot": 3, "height": 188, "weight": 83, "photo": "",
      "fo": {
        "sprint": 60, "accel": 43, "finishing": 43, "shotPower": 55, "longShots": 49, "positioning": 53, "volleys": 47,
        "penalty": 56, "shortPass": 57, "vision": 53, "crossing": 42, "longPass": 53, "freekick": 52, "curve": 45,
@@ -426,7 +426,7 @@
        "interceptions": 54, "heading": 57, "slideTackle": 62, "strength": 59, "stamina": 43, "aggression": 63, "jump": 58, "composure": 47,
        "gkDiving": 12, "gkHandling": 13, "gkKick": 14, "gkReflex": 11, "gkPos": 18
      }},
-    {"tid": 53, "name": "윌리엄 로빈슨", "nation": "잉글랜드", "club": "white", "grp": "subs", "pos": "RB", "num": 14, "age": 34, "foot": "right", "height": 188, "weight": 81, "photo": "",
+    {"tid": 53, "name": "윌리엄 로빈슨", "nation": "잉글랜드", "club": "white", "grp": "subs", "pos": "RB", "num": 14, "age": 34, "foot": "right", "weakFoot": 3, "height": 188, "weight": 81, "photo": "",
      "fo": {
        "sprint": 57, "accel": 59, "finishing": 54, "shotPower": 49, "longShots": 57, "positioning": 44, "volleys": 46,
        "penalty": 55, "shortPass": 56, "vision": 49, "crossing": 63, "longPass": 54, "freekick": 56, "curve": 54,
@@ -434,7 +434,7 @@
        "interceptions": 63, "heading": 55, "slideTackle": 64, "strength": 56, "stamina": 63, "aggression": 44, "jump": 56, "composure": 48,
        "gkDiving": 14, "gkHandling": 16, "gkKick": 11, "gkReflex": 12, "gkPos": 13
      }},
-    {"tid": 54, "name": "마티아스 로페스", "nation": "아르헨티나", "club": "white", "grp": "subs", "pos": "CM", "num": 15, "age": 31, "foot": "left", "height": 188, "weight": 90, "photo": "",
+    {"tid": 54, "name": "마티아스 로페스", "nation": "아르헨티나", "club": "white", "grp": "subs", "pos": "CM", "num": 15, "age": 31, "foot": "left", "weakFoot": 2, "height": 188, "weight": 90, "photo": "",
      "fo": {
        "sprint": 57, "accel": 59, "finishing": 66, "shotPower": 46, "longShots": 64, "positioning": 64, "volleys": 54,
        "penalty": 46, "shortPass": 65, "vision": 59, "crossing": 48, "longPass": 63, "freekick": 58, "curve": 49,
@@ -442,7 +442,7 @@
        "interceptions": 62, "heading": 46, "slideTackle": 51, "strength": 49, "stamina": 64, "aggression": 58, "jump": 54, "composure": 48,
        "gkDiving": 8, "gkHandling": 10, "gkKick": 16, "gkReflex": 10, "gkPos": 14
      }},
-    {"tid": 55, "name": "홍우진", "nation": "대한민국", "club": "white", "grp": "subs", "pos": "CAM", "num": 16, "age": 30, "foot": "left", "height": 168, "weight": 62, "photo": "",
+    {"tid": 55, "name": "홍우진", "nation": "대한민국", "club": "white", "grp": "subs", "pos": "CAM", "num": 16, "age": 30, "foot": "left", "weakFoot": 3, "height": 168, "weight": 62, "photo": "",
      "fo": {
        "sprint": 58, "accel": 64, "finishing": 64, "shotPower": 48, "longShots": 60, "positioning": 67, "volleys": 59,
        "penalty": 51, "shortPass": 65, "vision": 66, "crossing": 48, "longPass": 66, "freekick": 56, "curve": 56,
@@ -450,7 +450,7 @@
        "interceptions": 56, "heading": 47, "slideTackle": 53, "strength": 60, "stamina": 50, "aggression": 58, "jump": 58, "composure": 59,
        "gkDiving": 17, "gkHandling": 16, "gkKick": 8, "gkReflex": 11, "gkPos": 18
      }},
-    {"tid": 56, "name": "잭 휴즈", "nation": "잉글랜드", "club": "white", "grp": "subs", "pos": "LW", "num": 17, "age": 23, "foot": "left", "height": 167, "weight": 60, "photo": "",
+    {"tid": 56, "name": "잭 휴즈", "nation": "잉글랜드", "club": "white", "grp": "subs", "pos": "LW", "num": 17, "age": 23, "foot": "left", "weakFoot": 4, "height": 167, "weight": 60, "photo": "",
      "fo": {
        "sprint": 61, "accel": 58, "finishing": 55, "shotPower": 45, "longShots": 59, "positioning": 61, "volleys": 47,
        "penalty": 56, "shortPass": 64, "vision": 62, "crossing": 54, "longPass": 56, "freekick": 50, "curve": 50,
@@ -458,7 +458,7 @@
        "interceptions": 44, "heading": 57, "slideTackle": 51, "strength": 43, "stamina": 45, "aggression": 45, "jump": 53, "composure": 46,
        "gkDiving": 18, "gkHandling": 9, "gkKick": 12, "gkReflex": 9, "gkPos": 8
      }},
-    {"tid": 57, "name": "조르조 리치", "nation": "이탈리아", "club": "white", "grp": "subs", "pos": "ST", "num": 18, "age": 20, "foot": "left", "height": 186, "weight": 87, "photo": "",
+    {"tid": 57, "name": "조르조 리치", "nation": "이탈리아", "club": "white", "grp": "subs", "pos": "ST", "num": 18, "age": 20, "foot": "left", "weakFoot": 2, "height": 186, "weight": 87, "photo": "",
      "fo": {
        "sprint": 66, "accel": 62, "finishing": 57, "shotPower": 58, "longShots": 57, "positioning": 61, "volleys": 65,
        "penalty": 50, "shortPass": 56, "vision": 52, "crossing": 48, "longPass": 43, "freekick": 50, "curve": 54,
@@ -466,7 +466,7 @@
        "interceptions": 47, "heading": 62, "slideTackle": 52, "strength": 55, "stamina": 49, "aggression": 44, "jump": 57, "composure": 51,
        "gkDiving": 15, "gkHandling": 15, "gkKick": 17, "gkReflex": 13, "gkPos": 12
      }},
-    {"tid": 58, "name": "루이스 가르시아", "nation": "스페인", "club": "white", "grp": "res", "pos": "LB", "num": 19, "age": 18, "foot": "left", "height": 179, "weight": 73, "photo": "",
+    {"tid": 58, "name": "루이스 가르시아", "nation": "스페인", "club": "white", "grp": "res", "pos": "LB", "num": 19, "age": 18, "foot": "left", "weakFoot": 2, "height": 179, "weight": 73, "photo": "",
      "fo": {
        "sprint": 51, "accel": 56, "finishing": 43, "shotPower": 53, "longShots": 40, "positioning": 44, "volleys": 47,
        "penalty": 40, "shortPass": 59, "vision": 39, "crossing": 57, "longPass": 49, "freekick": 44, "curve": 43,
@@ -474,7 +474,7 @@
        "interceptions": 57, "heading": 57, "slideTackle": 55, "strength": 47, "stamina": 60, "aggression": 53, "jump": 39, "composure": 42,
        "gkDiving": 12, "gkHandling": 18, "gkKick": 9, "gkReflex": 12, "gkPos": 9
      }},
-    {"tid": 59, "name": "다이키 야마모토", "nation": "일본", "club": "white", "grp": "res", "pos": "CDM", "num": 20, "age": 20, "foot": "right", "height": 175, "weight": 67, "photo": "",
+    {"tid": 59, "name": "다이키 야마모토", "nation": "일본", "club": "white", "grp": "res", "pos": "CDM", "num": 20, "age": 20, "foot": "right", "weakFoot": 4, "height": 175, "weight": 67, "photo": "",
      "fo": {
        "sprint": 45, "accel": 49, "finishing": 50, "shotPower": 44, "longShots": 49, "positioning": 42, "volleys": 50,
        "penalty": 41, "shortPass": 60, "vision": 56, "crossing": 48, "longPass": 54, "freekick": 47, "curve": 47,
@@ -482,7 +482,7 @@
        "interceptions": 58, "heading": 50, "slideTackle": 52, "strength": 59, "stamina": 60, "aggression": 61, "jump": 46, "composure": 52,
        "gkDiving": 9, "gkHandling": 13, "gkKick": 18, "gkReflex": 17, "gkPos": 18
      }},
-    {"tid": 60, "name": "아구스틴 로페스", "nation": "아르헨티나", "club": "black", "grp": "xi", "pos": "GK", "num": 1, "age": 21, "foot": "right", "height": 191, "weight": 85, "photo": "",
+    {"tid": 60, "name": "아구스틴 로페스", "nation": "아르헨티나", "club": "black", "grp": "xi", "pos": "GK", "num": 1, "age": 21, "foot": "right", "weakFoot": 4, "height": 191, "weight": 85, "photo": "",
      "fo": {
        "sprint": 43, "accel": 42, "finishing": 50, "shotPower": 41, "longShots": 53, "positioning": 46, "volleys": 48,
        "penalty": 42, "shortPass": 48, "vision": 45, "crossing": 39, "longPass": 47, "freekick": 39, "curve": 48,
@@ -490,7 +490,7 @@
        "interceptions": 40, "heading": 49, "slideTackle": 51, "strength": 41, "stamina": 53, "aggression": 40, "jump": 45, "composure": 43,
        "gkDiving": 68, "gkHandling": 70, "gkKick": 69, "gkReflex": 62, "gkPos": 68
      }},
-    {"tid": 61, "name": "서승민", "nation": "대한민국", "club": "black", "grp": "xi", "pos": "LB", "num": 2, "age": 23, "foot": "left", "height": 177, "weight": 79, "photo": "",
+    {"tid": 61, "name": "서승민", "nation": "대한민국", "club": "black", "grp": "xi", "pos": "LB", "num": 2, "age": 23, "foot": "left", "weakFoot": 2, "height": 177, "weight": 79, "photo": "",
      "fo": {
        "sprint": 61, "accel": 58, "finishing": 54, "shotPower": 59, "longShots": 48, "positioning": 50, "volleys": 58,
        "penalty": 49, "shortPass": 64, "vision": 46, "crossing": 64, "longPass": 51, "freekick": 59, "curve": 59,
@@ -498,7 +498,7 @@
        "interceptions": 61, "heading": 64, "slideTackle": 60, "strength": 51, "stamina": 61, "aggression": 50, "jump": 49, "composure": 48,
        "gkDiving": 16, "gkHandling": 9, "gkKick": 18, "gkReflex": 13, "gkPos": 10
      }},
-    {"tid": 62, "name": "펠릭스 마이어", "nation": "독일", "club": "black", "grp": "xi", "pos": "CB", "num": 3, "age": 30, "foot": "right", "height": 190, "weight": 81, "photo": "",
+    {"tid": 62, "name": "펠릭스 마이어", "nation": "독일", "club": "black", "grp": "xi", "pos": "CB", "num": 3, "age": 30, "foot": "right", "weakFoot": 3, "height": 190, "weight": 81, "photo": "",
      "fo": {
        "sprint": 63, "accel": 56, "finishing": 51, "shotPower": 57, "longShots": 48, "positioning": 55, "volleys": 58,
        "penalty": 57, "shortPass": 57, "vision": 53, "crossing": 55, "longPass": 59, "freekick": 51, "curve": 55,
@@ -506,7 +506,7 @@
        "interceptions": 64, "heading": 65, "slideTackle": 67, "strength": 68, "stamina": 60, "aggression": 67, "jump": 68, "composure": 54,
        "gkDiving": 8, "gkHandling": 15, "gkKick": 12, "gkReflex": 11, "gkPos": 12
      }},
-    {"tid": 63, "name": "니콜라스 로메로", "nation": "아르헨티나", "club": "black", "grp": "xi", "pos": "CB", "num": 4, "age": 27, "foot": "right", "height": 185, "weight": 82, "photo": "",
+    {"tid": 63, "name": "니콜라스 로메로", "nation": "아르헨티나", "club": "black", "grp": "xi", "pos": "CB", "num": 4, "age": 27, "foot": "right", "weakFoot": 3, "height": 185, "weight": 82, "photo": "",
      "fo": {
        "sprint": 73, "accel": 58, "finishing": 49, "shotPower": 54, "longShots": 58, "positioning": 56, "volleys": 63,
        "penalty": 61, "shortPass": 71, "vision": 60, "crossing": 50, "longPass": 55, "freekick": 58, "curve": 61,
@@ -514,7 +514,7 @@
        "interceptions": 68, "heading": 62, "slideTackle": 62, "strength": 69, "stamina": 51, "aggression": 67, "jump": 63, "composure": 53,
        "gkDiving": 16, "gkHandling": 12, "gkKick": 9, "gkReflex": 15, "gkPos": 18
      }},
-    {"tid": 64, "name": "켄토 야마모토", "nation": "일본", "club": "black", "grp": "xi", "pos": "RB", "num": 5, "age": 34, "foot": "right", "height": 181, "weight": 74, "photo": "",
+    {"tid": 64, "name": "켄토 야마모토", "nation": "일본", "club": "black", "grp": "xi", "pos": "RB", "num": 5, "age": 34, "foot": "right", "weakFoot": 3, "height": 181, "weight": 74, "photo": "",
      "fo": {
        "sprint": 65, "accel": 68, "finishing": 48, "shotPower": 50, "longShots": 61, "positioning": 59, "volleys": 49,
        "penalty": 49, "shortPass": 69, "vision": 52, "crossing": 64, "longPass": 61, "freekick": 55, "curve": 48,
@@ -522,7 +522,7 @@
        "interceptions": 61, "heading": 63, "slideTackle": 61, "strength": 50, "stamina": 67, "aggression": 61, "jump": 54, "composure": 52,
        "gkDiving": 17, "gkHandling": 15, "gkKick": 12, "gkReflex": 8, "gkPos": 15
      }},
-    {"tid": 65, "name": "조민준", "nation": "대한민국", "club": "black", "grp": "xi", "pos": "CDM", "num": 6, "age": 34, "foot": "right", "height": 173, "weight": 76, "photo": "",
+    {"tid": 65, "name": "조민준", "nation": "대한민국", "club": "black", "grp": "xi", "pos": "CDM", "num": 6, "age": 34, "foot": "right", "weakFoot": 3, "height": 173, "weight": 76, "photo": "",
      "fo": {
        "sprint": 50, "accel": 56, "finishing": 59, "shotPower": 54, "longShots": 51, "positioning": 56, "volleys": 58,
        "penalty": 46, "shortPass": 63, "vision": 62, "crossing": 47, "longPass": 64, "freekick": 57, "curve": 48,
@@ -530,7 +530,7 @@
        "interceptions": 62, "heading": 53, "slideTackle": 63, "strength": 61, "stamina": 65, "aggression": 67, "jump": 56, "composure": 54,
        "gkDiving": 17, "gkHandling": 12, "gkKick": 14, "gkReflex": 14, "gkPos": 15
      }},
-    {"tid": 66, "name": "레안드로 알바레스", "nation": "아르헨티나", "club": "black", "grp": "xi", "pos": "CM", "num": 7, "age": 19, "foot": "right", "height": 173, "weight": 75, "photo": "",
+    {"tid": 66, "name": "레안드로 알바레스", "nation": "아르헨티나", "club": "black", "grp": "xi", "pos": "CM", "num": 7, "age": 19, "foot": "right", "weakFoot": 2, "height": 173, "weight": 75, "photo": "",
      "fo": {
        "sprint": 64, "accel": 58, "finishing": 64, "shotPower": 59, "longShots": 74, "positioning": 65, "volleys": 64,
        "penalty": 54, "shortPass": 64, "vision": 67, "crossing": 59, "longPass": 65, "freekick": 63, "curve": 62,
@@ -538,7 +538,7 @@
        "interceptions": 72, "heading": 59, "slideTackle": 60, "strength": 63, "stamina": 71, "aggression": 57, "jump": 62, "composure": 61,
        "gkDiving": 16, "gkHandling": 15, "gkKick": 18, "gkReflex": 8, "gkPos": 15
      }},
-    {"tid": 67, "name": "마테오 바르가스", "nation": "스페인", "club": "black", "grp": "xi", "pos": "CM", "num": 8, "age": 28, "foot": "right", "height": 176, "weight": 76, "photo": "",
+    {"tid": 67, "name": "마테오 바르가스", "nation": "스페인", "club": "black", "grp": "xi", "pos": "CM", "num": 8, "age": 28, "foot": "right", "weakFoot": 3, "height": 176, "weight": 76, "photo": "",
      "fo": {
        "sprint": 47, "accel": 47, "finishing": 64, "shotPower": 54, "longShots": 58, "positioning": 66, "volleys": 59,
        "penalty": 50, "shortPass": 59, "vision": 62, "crossing": 49, "longPass": 68, "freekick": 51, "curve": 60,
@@ -546,7 +546,7 @@
        "interceptions": 65, "heading": 55, "slideTackle": 57, "strength": 56, "stamina": 62, "aggression": 55, "jump": 55, "composure": 54,
        "gkDiving": 11, "gkHandling": 10, "gkKick": 13, "gkReflex": 10, "gkPos": 16
      }},
-    {"tid": 68, "name": "펠리페 아라우주", "nation": "브라질", "club": "black", "grp": "xi", "pos": "LW", "num": 9, "age": 29, "foot": "left", "height": 180, "weight": 80, "photo": "",
+    {"tid": 68, "name": "펠리페 아라우주", "nation": "브라질", "club": "black", "grp": "xi", "pos": "LW", "num": 9, "age": 29, "foot": "left", "weakFoot": 2, "height": 180, "weight": 80, "photo": "",
      "fo": {
        "sprint": 62, "accel": 69, "finishing": 70, "shotPower": 62, "longShots": 65, "positioning": 67, "volleys": 64,
        "penalty": 52, "shortPass": 71, "vision": 64, "crossing": 71, "longPass": 60, "freekick": 57, "curve": 56,
@@ -554,7 +554,7 @@
        "interceptions": 59, "heading": 51, "slideTackle": 63, "strength": 55, "stamina": 51, "aggression": 64, "jump": 62, "composure": 59,
        "gkDiving": 18, "gkHandling": 17, "gkKick": 16, "gkReflex": 13, "gkPos": 11
      }},
-    {"tid": 69, "name": "송재윤", "nation": "대한민국", "club": "black", "grp": "xi", "pos": "ST", "num": 10, "age": 18, "foot": "right", "height": 181, "weight": 79, "photo": "",
+    {"tid": 69, "name": "송재윤", "nation": "대한민국", "club": "black", "grp": "xi", "pos": "ST", "num": 10, "age": 18, "foot": "right", "weakFoot": 3, "height": 181, "weight": 79, "photo": "",
      "fo": {
        "sprint": 63, "accel": 68, "finishing": 65, "shotPower": 59, "longShots": 63, "positioning": 67, "volleys": 63,
        "penalty": 57, "shortPass": 67, "vision": 51, "crossing": 48, "longPass": 62, "freekick": 61, "curve": 52,
@@ -562,7 +562,7 @@
        "interceptions": 48, "heading": 68, "slideTackle": 56, "strength": 70, "stamina": 61, "aggression": 48, "jump": 62, "composure": 53,
        "gkDiving": 18, "gkHandling": 15, "gkKick": 14, "gkReflex": 10, "gkPos": 13
      }},
-    {"tid": 70, "name": "시모네 로시", "nation": "이탈리아", "club": "black", "grp": "xi", "pos": "RW", "num": 11, "age": 31, "foot": "right", "height": 176, "weight": 78, "photo": "",
+    {"tid": 70, "name": "시모네 로시", "nation": "이탈리아", "club": "black", "grp": "xi", "pos": "RW", "num": 11, "age": 31, "foot": "right", "weakFoot": 4, "height": 176, "weight": 78, "photo": "",
      "fo": {
        "sprint": 60, "accel": 62, "finishing": 64, "shotPower": 51, "longShots": 64, "positioning": 67, "volleys": 60,
        "penalty": 58, "shortPass": 65, "vision": 67, "crossing": 62, "longPass": 47, "freekick": 49, "curve": 53,
@@ -570,7 +570,7 @@
        "interceptions": 56, "heading": 57, "slideTackle": 56, "strength": 61, "stamina": 61, "aggression": 50, "jump": 56, "composure": 47,
        "gkDiving": 10, "gkHandling": 11, "gkKick": 17, "gkReflex": 18, "gkPos": 13
      }},
-    {"tid": 71, "name": "잔루카 리치", "nation": "이탈리아", "club": "black", "grp": "subs", "pos": "GK", "num": 12, "age": 25, "foot": "right", "height": 194, "weight": 92, "photo": "",
+    {"tid": 71, "name": "잔루카 리치", "nation": "이탈리아", "club": "black", "grp": "subs", "pos": "GK", "num": 12, "age": 25, "foot": "right", "weakFoot": 3, "height": 194, "weight": 92, "photo": "",
      "fo": {
        "sprint": 35, "accel": 39, "finishing": 47, "shotPower": 41, "longShots": 38, "positioning": 46, "volleys": 44,
        "penalty": 37, "shortPass": 40, "vision": 40, "crossing": 38, "longPass": 35, "freekick": 35, "curve": 36,
@@ -578,7 +578,7 @@
        "interceptions": 39, "heading": 42, "slideTackle": 46, "strength": 43, "stamina": 40, "aggression": 43, "jump": 45, "composure": 36,
        "gkDiving": 63, "gkHandling": 61, "gkKick": 66, "gkReflex": 57, "gkPos": 66
      }},
-    {"tid": 72, "name": "카를로스 로페스", "nation": "스페인", "club": "black", "grp": "subs", "pos": "CB", "num": 13, "age": 32, "foot": "right", "height": 182, "weight": 82, "photo": "",
+    {"tid": 72, "name": "카를로스 로페스", "nation": "스페인", "club": "black", "grp": "subs", "pos": "CB", "num": 13, "age": 32, "foot": "right", "weakFoot": 2, "height": 182, "weight": 82, "photo": "",
      "fo": {
        "sprint": 63, "accel": 57, "finishing": 60, "shotPower": 48, "longShots": 59, "positioning": 58, "volleys": 53,
        "penalty": 55, "shortPass": 64, "vision": 49, "crossing": 57, "longPass": 60, "freekick": 56, "curve": 46,
@@ -586,7 +586,7 @@
        "interceptions": 68, "heading": 60, "slideTackle": 62, "strength": 58, "stamina": 56, "aggression": 68, "jump": 58, "composure": 60,
        "gkDiving": 9, "gkHandling": 12, "gkKick": 11, "gkReflex": 18, "gkPos": 18
      }},
-    {"tid": 73, "name": "윤현우", "nation": "대한민국", "club": "black", "grp": "subs", "pos": "RB", "num": 14, "age": 26, "foot": "right", "height": 177, "weight": 69, "photo": "",
+    {"tid": 73, "name": "윤현우", "nation": "대한민국", "club": "black", "grp": "subs", "pos": "RB", "num": 14, "age": 26, "foot": "right", "weakFoot": 2, "height": 177, "weight": 69, "photo": "",
      "fo": {
        "sprint": 64, "accel": 56, "finishing": 48, "shotPower": 44, "longShots": 56, "positioning": 56, "volleys": 46,
        "penalty": 48, "shortPass": 59, "vision": 53, "crossing": 65, "longPass": 50, "freekick": 49, "curve": 51,
@@ -594,7 +594,7 @@
        "interceptions": 63, "heading": 66, "slideTackle": 64, "strength": 47, "stamina": 63, "aggression": 54, "jump": 54, "composure": 56,
        "gkDiving": 11, "gkHandling": 16, "gkKick": 15, "gkReflex": 12, "gkPos": 15
      }},
-    {"tid": 74, "name": "한지호", "nation": "대한민국", "club": "black", "grp": "subs", "pos": "CM", "num": 15, "age": 23, "foot": "right", "height": 183, "weight": 85, "photo": "",
+    {"tid": 74, "name": "한지호", "nation": "대한민국", "club": "black", "grp": "subs", "pos": "CM", "num": 15, "age": 23, "foot": "right", "weakFoot": 3, "height": 183, "weight": 85, "photo": "",
      "fo": {
        "sprint": 58, "accel": 57, "finishing": 63, "shotPower": 48, "longShots": 57, "positioning": 66, "volleys": 55,
        "penalty": 45, "shortPass": 58, "vision": 65, "crossing": 58, "longPass": 57, "freekick": 44, "curve": 47,
@@ -602,7 +602,7 @@
        "interceptions": 56, "heading": 54, "slideTackle": 54, "strength": 46, "stamina": 65, "aggression": 56, "jump": 53, "composure": 52,
        "gkDiving": 14, "gkHandling": 17, "gkKick": 16, "gkReflex": 10, "gkPos": 9
      }},
-    {"tid": 75, "name": "마르코 루소", "nation": "이탈리아", "club": "black", "grp": "subs", "pos": "CAM", "num": 16, "age": 29, "foot": "left", "height": 178, "weight": 69, "photo": "",
+    {"tid": 75, "name": "마르코 루소", "nation": "이탈리아", "club": "black", "grp": "subs", "pos": "CAM", "num": 16, "age": 29, "foot": "left", "weakFoot": 3, "height": 178, "weight": 69, "photo": "",
      "fo": {
        "sprint": 57, "accel": 63, "finishing": 64, "shotPower": 45, "longShots": 64, "positioning": 64, "volleys": 45,
        "penalty": 52, "shortPass": 63, "vision": 58, "crossing": 56, "longPass": 66, "freekick": 47, "curve": 48,
@@ -610,7 +610,7 @@
        "interceptions": 47, "heading": 57, "slideTackle": 57, "strength": 56, "stamina": 53, "aggression": 52, "jump": 47, "composure": 46,
        "gkDiving": 14, "gkHandling": 14, "gkKick": 15, "gkReflex": 18, "gkPos": 14
      }},
-    {"tid": 76, "name": "김지환", "nation": "대한민국", "club": "black", "grp": "subs", "pos": "LW", "num": 17, "age": 18, "foot": "right", "height": 171, "weight": 68, "photo": "",
+    {"tid": 76, "name": "김지환", "nation": "대한민국", "club": "black", "grp": "subs", "pos": "LW", "num": 17, "age": 18, "foot": "right", "weakFoot": 5, "height": 171, "weight": 68, "photo": "",
      "fo": {
        "sprint": 68, "accel": 62, "finishing": 67, "shotPower": 47, "longShots": 68, "positioning": 57, "volleys": 54,
        "penalty": 54, "shortPass": 60, "vision": 60, "crossing": 58, "longPass": 48, "freekick": 47, "curve": 54,
@@ -618,7 +618,7 @@
        "interceptions": 50, "heading": 51, "slideTackle": 53, "strength": 46, "stamina": 52, "aggression": 47, "jump": 53, "composure": 54,
        "gkDiving": 9, "gkHandling": 10, "gkKick": 18, "gkReflex": 9, "gkPos": 15
      }},
-    {"tid": 77, "name": "페드루 알메이다", "nation": "브라질", "club": "black", "grp": "subs", "pos": "ST", "num": 18, "age": 21, "foot": "right", "height": 182, "weight": 74, "photo": "",
+    {"tid": 77, "name": "페드루 알메이다", "nation": "브라질", "club": "black", "grp": "subs", "pos": "ST", "num": 18, "age": 21, "foot": "right", "weakFoot": 4, "height": 182, "weight": 74, "photo": "",
      "fo": {
        "sprint": 61, "accel": 60, "finishing": 61, "shotPower": 59, "longShots": 62, "positioning": 63, "volleys": 60,
        "penalty": 49, "shortPass": 58, "vision": 55, "crossing": 55, "longPass": 57, "freekick": 56, "curve": 45,
@@ -626,7 +626,7 @@
        "interceptions": 44, "heading": 60, "slideTackle": 48, "strength": 63, "stamina": 49, "aggression": 54, "jump": 44, "composure": 50,
        "gkDiving": 17, "gkHandling": 15, "gkKick": 10, "gkReflex": 14, "gkPos": 8
      }},
-    {"tid": 78, "name": "토마스 휴즈", "nation": "잉글랜드", "club": "black", "grp": "res", "pos": "LB", "num": 19, "age": 30, "foot": "left", "height": 176, "weight": 69, "photo": "",
+    {"tid": 78, "name": "토마스 휴즈", "nation": "잉글랜드", "club": "black", "grp": "res", "pos": "LB", "num": 19, "age": 30, "foot": "left", "weakFoot": 2, "height": 176, "weight": 69, "photo": "",
      "fo": {
        "sprint": 63, "accel": 55, "finishing": 49, "shotPower": 56, "longShots": 51, "positioning": 45, "volleys": 45,
        "penalty": 45, "shortPass": 58, "vision": 48, "crossing": 61, "longPass": 43, "freekick": 48, "curve": 43,
@@ -634,7 +634,7 @@
        "interceptions": 56, "heading": 59, "slideTackle": 56, "strength": 49, "stamina": 62, "aggression": 44, "jump": 51, "composure": 44,
        "gkDiving": 15, "gkHandling": 15, "gkKick": 10, "gkReflex": 15, "gkPos": 18
      }},
-    {"tid": 79, "name": "윤연우", "nation": "대한민국", "club": "black", "grp": "res", "pos": "CDM", "num": 20, "age": 30, "foot": "right", "height": 176, "weight": 74, "photo": "",
+    {"tid": 79, "name": "윤연우", "nation": "대한민국", "club": "black", "grp": "res", "pos": "CDM", "num": 20, "age": 30, "foot": "right", "weakFoot": 2, "height": 176, "weight": 74, "photo": "",
      "fo": {
        "sprint": 44, "accel": 41, "finishing": 49, "shotPower": 39, "longShots": 42, "positioning": 44, "volleys": 46,
        "penalty": 42, "shortPass": 56, "vision": 54, "crossing": 38, "longPass": 58, "freekick": 39, "curve": 49,
@@ -642,7 +642,7 @@
        "interceptions": 57, "heading": 47, "slideTackle": 53, "strength": 56, "stamina": 57, "aggression": 51, "jump": 44, "composure": 42,
        "gkDiving": 14, "gkHandling": 16, "gkKick": 14, "gkReflex": 11, "gkPos": 8
      }},
-    {"tid": 80, "name": "메이슨 윌슨", "nation": "잉글랜드", "club": "green", "grp": "xi", "pos": "GK", "num": 1, "age": 30, "foot": "right", "height": 188, "weight": 85, "photo": "",
+    {"tid": 80, "name": "메이슨 윌슨", "nation": "잉글랜드", "club": "green", "grp": "xi", "pos": "GK", "num": 1, "age": 30, "foot": "right", "weakFoot": 3, "height": 188, "weight": 85, "photo": "",
      "fo": {
        "sprint": 40, "accel": 43, "finishing": 44, "shotPower": 49, "longShots": 38, "positioning": 37, "volleys": 41,
        "penalty": 41, "shortPass": 49, "vision": 44, "crossing": 41, "longPass": 48, "freekick": 43, "curve": 49,
@@ -650,7 +650,7 @@
        "interceptions": 50, "heading": 38, "slideTackle": 48, "strength": 42, "stamina": 38, "aggression": 42, "jump": 49, "composure": 37,
        "gkDiving": 69, "gkHandling": 70, "gkKick": 68, "gkReflex": 60, "gkPos": 63
      }},
-    {"tid": 81, "name": "올리버 존스", "nation": "잉글랜드", "club": "green", "grp": "xi", "pos": "LB", "num": 2, "age": 21, "foot": "left", "height": 178, "weight": 72, "photo": "",
+    {"tid": 81, "name": "올리버 존스", "nation": "잉글랜드", "club": "green", "grp": "xi", "pos": "LB", "num": 2, "age": 21, "foot": "left", "weakFoot": 2, "height": 178, "weight": 72, "photo": "",
      "fo": {
        "sprint": 61, "accel": 61, "finishing": 47, "shotPower": 54, "longShots": 49, "positioning": 52, "volleys": 54,
        "penalty": 56, "shortPass": 59, "vision": 58, "crossing": 67, "longPass": 46, "freekick": 50, "curve": 51,
@@ -658,7 +658,7 @@
        "interceptions": 66, "heading": 62, "slideTackle": 63, "strength": 48, "stamina": 58, "aggression": 47, "jump": 57, "composure": 47,
        "gkDiving": 8, "gkHandling": 17, "gkKick": 12, "gkReflex": 9, "gkPos": 13
      }},
-    {"tid": 82, "name": "올리버 라이트", "nation": "잉글랜드", "club": "green", "grp": "xi", "pos": "CB", "num": 3, "age": 19, "foot": "right", "height": 194, "weight": 85, "photo": "",
+    {"tid": 82, "name": "올리버 라이트", "nation": "잉글랜드", "club": "green", "grp": "xi", "pos": "CB", "num": 3, "age": 19, "foot": "right", "weakFoot": 3, "height": 194, "weight": 85, "photo": "",
      "fo": {
        "sprint": 67, "accel": 61, "finishing": 50, "shotPower": 58, "longShots": 50, "positioning": 50, "volleys": 61,
        "penalty": 50, "shortPass": 69, "vision": 59, "crossing": 52, "longPass": 56, "freekick": 59, "curve": 60,
@@ -666,7 +666,7 @@
        "interceptions": 61, "heading": 68, "slideTackle": 67, "strength": 68, "stamina": 54, "aggression": 61, "jump": 68, "composure": 52,
        "gkDiving": 8, "gkHandling": 10, "gkKick": 13, "gkReflex": 16, "gkPos": 15
      }},
-    {"tid": 83, "name": "주앙 산투스", "nation": "브라질", "club": "green", "grp": "xi", "pos": "CB", "num": 4, "age": 25, "foot": "right", "height": 188, "weight": 81, "photo": "",
+    {"tid": 83, "name": "주앙 산투스", "nation": "브라질", "club": "green", "grp": "xi", "pos": "CB", "num": 4, "age": 25, "foot": "right", "weakFoot": 2, "height": 188, "weight": 81, "photo": "",
      "fo": {
        "sprint": 64, "accel": 57, "finishing": 53, "shotPower": 55, "longShots": 56, "positioning": 51, "volleys": 59,
        "penalty": 61, "shortPass": 65, "vision": 53, "crossing": 49, "longPass": 54, "freekick": 54, "curve": 58,
@@ -674,7 +674,7 @@
        "interceptions": 66, "heading": 61, "slideTackle": 64, "strength": 69, "stamina": 60, "aggression": 71, "jump": 61, "composure": 58,
        "gkDiving": 10, "gkHandling": 9, "gkKick": 10, "gkReflex": 16, "gkPos": 13
      }},
-    {"tid": 84, "name": "황동현", "nation": "대한민국", "club": "green", "grp": "xi", "pos": "RB", "num": 5, "age": 23, "foot": "right", "height": 183, "weight": 73, "photo": "",
+    {"tid": 84, "name": "황동현", "nation": "대한민국", "club": "green", "grp": "xi", "pos": "RB", "num": 5, "age": 23, "foot": "right", "weakFoot": 3, "height": 183, "weight": 73, "photo": "",
      "fo": {
        "sprint": 68, "accel": 63, "finishing": 60, "shotPower": 49, "longShots": 59, "positioning": 62, "volleys": 54,
        "penalty": 62, "shortPass": 67, "vision": 53, "crossing": 65, "longPass": 53, "freekick": 50, "curve": 52,
@@ -682,7 +682,7 @@
        "interceptions": 66, "heading": 70, "slideTackle": 61, "strength": 57, "stamina": 64, "aggression": 59, "jump": 53, "composure": 49,
        "gkDiving": 11, "gkHandling": 12, "gkKick": 9, "gkReflex": 12, "gkPos": 15
      }},
-    {"tid": 85, "name": "바티스트 로베르", "nation": "프랑스", "club": "green", "grp": "xi", "pos": "CDM", "num": 6, "age": 32, "foot": "right", "height": 174, "weight": 72, "photo": "",
+    {"tid": 85, "name": "바티스트 로베르", "nation": "프랑스", "club": "green", "grp": "xi", "pos": "CDM", "num": 6, "age": 32, "foot": "right", "weakFoot": 2, "height": 174, "weight": 72, "photo": "",
      "fo": {
        "sprint": 50, "accel": 49, "finishing": 50, "shotPower": 50, "longShots": 54, "positioning": 56, "volleys": 49,
        "penalty": 48, "shortPass": 62, "vision": 61, "crossing": 46, "longPass": 59, "freekick": 60, "curve": 59,
@@ -690,7 +690,7 @@
        "interceptions": 60, "heading": 57, "slideTackle": 65, "strength": 67, "stamina": 69, "aggression": 62, "jump": 59, "composure": 46,
        "gkDiving": 14, "gkHandling": 11, "gkKick": 16, "gkReflex": 13, "gkPos": 9
      }},
-    {"tid": 86, "name": "황주원", "nation": "대한민국", "club": "green", "grp": "xi", "pos": "CM", "num": 7, "age": 22, "foot": "right", "height": 175, "weight": 64, "photo": "",
+    {"tid": 86, "name": "황주원", "nation": "대한민국", "club": "green", "grp": "xi", "pos": "CM", "num": 7, "age": 22, "foot": "right", "weakFoot": 2, "height": 175, "weight": 64, "photo": "",
      "fo": {
        "sprint": 59, "accel": 60, "finishing": 63, "shotPower": 52, "longShots": 60, "positioning": 62, "volleys": 60,
        "penalty": 61, "shortPass": 65, "vision": 61, "crossing": 53, "longPass": 63, "freekick": 47, "curve": 55,
@@ -698,7 +698,7 @@
        "interceptions": 69, "heading": 60, "slideTackle": 51, "strength": 53, "stamina": 61, "aggression": 52, "jump": 61, "composure": 54,
        "gkDiving": 18, "gkHandling": 12, "gkKick": 14, "gkReflex": 18, "gkPos": 18
      }},
-    {"tid": 87, "name": "페드루 올리베이라", "nation": "브라질", "club": "green", "grp": "xi", "pos": "CM", "num": 8, "age": 25, "foot": "left", "height": 174, "weight": 73, "photo": "",
+    {"tid": 87, "name": "페드루 올리베이라", "nation": "브라질", "club": "green", "grp": "xi", "pos": "CM", "num": 8, "age": 25, "foot": "left", "weakFoot": 3, "height": 174, "weight": 73, "photo": "",
      "fo": {
        "sprint": 53, "accel": 59, "finishing": 65, "shotPower": 57, "longShots": 61, "positioning": 64, "volleys": 57,
        "penalty": 49, "shortPass": 65, "vision": 65, "crossing": 53, "longPass": 58, "freekick": 49, "curve": 49,
@@ -706,7 +706,7 @@
        "interceptions": 58, "heading": 55, "slideTackle": 52, "strength": 53, "stamina": 57, "aggression": 55, "jump": 51, "composure": 58,
        "gkDiving": 18, "gkHandling": 10, "gkKick": 9, "gkReflex": 15, "gkPos": 12
      }},
-    {"tid": 88, "name": "페드루 호드리게스", "nation": "브라질", "club": "green", "grp": "xi", "pos": "LW", "num": 9, "age": 21, "foot": "left", "height": 177, "weight": 67, "photo": "",
+    {"tid": 88, "name": "페드루 호드리게스", "nation": "브라질", "club": "green", "grp": "xi", "pos": "LW", "num": 9, "age": 21, "foot": "left", "weakFoot": 4, "height": 177, "weight": 67, "photo": "",
      "fo": {
        "sprint": 65, "accel": 64, "finishing": 66, "shotPower": 58, "longShots": 62, "positioning": 67, "volleys": 56,
        "penalty": 50, "shortPass": 70, "vision": 70, "crossing": 69, "longPass": 52, "freekick": 52, "curve": 62,
@@ -714,7 +714,7 @@
        "interceptions": 50, "heading": 58, "slideTackle": 61, "strength": 62, "stamina": 50, "aggression": 49, "jump": 53, "composure": 51,
        "gkDiving": 16, "gkHandling": 13, "gkKick": 10, "gkReflex": 16, "gkPos": 11
      }},
-    {"tid": 89, "name": "카이토 다카하시", "nation": "일본", "club": "green", "grp": "xi", "pos": "ST", "num": 10, "age": 18, "foot": "right", "height": 190, "weight": 91, "photo": "",
+    {"tid": 89, "name": "카이토 다카하시", "nation": "일본", "club": "green", "grp": "xi", "pos": "ST", "num": 10, "age": 18, "foot": "right", "weakFoot": 3, "height": 190, "weight": 91, "photo": "",
      "fo": {
        "sprint": 67, "accel": 65, "finishing": 66, "shotPower": 69, "longShots": 65, "positioning": 62, "volleys": 66,
        "penalty": 53, "shortPass": 70, "vision": 63, "crossing": 56, "longPass": 61, "freekick": 56, "curve": 50,
@@ -722,7 +722,7 @@
        "interceptions": 61, "heading": 64, "slideTackle": 55, "strength": 69, "stamina": 54, "aggression": 49, "jump": 53, "composure": 53,
        "gkDiving": 14, "gkHandling": 12, "gkKick": 8, "gkReflex": 12, "gkPos": 8
      }},
-    {"tid": 90, "name": "마테우스 카르발류", "nation": "브라질", "club": "green", "grp": "xi", "pos": "RW", "num": 11, "age": 27, "foot": "left", "height": 179, "weight": 72, "photo": "",
+    {"tid": 90, "name": "마테우스 카르발류", "nation": "브라질", "club": "green", "grp": "xi", "pos": "RW", "num": 11, "age": 27, "foot": "left", "weakFoot": 3, "height": 179, "weight": 72, "photo": "",
      "fo": {
        "sprint": 63, "accel": 58, "finishing": 66, "shotPower": 54, "longShots": 62, "positioning": 65, "volleys": 48,
        "penalty": 50, "shortPass": 61, "vision": 67, "crossing": 64, "longPass": 60, "freekick": 52, "curve": 57,
@@ -730,7 +730,7 @@
        "interceptions": 48, "heading": 53, "slideTackle": 50, "strength": 51, "stamina": 58, "aggression": 53, "jump": 60, "composure": 47,
        "gkDiving": 12, "gkHandling": 17, "gkKick": 14, "gkReflex": 15, "gkPos": 11
      }},
-    {"tid": 91, "name": "레안드로 로메로", "nation": "아르헨티나", "club": "green", "grp": "subs", "pos": "GK", "num": 12, "age": 27, "foot": "right", "height": 187, "weight": 89, "photo": "",
+    {"tid": 91, "name": "레안드로 로메로", "nation": "아르헨티나", "club": "green", "grp": "subs", "pos": "GK", "num": 12, "age": 27, "foot": "right", "weakFoot": 3, "height": 187, "weight": 89, "photo": "",
      "fo": {
        "sprint": 42, "accel": 39, "finishing": 44, "shotPower": 47, "longShots": 46, "positioning": 40, "volleys": 45,
        "penalty": 45, "shortPass": 35, "vision": 42, "crossing": 45, "longPass": 34, "freekick": 34, "curve": 35,
@@ -738,7 +738,7 @@
        "interceptions": 47, "heading": 36, "slideTackle": 35, "strength": 35, "stamina": 38, "aggression": 38, "jump": 40, "composure": 46,
        "gkDiving": 64, "gkHandling": 61, "gkKick": 56, "gkReflex": 63, "gkPos": 63
      }},
-    {"tid": 92, "name": "마티스 베르나르", "nation": "프랑스", "club": "green", "grp": "subs", "pos": "CB", "num": 13, "age": 18, "foot": "right", "height": 183, "weight": 85, "photo": "",
+    {"tid": 92, "name": "마티스 베르나르", "nation": "프랑스", "club": "green", "grp": "subs", "pos": "CB", "num": 13, "age": 18, "foot": "right", "weakFoot": 3, "height": 183, "weight": 85, "photo": "",
      "fo": {
        "sprint": 61, "accel": 52, "finishing": 60, "shotPower": 58, "longShots": 60, "positioning": 49, "volleys": 55,
        "penalty": 60, "shortPass": 65, "vision": 56, "crossing": 55, "longPass": 51, "freekick": 48, "curve": 47,
@@ -746,7 +746,7 @@
        "interceptions": 67, "heading": 61, "slideTackle": 61, "strength": 66, "stamina": 57, "aggression": 64, "jump": 61, "composure": 48,
        "gkDiving": 15, "gkHandling": 14, "gkKick": 15, "gkReflex": 14, "gkPos": 14
      }},
-    {"tid": 93, "name": "하비에르 산체스", "nation": "스페인", "club": "green", "grp": "subs", "pos": "RB", "num": 14, "age": 28, "foot": "right", "height": 177, "weight": 78, "photo": "",
+    {"tid": 93, "name": "하비에르 산체스", "nation": "스페인", "club": "green", "grp": "subs", "pos": "RB", "num": 14, "age": 28, "foot": "right", "weakFoot": 3, "height": 177, "weight": 78, "photo": "",
      "fo": {
        "sprint": 59, "accel": 65, "finishing": 53, "shotPower": 45, "longShots": 45, "positioning": 52, "volleys": 53,
        "penalty": 44, "shortPass": 54, "vision": 45, "crossing": 57, "longPass": 43, "freekick": 54, "curve": 45,
@@ -754,7 +754,7 @@
        "interceptions": 55, "heading": 54, "slideTackle": 64, "strength": 44, "stamina": 64, "aggression": 52, "jump": 52, "composure": 47,
        "gkDiving": 17, "gkHandling": 10, "gkKick": 8, "gkReflex": 9, "gkPos": 16
      }},
-    {"tid": 94, "name": "서시우", "nation": "대한민국", "club": "green", "grp": "subs", "pos": "CM", "num": 15, "age": 21, "foot": "right", "height": 172, "weight": 65, "photo": "",
+    {"tid": 94, "name": "서시우", "nation": "대한민국", "club": "green", "grp": "subs", "pos": "CM", "num": 15, "age": 21, "foot": "right", "weakFoot": 5, "height": 172, "weight": 65, "photo": "",
      "fo": {
        "sprint": 54, "accel": 46, "finishing": 57, "shotPower": 47, "longShots": 55, "positioning": 58, "volleys": 46,
        "penalty": 50, "shortPass": 55, "vision": 63, "crossing": 49, "longPass": 60, "freekick": 51, "curve": 57,
@@ -762,7 +762,7 @@
        "interceptions": 64, "heading": 57, "slideTackle": 57, "strength": 44, "stamina": 64, "aggression": 45, "jump": 48, "composure": 50,
        "gkDiving": 18, "gkHandling": 14, "gkKick": 11, "gkReflex": 10, "gkPos": 10
      }},
-    {"tid": 95, "name": "안유준", "nation": "대한민국", "club": "green", "grp": "subs", "pos": "CAM", "num": 16, "age": 23, "foot": "left", "height": 173, "weight": 74, "photo": "",
+    {"tid": 95, "name": "안유준", "nation": "대한민국", "club": "green", "grp": "subs", "pos": "CAM", "num": 16, "age": 23, "foot": "left", "weakFoot": 2, "height": 173, "weight": 74, "photo": "",
      "fo": {
        "sprint": 62, "accel": 58, "finishing": 58, "shotPower": 53, "longShots": 59, "positioning": 64, "volleys": 44,
        "penalty": 55, "shortPass": 56, "vision": 60, "crossing": 49, "longPass": 58, "freekick": 46, "curve": 52,
@@ -770,7 +770,7 @@
        "interceptions": 46, "heading": 45, "slideTackle": 43, "strength": 53, "stamina": 44, "aggression": 44, "jump": 44, "composure": 56,
        "gkDiving": 16, "gkHandling": 16, "gkKick": 9, "gkReflex": 16, "gkPos": 8
      }},
-    {"tid": 96, "name": "시모네 리치", "nation": "이탈리아", "club": "green", "grp": "subs", "pos": "LW", "num": 17, "age": 22, "foot": "left", "height": 170, "weight": 68, "photo": "",
+    {"tid": 96, "name": "시모네 리치", "nation": "이탈리아", "club": "green", "grp": "subs", "pos": "LW", "num": 17, "age": 22, "foot": "left", "weakFoot": 3, "height": 170, "weight": 68, "photo": "",
      "fo": {
        "sprint": 64, "accel": 65, "finishing": 57, "shotPower": 55, "longShots": 60, "positioning": 62, "volleys": 48,
        "penalty": 48, "shortPass": 59, "vision": 57, "crossing": 63, "longPass": 51, "freekick": 49, "curve": 56,
@@ -778,7 +778,7 @@
        "interceptions": 49, "heading": 50, "slideTackle": 45, "strength": 51, "stamina": 52, "aggression": 52, "jump": 46, "composure": 57,
        "gkDiving": 16, "gkHandling": 18, "gkKick": 10, "gkReflex": 13, "gkPos": 9
      }},
-    {"tid": 97, "name": "송동현", "nation": "대한민국", "club": "green", "grp": "subs", "pos": "ST", "num": 18, "age": 21, "foot": "left", "height": 176, "weight": 73, "photo": "",
+    {"tid": 97, "name": "송동현", "nation": "대한민국", "club": "green", "grp": "subs", "pos": "ST", "num": 18, "age": 21, "foot": "left", "weakFoot": 5, "height": 176, "weight": 73, "photo": "",
      "fo": {
        "sprint": 63, "accel": 59, "finishing": 68, "shotPower": 69, "longShots": 60, "positioning": 59, "volleys": 68,
        "penalty": 47, "shortPass": 61, "vision": 50, "crossing": 61, "longPass": 49, "freekick": 57, "curve": 53,
@@ -786,7 +786,7 @@
        "interceptions": 53, "heading": 65, "slideTackle": 50, "strength": 68, "stamina": 58, "aggression": 61, "jump": 55, "composure": 54,
        "gkDiving": 8, "gkHandling": 15, "gkKick": 17, "gkReflex": 11, "gkPos": 15
      }},
-    {"tid": 98, "name": "황승현", "nation": "대한민국", "club": "green", "grp": "res", "pos": "LB", "num": 19, "age": 30, "foot": "left", "height": 179, "weight": 82, "photo": "",
+    {"tid": 98, "name": "황승현", "nation": "대한민국", "club": "green", "grp": "res", "pos": "LB", "num": 19, "age": 30, "foot": "left", "weakFoot": 4, "height": 179, "weight": 82, "photo": "",
      "fo": {
        "sprint": 61, "accel": 55, "finishing": 48, "shotPower": 49, "longShots": 44, "positioning": 55, "volleys": 47,
        "penalty": 51, "shortPass": 57, "vision": 54, "crossing": 60, "longPass": 43, "freekick": 54, "curve": 52,
@@ -794,7 +794,7 @@
        "interceptions": 56, "heading": 62, "slideTackle": 63, "strength": 43, "stamina": 62, "aggression": 42, "jump": 49, "composure": 51,
        "gkDiving": 10, "gkHandling": 9, "gkKick": 10, "gkReflex": 10, "gkPos": 13
      }},
-    {"tid": 99, "name": "아구스틴 페르난데스", "nation": "아르헨티나", "club": "green", "grp": "res", "pos": "CDM", "num": 20, "age": 25, "foot": "right", "height": 172, "weight": 72, "photo": "",
+    {"tid": 99, "name": "아구스틴 페르난데스", "nation": "아르헨티나", "club": "green", "grp": "res", "pos": "CDM", "num": 20, "age": 25, "foot": "right", "weakFoot": 3, "height": 172, "weight": 72, "photo": "",
      "fo": {
        "sprint": 44, "accel": 51, "finishing": 39, "shotPower": 46, "longShots": 42, "positioning": 39, "volleys": 45,
        "penalty": 50, "shortPass": 54, "vision": 62, "crossing": 50, "longPass": 58, "freekick": 53, "curve": 46,
@@ -802,7 +802,7 @@
        "interceptions": 51, "heading": 48, "slideTackle": 52, "strength": 61, "stamina": 51, "aggression": 56, "jump": 41, "composure": 51,
        "gkDiving": 9, "gkHandling": 16, "gkKick": 12, "gkReflex": 17, "gkPos": 18
      }},
-    {"tid": 100, "name": "조태윤", "nation": "대한민국", "club": "orange", "grp": "xi", "pos": "GK", "num": 1, "age": 26, "foot": "right", "height": 192, "weight": 91, "photo": "",
+    {"tid": 100, "name": "조태윤", "nation": "대한민국", "club": "orange", "grp": "xi", "pos": "GK", "num": 1, "age": 26, "foot": "right", "weakFoot": 2, "height": 192, "weight": 91, "photo": "",
      "fo": {
        "sprint": 52, "accel": 50, "finishing": 42, "shotPower": 46, "longShots": 50, "positioning": 51, "volleys": 50,
        "penalty": 42, "shortPass": 51, "vision": 39, "crossing": 46, "longPass": 44, "freekick": 50, "curve": 39,
@@ -810,7 +810,7 @@
        "interceptions": 50, "heading": 40, "slideTackle": 47, "strength": 45, "stamina": 50, "aggression": 49, "jump": 44, "composure": 48,
        "gkDiving": 67, "gkHandling": 69, "gkKick": 68, "gkReflex": 63, "gkPos": 69
      }},
-    {"tid": 101, "name": "위고 프티", "nation": "프랑스", "club": "orange", "grp": "xi", "pos": "LB", "num": 2, "age": 27, "foot": "left", "height": 172, "weight": 71, "photo": "",
+    {"tid": 101, "name": "위고 프티", "nation": "프랑스", "club": "orange", "grp": "xi", "pos": "LB", "num": 2, "age": 27, "foot": "left", "weakFoot": 3, "height": 172, "weight": 71, "photo": "",
      "fo": {
        "sprint": 61, "accel": 59, "finishing": 57, "shotPower": 58, "longShots": 50, "positioning": 56, "volleys": 48,
        "penalty": 47, "shortPass": 60, "vision": 58, "crossing": 63, "longPass": 50, "freekick": 57, "curve": 54,
@@ -818,7 +818,7 @@
        "interceptions": 61, "heading": 68, "slideTackle": 68, "strength": 48, "stamina": 60, "aggression": 48, "jump": 49, "composure": 52,
        "gkDiving": 9, "gkHandling": 9, "gkKick": 8, "gkReflex": 17, "gkPos": 13
      }},
-    {"tid": 102, "name": "리카르도 비안키", "nation": "이탈리아", "club": "orange", "grp": "xi", "pos": "CB", "num": 3, "age": 25, "foot": "right", "height": 187, "weight": 76, "photo": "",
+    {"tid": 102, "name": "리카르도 비안키", "nation": "이탈리아", "club": "orange", "grp": "xi", "pos": "CB", "num": 3, "age": 25, "foot": "right", "weakFoot": 3, "height": 187, "weight": 76, "photo": "",
      "fo": {
        "sprint": 73, "accel": 55, "finishing": 56, "shotPower": 59, "longShots": 53, "positioning": 51, "volleys": 62,
        "penalty": 60, "shortPass": 69, "vision": 50, "crossing": 58, "longPass": 59, "freekick": 53, "curve": 63,
@@ -826,7 +826,7 @@
        "interceptions": 68, "heading": 64, "slideTackle": 65, "strength": 64, "stamina": 61, "aggression": 63, "jump": 67, "composure": 61,
        "gkDiving": 15, "gkHandling": 14, "gkKick": 12, "gkReflex": 14, "gkPos": 14
      }},
-    {"tid": 103, "name": "안드레 고메스", "nation": "브라질", "club": "orange", "grp": "xi", "pos": "CB", "num": 4, "age": 27, "foot": "right", "height": 192, "weight": 87, "photo": "",
+    {"tid": 103, "name": "안드레 고메스", "nation": "브라질", "club": "orange", "grp": "xi", "pos": "CB", "num": 4, "age": 27, "foot": "right", "weakFoot": 4, "height": 192, "weight": 87, "photo": "",
      "fo": {
        "sprint": 61, "accel": 52, "finishing": 46, "shotPower": 53, "longShots": 56, "positioning": 55, "volleys": 46,
        "penalty": 54, "shortPass": 58, "vision": 52, "crossing": 54, "longPass": 47, "freekick": 57, "curve": 54,
@@ -834,7 +834,7 @@
        "interceptions": 68, "heading": 66, "slideTackle": 65, "strength": 68, "stamina": 50, "aggression": 60, "jump": 67, "composure": 54,
        "gkDiving": 8, "gkHandling": 15, "gkKick": 16, "gkReflex": 8, "gkPos": 16
      }},
-    {"tid": 104, "name": "레온 리히터", "nation": "독일", "club": "orange", "grp": "xi", "pos": "RB", "num": 5, "age": 25, "foot": "right", "height": 182, "weight": 73, "photo": "",
+    {"tid": 104, "name": "레온 리히터", "nation": "독일", "club": "orange", "grp": "xi", "pos": "RB", "num": 5, "age": 25, "foot": "right", "weakFoot": 4, "height": 182, "weight": 73, "photo": "",
      "fo": {
        "sprint": 61, "accel": 66, "finishing": 59, "shotPower": 54, "longShots": 49, "positioning": 52, "volleys": 55,
        "penalty": 59, "shortPass": 62, "vision": 50, "crossing": 62, "longPass": 53, "freekick": 60, "curve": 55,
@@ -842,7 +842,7 @@
        "interceptions": 67, "heading": 63, "slideTackle": 65, "strength": 61, "stamina": 62, "aggression": 61, "jump": 55, "composure": 50,
        "gkDiving": 16, "gkHandling": 18, "gkKick": 13, "gkReflex": 10, "gkPos": 11
      }},
-    {"tid": 105, "name": "에세키엘 로메로", "nation": "아르헨티나", "club": "orange", "grp": "xi", "pos": "CDM", "num": 6, "age": 33, "foot": "right", "height": 184, "weight": 77, "photo": "",
+    {"tid": 105, "name": "에세키엘 로메로", "nation": "아르헨티나", "club": "orange", "grp": "xi", "pos": "CDM", "num": 6, "age": 33, "foot": "right", "weakFoot": 4, "height": 184, "weight": 77, "photo": "",
      "fo": {
        "sprint": 54, "accel": 58, "finishing": 56, "shotPower": 48, "longShots": 48, "positioning": 60, "volleys": 52,
        "penalty": 58, "shortPass": 57, "vision": 67, "crossing": 54, "longPass": 67, "freekick": 48, "curve": 56,
@@ -850,7 +850,7 @@
        "interceptions": 66, "heading": 57, "slideTackle": 64, "strength": 65, "stamina": 61, "aggression": 58, "jump": 51, "composure": 54,
        "gkDiving": 11, "gkHandling": 9, "gkKick": 10, "gkReflex": 17, "gkPos": 18
      }},
-    {"tid": 106, "name": "페데리코 그레코", "nation": "이탈리아", "club": "orange", "grp": "xi", "pos": "CM", "num": 7, "age": 18, "foot": "right", "height": 173, "weight": 67, "photo": "",
+    {"tid": 106, "name": "페데리코 그레코", "nation": "이탈리아", "club": "orange", "grp": "xi", "pos": "CM", "num": 7, "age": 18, "foot": "right", "weakFoot": 3, "height": 173, "weight": 67, "photo": "",
      "fo": {
        "sprint": 56, "accel": 53, "finishing": 67, "shotPower": 58, "longShots": 69, "positioning": 66, "volleys": 55,
        "penalty": 64, "shortPass": 70, "vision": 70, "crossing": 64, "longPass": 61, "freekick": 58, "curve": 50,
@@ -858,7 +858,7 @@
        "interceptions": 66, "heading": 50, "slideTackle": 62, "strength": 57, "stamina": 66, "aggression": 51, "jump": 57, "composure": 51,
        "gkDiving": 17, "gkHandling": 14, "gkKick": 17, "gkReflex": 18, "gkPos": 9
      }},
-    {"tid": 107, "name": "마티아스 페르난데스", "nation": "아르헨티나", "club": "orange", "grp": "xi", "pos": "CM", "num": 8, "age": 32, "foot": "right", "height": 185, "weight": 80, "photo": "",
+    {"tid": 107, "name": "마티아스 페르난데스", "nation": "아르헨티나", "club": "orange", "grp": "xi", "pos": "CM", "num": 8, "age": 32, "foot": "right", "weakFoot": 2, "height": 185, "weight": 80, "photo": "",
      "fo": {
        "sprint": 60, "accel": 49, "finishing": 59, "shotPower": 52, "longShots": 60, "positioning": 61, "volleys": 52,
        "penalty": 58, "shortPass": 63, "vision": 64, "crossing": 55, "longPass": 61, "freekick": 52, "curve": 49,
@@ -866,7 +866,7 @@
        "interceptions": 67, "heading": 47, "slideTackle": 47, "strength": 52, "stamina": 67, "aggression": 57, "jump": 50, "composure": 55,
        "gkDiving": 10, "gkHandling": 11, "gkKick": 9, "gkReflex": 16, "gkPos": 8
      }},
-    {"tid": 108, "name": "라울 에레라", "nation": "스페인", "club": "orange", "grp": "xi", "pos": "LW", "num": 9, "age": 31, "foot": "right", "height": 169, "weight": 69, "photo": "",
+    {"tid": 108, "name": "라울 에레라", "nation": "스페인", "club": "orange", "grp": "xi", "pos": "LW", "num": 9, "age": 31, "foot": "right", "weakFoot": 3, "height": 169, "weight": 69, "photo": "",
      "fo": {
        "sprint": 65, "accel": 67, "finishing": 70, "shotPower": 54, "longShots": 67, "positioning": 65, "volleys": 63,
        "penalty": 63, "shortPass": 69, "vision": 63, "crossing": 62, "longPass": 63, "freekick": 51, "curve": 64,
@@ -874,7 +874,7 @@
        "interceptions": 53, "heading": 50, "slideTackle": 61, "strength": 54, "stamina": 64, "aggression": 51, "jump": 64, "composure": 53,
        "gkDiving": 18, "gkHandling": 12, "gkKick": 9, "gkReflex": 14, "gkPos": 17
      }},
-    {"tid": 109, "name": "케빈 슐츠", "nation": "독일", "club": "orange", "grp": "xi", "pos": "ST", "num": 10, "age": 20, "foot": "right", "height": 188, "weight": 85, "photo": "",
+    {"tid": 109, "name": "케빈 슐츠", "nation": "독일", "club": "orange", "grp": "xi", "pos": "ST", "num": 10, "age": 20, "foot": "right", "weakFoot": 5, "height": 188, "weight": 85, "photo": "",
      "fo": {
        "sprint": 65, "accel": 65, "finishing": 66, "shotPower": 67, "longShots": 74, "positioning": 65, "volleys": 69,
        "penalty": 55, "shortPass": 71, "vision": 64, "crossing": 54, "longPass": 55, "freekick": 59, "curve": 60,
@@ -882,7 +882,7 @@
        "interceptions": 59, "heading": 65, "slideTackle": 60, "strength": 73, "stamina": 62, "aggression": 52, "jump": 51, "composure": 52,
        "gkDiving": 11, "gkHandling": 9, "gkKick": 9, "gkReflex": 9, "gkPos": 8
      }},
-    {"tid": 110, "name": "정연우", "nation": "대한민국", "club": "orange", "grp": "xi", "pos": "RW", "num": 11, "age": 19, "foot": "left", "height": 173, "weight": 75, "photo": "",
+    {"tid": 110, "name": "정연우", "nation": "대한민국", "club": "orange", "grp": "xi", "pos": "RW", "num": 11, "age": 19, "foot": "left", "weakFoot": 4, "height": 173, "weight": 75, "photo": "",
      "fo": {
        "sprint": 62, "accel": 69, "finishing": 66, "shotPower": 55, "longShots": 63, "positioning": 62, "volleys": 59,
        "penalty": 60, "shortPass": 66, "vision": 60, "crossing": 67, "longPass": 61, "freekick": 59, "curve": 59,
@@ -890,7 +890,7 @@
        "interceptions": 57, "heading": 58, "slideTackle": 48, "strength": 57, "stamina": 60, "aggression": 52, "jump": 54, "composure": 58,
        "gkDiving": 11, "gkHandling": 14, "gkKick": 16, "gkReflex": 12, "gkPos": 9
      }},
-    {"tid": 111, "name": "테오 프티", "nation": "프랑스", "club": "orange", "grp": "subs", "pos": "GK", "num": 12, "age": 28, "foot": "right", "height": 194, "weight": 91, "photo": "",
+    {"tid": 111, "name": "테오 프티", "nation": "프랑스", "club": "orange", "grp": "subs", "pos": "GK", "num": 12, "age": 28, "foot": "right", "weakFoot": 3, "height": 194, "weight": 91, "photo": "",
      "fo": {
        "sprint": 41, "accel": 39, "finishing": 34, "shotPower": 34, "longShots": 45, "positioning": 33, "volleys": 31,
        "penalty": 31, "shortPass": 35, "vision": 36, "crossing": 34, "longPass": 36, "freekick": 31, "curve": 41,
@@ -898,7 +898,7 @@
        "interceptions": 35, "heading": 42, "slideTackle": 40, "strength": 42, "stamina": 35, "aggression": 37, "jump": 39, "composure": 33,
        "gkDiving": 61, "gkHandling": 54, "gkKick": 56, "gkReflex": 63, "gkPos": 61
      }},
-    {"tid": 112, "name": "바티스트 프티", "nation": "프랑스", "club": "orange", "grp": "subs", "pos": "CB", "num": 13, "age": 24, "foot": "left", "height": 186, "weight": 79, "photo": "",
+    {"tid": 112, "name": "바티스트 프티", "nation": "프랑스", "club": "orange", "grp": "subs", "pos": "CB", "num": 13, "age": 24, "foot": "left", "weakFoot": 3, "height": 186, "weight": 79, "photo": "",
      "fo": {
        "sprint": 56, "accel": 56, "finishing": 56, "shotPower": 50, "longShots": 57, "positioning": 48, "volleys": 47,
        "penalty": 54, "shortPass": 62, "vision": 50, "crossing": 58, "longPass": 57, "freekick": 46, "curve": 54,
@@ -906,7 +906,7 @@
        "interceptions": 62, "heading": 62, "slideTackle": 60, "strength": 58, "stamina": 59, "aggression": 64, "jump": 63, "composure": 46,
        "gkDiving": 17, "gkHandling": 13, "gkKick": 16, "gkReflex": 12, "gkPos": 17
      }},
-    {"tid": 113, "name": "홍민재", "nation": "대한민국", "club": "orange", "grp": "subs", "pos": "RB", "num": 14, "age": 31, "foot": "right", "height": 185, "weight": 75, "photo": "",
+    {"tid": 113, "name": "홍민재", "nation": "대한민국", "club": "orange", "grp": "subs", "pos": "RB", "num": 14, "age": 31, "foot": "right", "weakFoot": 3, "height": 185, "weight": 75, "photo": "",
      "fo": {
        "sprint": 55, "accel": 55, "finishing": 56, "shotPower": 49, "longShots": 53, "positioning": 52, "volleys": 48,
        "penalty": 46, "shortPass": 61, "vision": 46, "crossing": 56, "longPass": 48, "freekick": 47, "curve": 50,
@@ -914,7 +914,7 @@
        "interceptions": 64, "heading": 56, "slideTackle": 65, "strength": 45, "stamina": 63, "aggression": 57, "jump": 53, "composure": 43,
        "gkDiving": 13, "gkHandling": 11, "gkKick": 18, "gkReflex": 10, "gkPos": 12
      }},
-    {"tid": 114, "name": "에베르통 바르보자", "nation": "브라질", "club": "orange", "grp": "subs", "pos": "CM", "num": 15, "age": 27, "foot": "left", "height": 180, "weight": 73, "photo": "",
+    {"tid": 114, "name": "에베르통 바르보자", "nation": "브라질", "club": "orange", "grp": "subs", "pos": "CM", "num": 15, "age": 27, "foot": "left", "weakFoot": 2, "height": 180, "weight": 73, "photo": "",
      "fo": {
        "sprint": 53, "accel": 56, "finishing": 65, "shotPower": 45, "longShots": 58, "positioning": 61, "volleys": 44,
        "penalty": 49, "shortPass": 61, "vision": 60, "crossing": 56, "longPass": 59, "freekick": 44, "curve": 54,
@@ -922,7 +922,7 @@
        "interceptions": 55, "heading": 53, "slideTackle": 52, "strength": 54, "stamina": 64, "aggression": 57, "jump": 54, "composure": 52,
        "gkDiving": 9, "gkHandling": 13, "gkKick": 11, "gkReflex": 17, "gkPos": 13
      }},
-    {"tid": 115, "name": "페드루 아라우주", "nation": "브라질", "club": "orange", "grp": "subs", "pos": "CAM", "num": 16, "age": 18, "foot": "right", "height": 179, "weight": 81, "photo": "",
+    {"tid": 115, "name": "페드루 아라우주", "nation": "브라질", "club": "orange", "grp": "subs", "pos": "CAM", "num": 16, "age": 18, "foot": "right", "weakFoot": 2, "height": 179, "weight": 81, "photo": "",
      "fo": {
        "sprint": 61, "accel": 60, "finishing": 57, "shotPower": 49, "longShots": 58, "positioning": 59, "volleys": 57,
        "penalty": 47, "shortPass": 56, "vision": 58, "crossing": 49, "longPass": 60, "freekick": 51, "curve": 44,
@@ -930,7 +930,7 @@
        "interceptions": 49, "heading": 53, "slideTackle": 55, "strength": 53, "stamina": 57, "aggression": 53, "jump": 48, "composure": 49,
        "gkDiving": 10, "gkHandling": 18, "gkKick": 8, "gkReflex": 17, "gkPos": 16
      }},
-    {"tid": 116, "name": "송은우", "nation": "대한민국", "club": "orange", "grp": "subs", "pos": "LW", "num": 17, "age": 20, "foot": "right", "height": 172, "weight": 64, "photo": "",
+    {"tid": 116, "name": "송은우", "nation": "대한민국", "club": "orange", "grp": "subs", "pos": "LW", "num": 17, "age": 20, "foot": "right", "weakFoot": 2, "height": 172, "weight": 64, "photo": "",
      "fo": {
        "sprint": 62, "accel": 55, "finishing": 61, "shotPower": 53, "longShots": 61, "positioning": 62, "volleys": 46,
        "penalty": 58, "shortPass": 64, "vision": 57, "crossing": 64, "longPass": 46, "freekick": 47, "curve": 48,
@@ -938,7 +938,7 @@
        "interceptions": 57, "heading": 50, "slideTackle": 44, "strength": 52, "stamina": 55, "aggression": 51, "jump": 47, "composure": 54,
        "gkDiving": 18, "gkHandling": 11, "gkKick": 10, "gkReflex": 16, "gkPos": 16
      }},
-    {"tid": 117, "name": "한유준", "nation": "대한민국", "club": "orange", "grp": "subs", "pos": "ST", "num": 18, "age": 25, "foot": "left", "height": 187, "weight": 82, "photo": "",
+    {"tid": 117, "name": "한유준", "nation": "대한민국", "club": "orange", "grp": "subs", "pos": "ST", "num": 18, "age": 25, "foot": "left", "weakFoot": 3, "height": 187, "weight": 82, "photo": "",
      "fo": {
        "sprint": 60, "accel": 63, "finishing": 65, "shotPower": 68, "longShots": 66, "positioning": 61, "volleys": 59,
        "penalty": 55, "shortPass": 59, "vision": 60, "crossing": 58, "longPass": 59, "freekick": 48, "curve": 47,
@@ -946,7 +946,7 @@
        "interceptions": 58, "heading": 68, "slideTackle": 48, "strength": 66, "stamina": 60, "aggression": 58, "jump": 54, "composure": 53,
        "gkDiving": 16, "gkHandling": 13, "gkKick": 13, "gkReflex": 17, "gkPos": 10
      }},
-    {"tid": 118, "name": "테오 르루아", "nation": "프랑스", "club": "orange", "grp": "res", "pos": "LB", "num": 19, "age": 19, "foot": "left", "height": 181, "weight": 70, "photo": "",
+    {"tid": 118, "name": "테오 르루아", "nation": "프랑스", "club": "orange", "grp": "res", "pos": "LB", "num": 19, "age": 19, "foot": "left", "weakFoot": 5, "height": 181, "weight": 70, "photo": "",
      "fo": {
        "sprint": 59, "accel": 56, "finishing": 40, "shotPower": 50, "longShots": 40, "positioning": 51, "volleys": 49,
        "penalty": 40, "shortPass": 57, "vision": 54, "crossing": 57, "longPass": 41, "freekick": 44, "curve": 54,
@@ -954,7 +954,7 @@
        "interceptions": 63, "heading": 56, "slideTackle": 56, "strength": 52, "stamina": 54, "aggression": 51, "jump": 53, "composure": 48,
        "gkDiving": 8, "gkHandling": 17, "gkKick": 14, "gkReflex": 9, "gkPos": 15
      }},
-    {"tid": 119, "name": "위고 뒤부아", "nation": "프랑스", "club": "orange", "grp": "res", "pos": "CDM", "num": 20, "age": 26, "foot": "right", "height": 179, "weight": 71, "photo": "",
+    {"tid": 119, "name": "위고 뒤부아", "nation": "프랑스", "club": "orange", "grp": "res", "pos": "CDM", "num": 20, "age": 26, "foot": "right", "weakFoot": 5, "height": 179, "weight": 71, "photo": "",
      "fo": {
        "sprint": 48, "accel": 43, "finishing": 41, "shotPower": 47, "longShots": 40, "positioning": 51, "volleys": 43,
        "penalty": 39, "shortPass": 51, "vision": 50, "crossing": 40, "longPass": 58, "freekick": 47, "curve": 43,
@@ -962,7 +962,7 @@
        "interceptions": 58, "heading": 39, "slideTackle": 60, "strength": 59, "stamina": 53, "aggression": 55, "jump": 45, "composure": 51,
        "gkDiving": 13, "gkHandling": 14, "gkKick": 8, "gkReflex": 8, "gkPos": 17
      }},
-    {"tid": 120, "name": "파블로 카스티요", "nation": "스페인", "club": "yellow", "grp": "xi", "pos": "GK", "num": 1, "age": 25, "foot": "right", "height": 189, "weight": 87, "photo": "",
+    {"tid": 120, "name": "파블로 카스티요", "nation": "스페인", "club": "yellow", "grp": "xi", "pos": "GK", "num": 1, "age": 25, "foot": "right", "weakFoot": 3, "height": 189, "weight": 87, "photo": "",
      "fo": {
        "sprint": 42, "accel": 41, "finishing": 46, "shotPower": 43, "longShots": 39, "positioning": 43, "volleys": 48,
        "penalty": 47, "shortPass": 49, "vision": 42, "crossing": 48, "longPass": 44, "freekick": 37, "curve": 42,
@@ -970,7 +970,7 @@
        "interceptions": 45, "heading": 42, "slideTackle": 45, "strength": 39, "stamina": 45, "aggression": 36, "jump": 46, "composure": 50,
        "gkDiving": 62, "gkHandling": 64, "gkKick": 66, "gkReflex": 66, "gkPos": 64
      }},
-    {"tid": 121, "name": "켄토 사토", "nation": "일본", "club": "yellow", "grp": "xi", "pos": "LB", "num": 2, "age": 29, "foot": "left", "height": 187, "weight": 77, "photo": "",
+    {"tid": 121, "name": "켄토 사토", "nation": "일본", "club": "yellow", "grp": "xi", "pos": "LB", "num": 2, "age": 29, "foot": "left", "weakFoot": 3, "height": 187, "weight": 77, "photo": "",
      "fo": {
        "sprint": 61, "accel": 63, "finishing": 46, "shotPower": 53, "longShots": 54, "positioning": 55, "volleys": 58,
        "penalty": 47, "shortPass": 60, "vision": 55, "crossing": 67, "longPass": 58, "freekick": 47, "curve": 55,
@@ -978,7 +978,7 @@
        "interceptions": 68, "heading": 66, "slideTackle": 64, "strength": 48, "stamina": 58, "aggression": 53, "jump": 53, "composure": 48,
        "gkDiving": 8, "gkHandling": 14, "gkKick": 18, "gkReflex": 8, "gkPos": 13
      }},
-    {"tid": 122, "name": "최도윤", "nation": "대한민국", "club": "yellow", "grp": "xi", "pos": "CB", "num": 3, "age": 27, "foot": "left", "height": 189, "weight": 80, "photo": "",
+    {"tid": 122, "name": "최도윤", "nation": "대한민국", "club": "yellow", "grp": "xi", "pos": "CB", "num": 3, "age": 27, "foot": "left", "weakFoot": 3, "height": 189, "weight": 80, "photo": "",
      "fo": {
        "sprint": 62, "accel": 48, "finishing": 47, "shotPower": 49, "longShots": 48, "positioning": 55, "volleys": 55,
        "penalty": 52, "shortPass": 59, "vision": 61, "crossing": 60, "longPass": 51, "freekick": 57, "curve": 51,
@@ -986,7 +986,7 @@
        "interceptions": 66, "heading": 63, "slideTackle": 62, "strength": 66, "stamina": 51, "aggression": 62, "jump": 66, "composure": 51,
        "gkDiving": 12, "gkHandling": 17, "gkKick": 16, "gkReflex": 14, "gkPos": 11
      }},
-    {"tid": 123, "name": "팀 바그너", "nation": "독일", "club": "yellow", "grp": "xi", "pos": "CB", "num": 4, "age": 27, "foot": "right", "height": 185, "weight": 83, "photo": "",
+    {"tid": 123, "name": "팀 바그너", "nation": "독일", "club": "yellow", "grp": "xi", "pos": "CB", "num": 4, "age": 27, "foot": "right", "weakFoot": 4, "height": 185, "weight": 83, "photo": "",
      "fo": {
        "sprint": 64, "accel": 53, "finishing": 51, "shotPower": 55, "longShots": 50, "positioning": 49, "volleys": 50,
        "penalty": 46, "shortPass": 61, "vision": 49, "crossing": 60, "longPass": 51, "freekick": 60, "curve": 49,
@@ -994,7 +994,7 @@
        "interceptions": 63, "heading": 60, "slideTackle": 69, "strength": 69, "stamina": 48, "aggression": 60, "jump": 62, "composure": 47,
        "gkDiving": 11, "gkHandling": 18, "gkKick": 8, "gkReflex": 9, "gkPos": 18
      }},
-    {"tid": 124, "name": "닐스 리히터", "nation": "독일", "club": "yellow", "grp": "xi", "pos": "RB", "num": 5, "age": 34, "foot": "right", "height": 186, "weight": 80, "photo": "",
+    {"tid": 124, "name": "닐스 리히터", "nation": "독일", "club": "yellow", "grp": "xi", "pos": "RB", "num": 5, "age": 34, "foot": "right", "weakFoot": 1, "height": 186, "weight": 80, "photo": "",
      "fo": {
        "sprint": 66, "accel": 65, "finishing": 56, "shotPower": 60, "longShots": 55, "positioning": 58, "volleys": 46,
        "penalty": 50, "shortPass": 57, "vision": 48, "crossing": 65, "longPass": 46, "freekick": 54, "curve": 57,
@@ -1002,7 +1002,7 @@
        "interceptions": 68, "heading": 64, "slideTackle": 60, "strength": 59, "stamina": 67, "aggression": 47, "jump": 47, "composure": 58,
        "gkDiving": 10, "gkHandling": 17, "gkKick": 17, "gkReflex": 12, "gkPos": 14
      }},
-    {"tid": 125, "name": "니콜라스 로페스", "nation": "아르헨티나", "club": "yellow", "grp": "xi", "pos": "CDM", "num": 6, "age": 18, "foot": "right", "height": 175, "weight": 77, "photo": "",
+    {"tid": 125, "name": "니콜라스 로페스", "nation": "아르헨티나", "club": "yellow", "grp": "xi", "pos": "CDM", "num": 6, "age": 18, "foot": "right", "weakFoot": 3, "height": 175, "weight": 77, "photo": "",
      "fo": {
        "sprint": 60, "accel": 48, "finishing": 61, "shotPower": 51, "longShots": 60, "positioning": 61, "volleys": 59,
        "penalty": 59, "shortPass": 64, "vision": 63, "crossing": 51, "longPass": 64, "freekick": 51, "curve": 60,
@@ -1010,7 +1010,7 @@
        "interceptions": 68, "heading": 55, "slideTackle": 65, "strength": 69, "stamina": 63, "aggression": 65, "jump": 57, "composure": 51,
        "gkDiving": 8, "gkHandling": 14, "gkKick": 14, "gkReflex": 14, "gkPos": 10
      }},
-    {"tid": 126, "name": "테오 토마", "nation": "프랑스", "club": "yellow", "grp": "xi", "pos": "CM", "num": 7, "age": 34, "foot": "right", "height": 175, "weight": 70, "photo": "",
+    {"tid": 126, "name": "테오 토마", "nation": "프랑스", "club": "yellow", "grp": "xi", "pos": "CM", "num": 7, "age": 34, "foot": "right", "weakFoot": 2, "height": 175, "weight": 70, "photo": "",
      "fo": {
        "sprint": 60, "accel": 49, "finishing": 60, "shotPower": 51, "longShots": 63, "positioning": 62, "volleys": 54,
        "penalty": 54, "shortPass": 62, "vision": 65, "crossing": 48, "longPass": 68, "freekick": 59, "curve": 58,
@@ -1018,7 +1018,7 @@
        "interceptions": 63, "heading": 54, "slideTackle": 51, "strength": 59, "stamina": 66, "aggression": 47, "jump": 59, "composure": 50,
        "gkDiving": 15, "gkHandling": 10, "gkKick": 17, "gkReflex": 14, "gkPos": 17
      }},
-    {"tid": 127, "name": "하비에르 마르티네스", "nation": "스페인", "club": "yellow", "grp": "xi", "pos": "CM", "num": 8, "age": 23, "foot": "left", "height": 174, "weight": 65, "photo": "",
+    {"tid": 127, "name": "하비에르 마르티네스", "nation": "스페인", "club": "yellow", "grp": "xi", "pos": "CM", "num": 8, "age": 23, "foot": "left", "weakFoot": 4, "height": 174, "weight": 65, "photo": "",
      "fo": {
        "sprint": 54, "accel": 61, "finishing": 66, "shotPower": 52, "longShots": 72, "positioning": 71, "volleys": 58,
        "penalty": 52, "shortPass": 65, "vision": 63, "crossing": 59, "longPass": 67, "freekick": 54, "curve": 57,
@@ -1026,7 +1026,7 @@
        "interceptions": 62, "heading": 58, "slideTackle": 49, "strength": 53, "stamina": 67, "aggression": 52, "jump": 51, "composure": 61,
        "gkDiving": 16, "gkHandling": 17, "gkKick": 18, "gkReflex": 9, "gkPos": 14
      }},
-    {"tid": 128, "name": "티아구 카르발류", "nation": "브라질", "club": "yellow", "grp": "xi", "pos": "LW", "num": 9, "age": 25, "foot": "left", "height": 171, "weight": 64, "photo": "",
+    {"tid": 128, "name": "티아구 카르발류", "nation": "브라질", "club": "yellow", "grp": "xi", "pos": "LW", "num": 9, "age": 25, "foot": "left", "weakFoot": 3, "height": 171, "weight": 64, "photo": "",
      "fo": {
        "sprint": 61, "accel": 61, "finishing": 63, "shotPower": 51, "longShots": 59, "positioning": 67, "volleys": 46,
        "penalty": 54, "shortPass": 65, "vision": 65, "crossing": 59, "longPass": 57, "freekick": 51, "curve": 49,
@@ -1034,7 +1034,7 @@
        "interceptions": 47, "heading": 58, "slideTackle": 48, "strength": 54, "stamina": 58, "aggression": 57, "jump": 54, "composure": 47,
        "gkDiving": 18, "gkHandling": 16, "gkKick": 15, "gkReflex": 11, "gkPos": 18
      }},
-    {"tid": 129, "name": "최정우", "nation": "대한민국", "club": "yellow", "grp": "xi", "pos": "ST", "num": 10, "age": 29, "foot": "right", "height": 183, "weight": 82, "photo": "",
+    {"tid": 129, "name": "최정우", "nation": "대한민국", "club": "yellow", "grp": "xi", "pos": "ST", "num": 10, "age": 29, "foot": "right", "weakFoot": 3, "height": 183, "weight": 82, "photo": "",
      "fo": {
        "sprint": 63, "accel": 69, "finishing": 70, "shotPower": 68, "longShots": 63, "positioning": 66, "volleys": 64,
        "penalty": 52, "shortPass": 68, "vision": 54, "crossing": 56, "longPass": 63, "freekick": 56, "curve": 50,
@@ -1042,7 +1042,7 @@
        "interceptions": 49, "heading": 61, "slideTackle": 55, "strength": 66, "stamina": 59, "aggression": 61, "jump": 55, "composure": 58,
        "gkDiving": 8, "gkHandling": 11, "gkKick": 12, "gkReflex": 18, "gkPos": 17
      }},
-    {"tid": 130, "name": "카를로스 라모스", "nation": "스페인", "club": "yellow", "grp": "xi", "pos": "RW", "num": 11, "age": 29, "foot": "right", "height": 169, "weight": 69, "photo": "",
+    {"tid": 130, "name": "카를로스 라모스", "nation": "스페인", "club": "yellow", "grp": "xi", "pos": "RW", "num": 11, "age": 29, "foot": "right", "weakFoot": 3, "height": 169, "weight": 69, "photo": "",
      "fo": {
        "sprint": 65, "accel": 69, "finishing": 71, "shotPower": 60, "longShots": 66, "positioning": 63, "volleys": 61,
        "penalty": 53, "shortPass": 71, "vision": 70, "crossing": 64, "longPass": 54, "freekick": 58, "curve": 53,
@@ -1050,7 +1050,7 @@
        "interceptions": 51, "heading": 59, "slideTackle": 62, "strength": 64, "stamina": 57, "aggression": 63, "jump": 58, "composure": 61,
        "gkDiving": 11, "gkHandling": 16, "gkKick": 18, "gkReflex": 16, "gkPos": 9
      }},
-    {"tid": 131, "name": "요스트 메이르", "nation": "네덜란드", "club": "yellow", "grp": "subs", "pos": "GK", "num": 12, "age": 28, "foot": "right", "height": 191, "weight": 84, "photo": "",
+    {"tid": 131, "name": "요스트 메이르", "nation": "네덜란드", "club": "yellow", "grp": "subs", "pos": "GK", "num": 12, "age": 28, "foot": "right", "weakFoot": 3, "height": 191, "weight": 84, "photo": "",
      "fo": {
        "sprint": 33, "accel": 34, "finishing": 32, "shotPower": 39, "longShots": 44, "positioning": 34, "volleys": 32,
        "penalty": 46, "shortPass": 45, "vision": 38, "crossing": 36, "longPass": 37, "freekick": 34, "curve": 45,
@@ -1058,7 +1058,7 @@
        "interceptions": 37, "heading": 34, "slideTackle": 39, "strength": 41, "stamina": 43, "aggression": 33, "jump": 41, "composure": 39,
        "gkDiving": 60, "gkHandling": 59, "gkKick": 57, "gkReflex": 63, "gkPos": 61
      }},
-    {"tid": 132, "name": "마티아스 디아스", "nation": "아르헨티나", "club": "yellow", "grp": "subs", "pos": "CB", "num": 13, "age": 22, "foot": "right", "height": 185, "weight": 75, "photo": "",
+    {"tid": 132, "name": "마티아스 디아스", "nation": "아르헨티나", "club": "yellow", "grp": "subs", "pos": "CB", "num": 13, "age": 22, "foot": "right", "weakFoot": 3, "height": 185, "weight": 75, "photo": "",
      "fo": {
        "sprint": 66, "accel": 47, "finishing": 59, "shotPower": 51, "longShots": 57, "positioning": 47, "volleys": 56,
        "penalty": 56, "shortPass": 64, "vision": 54, "crossing": 48, "longPass": 54, "freekick": 60, "curve": 52,
@@ -1066,7 +1066,7 @@
        "interceptions": 66, "heading": 66, "slideTackle": 64, "strength": 59, "stamina": 46, "aggression": 66, "jump": 66, "composure": 52,
        "gkDiving": 16, "gkHandling": 9, "gkKick": 10, "gkReflex": 12, "gkPos": 8
      }},
-    {"tid": 133, "name": "송준혁", "nation": "대한민국", "club": "yellow", "grp": "subs", "pos": "RB", "num": 14, "age": 26, "foot": "right", "height": 179, "weight": 74, "photo": "",
+    {"tid": 133, "name": "송준혁", "nation": "대한민국", "club": "yellow", "grp": "subs", "pos": "RB", "num": 14, "age": 26, "foot": "right", "weakFoot": 3, "height": 179, "weight": 74, "photo": "",
      "fo": {
        "sprint": 64, "accel": 61, "finishing": 47, "shotPower": 56, "longShots": 59, "positioning": 56, "volleys": 58,
        "penalty": 52, "shortPass": 64, "vision": 46, "crossing": 59, "longPass": 50, "freekick": 59, "curve": 57,
@@ -1074,7 +1074,7 @@
        "interceptions": 60, "heading": 60, "slideTackle": 60, "strength": 48, "stamina": 62, "aggression": 46, "jump": 48, "composure": 46,
        "gkDiving": 18, "gkHandling": 15, "gkKick": 11, "gkReflex": 9, "gkPos": 11
      }},
-    {"tid": 134, "name": "홍정우", "nation": "대한민국", "club": "yellow", "grp": "subs", "pos": "CM", "num": 15, "age": 31, "foot": "right", "height": 187, "weight": 81, "photo": "",
+    {"tid": 134, "name": "홍정우", "nation": "대한민국", "club": "yellow", "grp": "subs", "pos": "CM", "num": 15, "age": 31, "foot": "right", "weakFoot": 3, "height": 187, "weight": 81, "photo": "",
      "fo": {
        "sprint": 53, "accel": 56, "finishing": 65, "shotPower": 52, "longShots": 66, "positioning": 59, "volleys": 46,
        "penalty": 57, "shortPass": 62, "vision": 64, "crossing": 58, "longPass": 68, "freekick": 59, "curve": 47,
@@ -1082,7 +1082,7 @@
        "interceptions": 59, "heading": 59, "slideTackle": 53, "strength": 50, "stamina": 64, "aggression": 55, "jump": 54, "composure": 55,
        "gkDiving": 8, "gkHandling": 15, "gkKick": 16, "gkReflex": 15, "gkPos": 10
      }},
-    {"tid": 135, "name": "밀런 데 용", "nation": "네덜란드", "club": "yellow", "grp": "subs", "pos": "CAM", "num": 16, "age": 27, "foot": "left", "height": 171, "weight": 74, "photo": "",
+    {"tid": 135, "name": "밀런 데 용", "nation": "네덜란드", "club": "yellow", "grp": "subs", "pos": "CAM", "num": 16, "age": 27, "foot": "left", "weakFoot": 3, "height": 171, "weight": 74, "photo": "",
      "fo": {
        "sprint": 61, "accel": 63, "finishing": 57, "shotPower": 52, "longShots": 57, "positioning": 64, "volleys": 45,
        "penalty": 44, "shortPass": 57, "vision": 64, "crossing": 51, "longPass": 59, "freekick": 45, "curve": 54,
@@ -1090,7 +1090,7 @@
        "interceptions": 55, "heading": 49, "slideTackle": 50, "strength": 49, "stamina": 43, "aggression": 47, "jump": 54, "composure": 47,
        "gkDiving": 16, "gkHandling": 18, "gkKick": 10, "gkReflex": 18, "gkPos": 14
      }},
-    {"tid": 136, "name": "하비에르 에레라", "nation": "스페인", "club": "yellow", "grp": "subs", "pos": "LW", "num": 17, "age": 30, "foot": "left", "height": 176, "weight": 69, "photo": "",
+    {"tid": 136, "name": "하비에르 에레라", "nation": "스페인", "club": "yellow", "grp": "subs", "pos": "LW", "num": 17, "age": 30, "foot": "left", "weakFoot": 4, "height": 176, "weight": 69, "photo": "",
      "fo": {
        "sprint": 61, "accel": 61, "finishing": 58, "shotPower": 45, "longShots": 62, "positioning": 61, "volleys": 55,
        "penalty": 44, "shortPass": 62, "vision": 63, "crossing": 60, "longPass": 51, "freekick": 47, "curve": 54,
@@ -1098,7 +1098,7 @@
        "interceptions": 48, "heading": 53, "slideTackle": 56, "strength": 46, "stamina": 44, "aggression": 57, "jump": 54, "composure": 51,
        "gkDiving": 8, "gkHandling": 14, "gkKick": 12, "gkReflex": 11, "gkPos": 9
      }},
-    {"tid": 137, "name": "조우진", "nation": "대한민국", "club": "yellow", "grp": "subs", "pos": "ST", "num": 18, "age": 24, "foot": "right", "height": 175, "weight": 71, "photo": "",
+    {"tid": 137, "name": "조우진", "nation": "대한민국", "club": "yellow", "grp": "subs", "pos": "ST", "num": 18, "age": 24, "foot": "right", "weakFoot": 2, "height": 175, "weight": 71, "photo": "",
      "fo": {
        "sprint": 67, "accel": 63, "finishing": 63, "shotPower": 60, "longShots": 68, "positioning": 59, "volleys": 66,
        "penalty": 53, "shortPass": 66, "vision": 53, "crossing": 49, "longPass": 46, "freekick": 51, "curve": 52,
@@ -1106,7 +1106,7 @@
        "interceptions": 56, "heading": 59, "slideTackle": 60, "strength": 64, "stamina": 60, "aggression": 60, "jump": 53, "composure": 56,
        "gkDiving": 12, "gkHandling": 13, "gkKick": 12, "gkReflex": 16, "gkPos": 18
      }},
-    {"tid": 138, "name": "켄토 다카하시", "nation": "일본", "club": "yellow", "grp": "res", "pos": "LB", "num": 19, "age": 26, "foot": "left", "height": 173, "weight": 76, "photo": "",
+    {"tid": 138, "name": "켄토 다카하시", "nation": "일본", "club": "yellow", "grp": "res", "pos": "LB", "num": 19, "age": 26, "foot": "left", "weakFoot": 4, "height": 173, "weight": 76, "photo": "",
      "fo": {
        "sprint": 60, "accel": 55, "finishing": 51, "shotPower": 46, "longShots": 42, "positioning": 56, "volleys": 53,
        "penalty": 48, "shortPass": 61, "vision": 51, "crossing": 53, "longPass": 55, "freekick": 44, "curve": 44,
@@ -1114,7 +1114,7 @@
        "interceptions": 63, "heading": 56, "slideTackle": 62, "strength": 48, "stamina": 63, "aggression": 50, "jump": 49, "composure": 45,
        "gkDiving": 18, "gkHandling": 15, "gkKick": 18, "gkReflex": 17, "gkPos": 12
      }},
-    {"tid": 139, "name": "펠리페 올리베이라", "nation": "브라질", "club": "yellow", "grp": "res", "pos": "CDM", "num": 20, "age": 33, "foot": "right", "height": 179, "weight": 74, "photo": "",
+    {"tid": 139, "name": "펠리페 올리베이라", "nation": "브라질", "club": "yellow", "grp": "res", "pos": "CDM", "num": 20, "age": 33, "foot": "right", "weakFoot": 2, "height": 179, "weight": 74, "photo": "",
      "fo": {
        "sprint": 46, "accel": 54, "finishing": 49, "shotPower": 45, "longShots": 45, "positioning": 46, "volleys": 52,
        "penalty": 44, "shortPass": 55, "vision": 57, "crossing": 42, "longPass": 53, "freekick": 47, "curve": 46,
@@ -1122,7 +1122,7 @@
        "interceptions": 63, "heading": 45, "slideTackle": 55, "strength": 58, "stamina": 60, "aggression": 55, "jump": 55, "composure": 51,
        "gkDiving": 18, "gkHandling": 18, "gkKick": 16, "gkReflex": 18, "gkPos": 12
      }},
-    {"tid": 140, "name": "위고 르루아", "nation": "프랑스", "club": "cyan", "grp": "xi", "pos": "GK", "num": 1, "age": 29, "foot": "right", "height": 196, "weight": 91, "photo": "",
+    {"tid": 140, "name": "위고 르루아", "nation": "프랑스", "club": "cyan", "grp": "xi", "pos": "GK", "num": 1, "age": 29, "foot": "right", "weakFoot": 2, "height": 196, "weight": 91, "photo": "",
      "fo": {
        "sprint": 51, "accel": 45, "finishing": 41, "shotPower": 46, "longShots": 50, "positioning": 39, "volleys": 42,
        "penalty": 44, "shortPass": 38, "vision": 40, "crossing": 49, "longPass": 46, "freekick": 39, "curve": 38,
@@ -1130,7 +1130,7 @@
        "interceptions": 48, "heading": 50, "slideTackle": 41, "strength": 41, "stamina": 40, "aggression": 42, "jump": 45, "composure": 39,
        "gkDiving": 62, "gkHandling": 69, "gkKick": 63, "gkReflex": 65, "gkPos": 70
      }},
-    {"tid": 141, "name": "루카스 히베이루", "nation": "브라질", "club": "cyan", "grp": "xi", "pos": "LB", "num": 2, "age": 22, "foot": "left", "height": 184, "weight": 77, "photo": "",
+    {"tid": 141, "name": "루카스 히베이루", "nation": "브라질", "club": "cyan", "grp": "xi", "pos": "LB", "num": 2, "age": 22, "foot": "left", "weakFoot": 3, "height": 184, "weight": 77, "photo": "",
      "fo": {
        "sprint": 62, "accel": 65, "finishing": 56, "shotPower": 48, "longShots": 49, "positioning": 54, "volleys": 55,
        "penalty": 57, "shortPass": 58, "vision": 58, "crossing": 59, "longPass": 52, "freekick": 48, "curve": 47,
@@ -1138,7 +1138,7 @@
        "interceptions": 67, "heading": 59, "slideTackle": 66, "strength": 54, "stamina": 61, "aggression": 55, "jump": 50, "composure": 48,
        "gkDiving": 10, "gkHandling": 16, "gkKick": 9, "gkReflex": 17, "gkPos": 15
      }},
-    {"tid": 142, "name": "하비에르 라모스", "nation": "스페인", "club": "cyan", "grp": "xi", "pos": "CB", "num": 3, "age": 34, "foot": "right", "height": 186, "weight": 82, "photo": "",
+    {"tid": 142, "name": "하비에르 라모스", "nation": "스페인", "club": "cyan", "grp": "xi", "pos": "CB", "num": 3, "age": 34, "foot": "right", "weakFoot": 3, "height": 186, "weight": 82, "photo": "",
      "fo": {
        "sprint": 71, "accel": 65, "finishing": 57, "shotPower": 51, "longShots": 56, "positioning": 54, "volleys": 63,
        "penalty": 51, "shortPass": 65, "vision": 63, "crossing": 51, "longPass": 57, "freekick": 61, "curve": 58,
@@ -1146,7 +1146,7 @@
        "interceptions": 67, "heading": 67, "slideTackle": 73, "strength": 65, "stamina": 54, "aggression": 68, "jump": 66, "composure": 59,
        "gkDiving": 16, "gkHandling": 14, "gkKick": 17, "gkReflex": 17, "gkPos": 10
      }},
-    {"tid": 143, "name": "유토 고바야시", "nation": "일본", "club": "cyan", "grp": "xi", "pos": "CB", "num": 4, "age": 28, "foot": "right", "height": 184, "weight": 79, "photo": "",
+    {"tid": 143, "name": "유토 고바야시", "nation": "일본", "club": "cyan", "grp": "xi", "pos": "CB", "num": 4, "age": 28, "foot": "right", "weakFoot": 2, "height": 184, "weight": 79, "photo": "",
      "fo": {
        "sprint": 68, "accel": 49, "finishing": 62, "shotPower": 58, "longShots": 53, "positioning": 51, "volleys": 54,
        "penalty": 59, "shortPass": 71, "vision": 56, "crossing": 52, "longPass": 56, "freekick": 63, "curve": 51,
@@ -1154,7 +1154,7 @@
        "interceptions": 65, "heading": 69, "slideTackle": 69, "strength": 61, "stamina": 49, "aggression": 69, "jump": 67, "composure": 52,
        "gkDiving": 16, "gkHandling": 13, "gkKick": 17, "gkReflex": 18, "gkPos": 18
      }},
-    {"tid": 144, "name": "요나스 피셔", "nation": "독일", "club": "cyan", "grp": "xi", "pos": "RB", "num": 5, "age": 27, "foot": "right", "height": 186, "weight": 89, "photo": "",
+    {"tid": 144, "name": "요나스 피셔", "nation": "독일", "club": "cyan", "grp": "xi", "pos": "RB", "num": 5, "age": 27, "foot": "right", "weakFoot": 4, "height": 186, "weight": 89, "photo": "",
      "fo": {
        "sprint": 68, "accel": 62, "finishing": 54, "shotPower": 54, "longShots": 60, "positioning": 55, "volleys": 58,
        "penalty": 60, "shortPass": 59, "vision": 61, "crossing": 58, "longPass": 57, "freekick": 59, "curve": 54,
@@ -1162,7 +1162,7 @@
        "interceptions": 60, "heading": 67, "slideTackle": 62, "strength": 50, "stamina": 66, "aggression": 54, "jump": 58, "composure": 51,
        "gkDiving": 10, "gkHandling": 16, "gkKick": 10, "gkReflex": 13, "gkPos": 16
      }},
-    {"tid": 145, "name": "주앙 히베이루", "nation": "브라질", "club": "cyan", "grp": "xi", "pos": "CDM", "num": 6, "age": 27, "foot": "right", "height": 182, "weight": 83, "photo": "",
+    {"tid": 145, "name": "주앙 히베이루", "nation": "브라질", "club": "cyan", "grp": "xi", "pos": "CDM", "num": 6, "age": 27, "foot": "right", "weakFoot": 4, "height": 182, "weight": 83, "photo": "",
      "fo": {
        "sprint": 48, "accel": 57, "finishing": 52, "shotPower": 49, "longShots": 51, "positioning": 52, "volleys": 49,
        "penalty": 58, "shortPass": 66, "vision": 60, "crossing": 50, "longPass": 61, "freekick": 60, "curve": 50,
@@ -1170,7 +1170,7 @@
        "interceptions": 68, "heading": 55, "slideTackle": 64, "strength": 62, "stamina": 66, "aggression": 58, "jump": 47, "composure": 47,
        "gkDiving": 8, "gkHandling": 14, "gkKick": 16, "gkReflex": 18, "gkPos": 10
      }},
-    {"tid": 146, "name": "최은우", "nation": "대한민국", "club": "cyan", "grp": "xi", "pos": "CM", "num": 7, "age": 27, "foot": "right", "height": 185, "weight": 76, "photo": "",
+    {"tid": 146, "name": "최은우", "nation": "대한민국", "club": "cyan", "grp": "xi", "pos": "CM", "num": 7, "age": 27, "foot": "right", "weakFoot": 3, "height": 185, "weight": 76, "photo": "",
      "fo": {
        "sprint": 54, "accel": 55, "finishing": 68, "shotPower": 52, "longShots": 69, "positioning": 66, "volleys": 55,
        "penalty": 56, "shortPass": 70, "vision": 68, "crossing": 51, "longPass": 73, "freekick": 51, "curve": 61,
@@ -1178,7 +1178,7 @@
        "interceptions": 63, "heading": 56, "slideTackle": 65, "strength": 65, "stamina": 71, "aggression": 53, "jump": 55, "composure": 61,
        "gkDiving": 14, "gkHandling": 8, "gkKick": 13, "gkReflex": 18, "gkPos": 12
      }},
-    {"tid": 147, "name": "노아 프티", "nation": "프랑스", "club": "cyan", "grp": "xi", "pos": "CM", "num": 8, "age": 23, "foot": "right", "height": 172, "weight": 73, "photo": "",
+    {"tid": 147, "name": "노아 프티", "nation": "프랑스", "club": "cyan", "grp": "xi", "pos": "CM", "num": 8, "age": 23, "foot": "right", "weakFoot": 3, "height": 172, "weight": 73, "photo": "",
      "fo": {
        "sprint": 61, "accel": 53, "finishing": 60, "shotPower": 57, "longShots": 64, "positioning": 69, "volleys": 56,
        "penalty": 57, "shortPass": 64, "vision": 71, "crossing": 59, "longPass": 64, "freekick": 56, "curve": 55,
@@ -1186,7 +1186,7 @@
        "interceptions": 70, "heading": 53, "slideTackle": 61, "strength": 58, "stamina": 64, "aggression": 57, "jump": 59, "composure": 54,
        "gkDiving": 16, "gkHandling": 9, "gkKick": 15, "gkReflex": 11, "gkPos": 10
      }},
-    {"tid": 148, "name": "비니시우스 고메스", "nation": "브라질", "club": "cyan", "grp": "xi", "pos": "LW", "num": 9, "age": 31, "foot": "left", "height": 182, "weight": 79, "photo": "",
+    {"tid": 148, "name": "비니시우스 고메스", "nation": "브라질", "club": "cyan", "grp": "xi", "pos": "LW", "num": 9, "age": 31, "foot": "left", "weakFoot": 4, "height": 182, "weight": 79, "photo": "",
      "fo": {
        "sprint": 68, "accel": 68, "finishing": 64, "shotPower": 56, "longShots": 61, "positioning": 63, "volleys": 58,
        "penalty": 60, "shortPass": 69, "vision": 67, "crossing": 66, "longPass": 60, "freekick": 61, "curve": 48,
@@ -1194,7 +1194,7 @@
        "interceptions": 49, "heading": 53, "slideTackle": 57, "strength": 51, "stamina": 50, "aggression": 49, "jump": 56, "composure": 56,
        "gkDiving": 13, "gkHandling": 17, "gkKick": 15, "gkReflex": 17, "gkPos": 10
      }},
-    {"tid": 149, "name": "로렌초 리치", "nation": "이탈리아", "club": "cyan", "grp": "xi", "pos": "ST", "num": 10, "age": 27, "foot": "left", "height": 181, "weight": 80, "photo": "",
+    {"tid": 149, "name": "로렌초 리치", "nation": "이탈리아", "club": "cyan", "grp": "xi", "pos": "ST", "num": 10, "age": 27, "foot": "left", "weakFoot": 3, "height": 181, "weight": 80, "photo": "",
      "fo": {
        "sprint": 64, "accel": 70, "finishing": 70, "shotPower": 61, "longShots": 64, "positioning": 61, "volleys": 71,
        "penalty": 55, "shortPass": 70, "vision": 56, "crossing": 53, "longPass": 56, "freekick": 52, "curve": 50,
@@ -1202,7 +1202,7 @@
        "interceptions": 54, "heading": 71, "slideTackle": 58, "strength": 72, "stamina": 50, "aggression": 56, "jump": 51, "composure": 57,
        "gkDiving": 9, "gkHandling": 18, "gkKick": 16, "gkReflex": 14, "gkPos": 10
      }},
-    {"tid": 150, "name": "니클라스 호프만", "nation": "독일", "club": "cyan", "grp": "xi", "pos": "RW", "num": 11, "age": 32, "foot": "right", "height": 173, "weight": 73, "photo": "",
+    {"tid": 150, "name": "니클라스 호프만", "nation": "독일", "club": "cyan", "grp": "xi", "pos": "RW", "num": 11, "age": 32, "foot": "right", "weakFoot": 2, "height": 173, "weight": 73, "photo": "",
      "fo": {
        "sprint": 68, "accel": 68, "finishing": 60, "shotPower": 56, "longShots": 68, "positioning": 61, "volleys": 58,
        "penalty": 55, "shortPass": 69, "vision": 59, "crossing": 61, "longPass": 56, "freekick": 49, "curve": 52,
@@ -1210,7 +1210,7 @@
        "interceptions": 59, "heading": 61, "slideTackle": 48, "strength": 58, "stamina": 52, "aggression": 61, "jump": 49, "composure": 51,
        "gkDiving": 11, "gkHandling": 18, "gkKick": 12, "gkReflex": 15, "gkPos": 15
      }},
-    {"tid": 151, "name": "니콜로 페라리", "nation": "이탈리아", "club": "cyan", "grp": "subs", "pos": "GK", "num": 12, "age": 22, "foot": "right", "height": 191, "weight": 93, "photo": "",
+    {"tid": 151, "name": "니콜로 페라리", "nation": "이탈리아", "club": "cyan", "grp": "subs", "pos": "GK", "num": 12, "age": 22, "foot": "right", "weakFoot": 3, "height": 191, "weight": 93, "photo": "",
      "fo": {
        "sprint": 33, "accel": 41, "finishing": 38, "shotPower": 40, "longShots": 41, "positioning": 32, "volleys": 44,
        "penalty": 38, "shortPass": 39, "vision": 35, "crossing": 42, "longPass": 31, "freekick": 31, "curve": 37,
@@ -1218,7 +1218,7 @@
        "interceptions": 31, "heading": 42, "slideTackle": 32, "strength": 43, "stamina": 43, "aggression": 44, "jump": 43, "composure": 40,
        "gkDiving": 55, "gkHandling": 59, "gkKick": 61, "gkReflex": 61, "gkPos": 55
      }},
-    {"tid": 152, "name": "마테오 가르시아", "nation": "스페인", "club": "cyan", "grp": "subs", "pos": "CB", "num": 13, "age": 32, "foot": "right", "height": 192, "weight": 94, "photo": "",
+    {"tid": 152, "name": "마테오 가르시아", "nation": "스페인", "club": "cyan", "grp": "subs", "pos": "CB", "num": 13, "age": 32, "foot": "right", "weakFoot": 3, "height": 192, "weight": 94, "photo": "",
      "fo": {
        "sprint": 62, "accel": 47, "finishing": 52, "shotPower": 53, "longShots": 48, "positioning": 48, "volleys": 55,
        "penalty": 55, "shortPass": 65, "vision": 59, "crossing": 56, "longPass": 47, "freekick": 50, "curve": 53,
@@ -1226,7 +1226,7 @@
        "interceptions": 61, "heading": 58, "slideTackle": 64, "strength": 61, "stamina": 50, "aggression": 59, "jump": 67, "composure": 59,
        "gkDiving": 15, "gkHandling": 8, "gkKick": 8, "gkReflex": 11, "gkPos": 18
      }},
-    {"tid": 153, "name": "산티아고 로메로", "nation": "아르헨티나", "club": "cyan", "grp": "subs", "pos": "RB", "num": 14, "age": 25, "foot": "right", "height": 187, "weight": 78, "photo": "",
+    {"tid": 153, "name": "산티아고 로메로", "nation": "아르헨티나", "club": "cyan", "grp": "subs", "pos": "RB", "num": 14, "age": 25, "foot": "right", "weakFoot": 3, "height": 187, "weight": 78, "photo": "",
      "fo": {
        "sprint": 55, "accel": 57, "finishing": 48, "shotPower": 44, "longShots": 50, "positioning": 50, "volleys": 51,
        "penalty": 51, "shortPass": 54, "vision": 45, "crossing": 59, "longPass": 49, "freekick": 51, "curve": 48,
@@ -1234,7 +1234,7 @@
        "interceptions": 60, "heading": 61, "slideTackle": 58, "strength": 51, "stamina": 62, "aggression": 54, "jump": 50, "composure": 47,
        "gkDiving": 9, "gkHandling": 8, "gkKick": 15, "gkReflex": 9, "gkPos": 11
      }},
-    {"tid": 154, "name": "비니시우스 코스타", "nation": "브라질", "club": "cyan", "grp": "subs", "pos": "CM", "num": 15, "age": 23, "foot": "right", "height": 187, "weight": 76, "photo": "",
+    {"tid": 154, "name": "비니시우스 코스타", "nation": "브라질", "club": "cyan", "grp": "subs", "pos": "CM", "num": 15, "age": 23, "foot": "right", "weakFoot": 3, "height": 187, "weight": 76, "photo": "",
      "fo": {
        "sprint": 58, "accel": 47, "finishing": 57, "shotPower": 55, "longShots": 59, "positioning": 57, "volleys": 46,
        "penalty": 51, "shortPass": 63, "vision": 64, "crossing": 49, "longPass": 65, "freekick": 53, "curve": 58,
@@ -1242,7 +1242,7 @@
        "interceptions": 66, "heading": 51, "slideTackle": 58, "strength": 53, "stamina": 62, "aggression": 50, "jump": 45, "composure": 53,
        "gkDiving": 9, "gkHandling": 15, "gkKick": 8, "gkReflex": 10, "gkPos": 12
      }},
-    {"tid": 155, "name": "셈 메이르", "nation": "네덜란드", "club": "cyan", "grp": "subs", "pos": "CAM", "num": 16, "age": 21, "foot": "right", "height": 179, "weight": 70, "photo": "",
+    {"tid": 155, "name": "셈 메이르", "nation": "네덜란드", "club": "cyan", "grp": "subs", "pos": "CAM", "num": 16, "age": 21, "foot": "right", "weakFoot": 3, "height": 179, "weight": 70, "photo": "",
      "fo": {
        "sprint": 68, "accel": 60, "finishing": 66, "shotPower": 47, "longShots": 61, "positioning": 61, "volleys": 51,
        "penalty": 55, "shortPass": 58, "vision": 59, "crossing": 49, "longPass": 59, "freekick": 51, "curve": 58,
@@ -1250,7 +1250,7 @@
        "interceptions": 52, "heading": 59, "slideTackle": 57, "strength": 53, "stamina": 53, "aggression": 56, "jump": 45, "composure": 55,
        "gkDiving": 12, "gkHandling": 10, "gkKick": 8, "gkReflex": 8, "gkPos": 9
      }},
-    {"tid": 156, "name": "홍도윤", "nation": "대한민국", "club": "cyan", "grp": "subs", "pos": "LW", "num": 17, "age": 20, "foot": "right", "height": 167, "weight": 60, "photo": "",
+    {"tid": 156, "name": "홍도윤", "nation": "대한민국", "club": "cyan", "grp": "subs", "pos": "LW", "num": 17, "age": 20, "foot": "right", "weakFoot": 4, "height": 167, "weight": 60, "photo": "",
      "fo": {
        "sprint": 62, "accel": 66, "finishing": 62, "shotPower": 51, "longShots": 62, "positioning": 60, "volleys": 59,
        "penalty": 58, "shortPass": 64, "vision": 61, "crossing": 68, "longPass": 56, "freekick": 53, "curve": 55,
@@ -1258,7 +1258,7 @@
        "interceptions": 54, "heading": 52, "slideTackle": 59, "strength": 58, "stamina": 52, "aggression": 53, "jump": 46, "composure": 57,
        "gkDiving": 15, "gkHandling": 16, "gkKick": 16, "gkReflex": 14, "gkPos": 15
      }},
-    {"tid": 157, "name": "신서준", "nation": "대한민국", "club": "cyan", "grp": "subs", "pos": "ST", "num": 18, "age": 32, "foot": "right", "height": 191, "weight": 84, "photo": "",
+    {"tid": 157, "name": "신서준", "nation": "대한민국", "club": "cyan", "grp": "subs", "pos": "ST", "num": 18, "age": 32, "foot": "right", "weakFoot": 3, "height": 191, "weight": 84, "photo": "",
      "fo": {
        "sprint": 70, "accel": 65, "finishing": 67, "shotPower": 66, "longShots": 60, "positioning": 64, "volleys": 61,
        "penalty": 60, "shortPass": 60, "vision": 52, "crossing": 51, "longPass": 60, "freekick": 48, "curve": 56,
@@ -1266,7 +1266,7 @@
        "interceptions": 51, "heading": 63, "slideTackle": 48, "strength": 62, "stamina": 57, "aggression": 54, "jump": 54, "composure": 57,
        "gkDiving": 15, "gkHandling": 8, "gkKick": 8, "gkReflex": 9, "gkPos": 16
      }},
-    {"tid": 158, "name": "박성민", "nation": "대한민국", "club": "cyan", "grp": "res", "pos": "LB", "num": 19, "age": 23, "foot": "left", "height": 187, "weight": 90, "photo": "",
+    {"tid": 158, "name": "박성민", "nation": "대한민국", "club": "cyan", "grp": "res", "pos": "LB", "num": 19, "age": 23, "foot": "left", "weakFoot": 2, "height": 187, "weight": 90, "photo": "",
      "fo": {
        "sprint": 60, "accel": 57, "finishing": 47, "shotPower": 55, "longShots": 41, "positioning": 47, "volleys": 49,
        "penalty": 43, "shortPass": 56, "vision": 45, "crossing": 64, "longPass": 53, "freekick": 47, "curve": 44,
@@ -1274,7 +1274,7 @@
        "interceptions": 59, "heading": 59, "slideTackle": 58, "strength": 53, "stamina": 53, "aggression": 53, "jump": 54, "composure": 43,
        "gkDiving": 8, "gkHandling": 18, "gkKick": 11, "gkReflex": 8, "gkPos": 17
      }},
-    {"tid": 159, "name": "클레망 프티", "nation": "프랑스", "club": "cyan", "grp": "res", "pos": "CDM", "num": 20, "age": 27, "foot": "right", "height": 183, "weight": 72, "photo": "",
+    {"tid": 159, "name": "클레망 프티", "nation": "프랑스", "club": "cyan", "grp": "res", "pos": "CDM", "num": 20, "age": 27, "foot": "right", "weakFoot": 3, "height": 183, "weight": 72, "photo": "",
      "fo": {
        "sprint": 43, "accel": 43, "finishing": 41, "shotPower": 38, "longShots": 39, "positioning": 45, "volleys": 39,
        "penalty": 43, "shortPass": 58, "vision": 57, "crossing": 49, "longPass": 49, "freekick": 44, "curve": 41,
@@ -1282,7 +1282,7 @@
        "interceptions": 50, "heading": 49, "slideTackle": 58, "strength": 57, "stamina": 50, "aggression": 59, "jump": 47, "composure": 40,
        "gkDiving": 18, "gkHandling": 11, "gkKick": 11, "gkReflex": 12, "gkPos": 18
      }},
-    {"tid": 160, "name": "레오 마르텔", "nation": "브라질", "club": null, "grp": "fa", "pos": "ST", "num": 13, "age": 32, "foot": "right", "height": 184, "weight": 82, "photo": "",
+    {"tid": 160, "name": "레오 마르텔", "nation": "브라질", "club": null, "grp": "fa", "pos": "ST", "num": 13, "age": 32, "foot": "right", "weakFoot": 2, "height": 184, "weight": 82, "photo": "",
      "fo": {
        "sprint": 85, "accel": 83, "finishing": 86, "shotPower": 78, "longShots": 83, "positioning": 82, "volleys": 76,
        "penalty": 68, "shortPass": 81, "vision": 67, "crossing": 78, "longPass": 66, "freekick": 67, "curve": 71,
@@ -1290,7 +1290,7 @@
        "interceptions": 75, "heading": 86, "slideTackle": 77, "strength": 79, "stamina": 79, "aggression": 67, "jump": 78, "composure": 69,
        "gkDiving": 15, "gkHandling": 15, "gkKick": 8, "gkReflex": 12, "gkPos": 10
      }},
-    {"tid": 161, "name": "카이 브란트", "nation": "독일", "club": null, "grp": "fa", "pos": "LW", "num": 27, "age": 29, "foot": "left", "height": 177, "weight": 69, "photo": "",
+    {"tid": 161, "name": "카이 브란트", "nation": "독일", "club": null, "grp": "fa", "pos": "LW", "num": 27, "age": 29, "foot": "left", "weakFoot": 3, "height": 177, "weight": 69, "photo": "",
      "fo": {
        "sprint": 89, "accel": 91, "finishing": 94, "shotPower": 75, "longShots": 94, "positioning": 96, "volleys": 88,
        "penalty": 81, "shortPass": 89, "vision": 86, "crossing": 88, "longPass": 85, "freekick": 77, "curve": 78,
@@ -1298,7 +1298,7 @@
        "interceptions": 85, "heading": 83, "slideTackle": 77, "strength": 89, "stamina": 76, "aggression": 82, "jump": 77, "composure": 76,
        "gkDiving": 18, "gkHandling": 14, "gkKick": 11, "gkReflex": 17, "gkPos": 12
      }},
-    {"tid": 162, "name": "마테오 실바", "nation": "포르투갈", "club": null, "grp": "fa", "pos": "CAM", "num": 28, "age": 29, "foot": "right", "height": 181, "weight": 81, "photo": "",
+    {"tid": 162, "name": "마테오 실바", "nation": "포르투갈", "club": null, "grp": "fa", "pos": "CAM", "num": 28, "age": 29, "foot": "right", "weakFoot": 3, "height": 181, "weight": 81, "photo": "",
      "fo": {
        "sprint": 83, "accel": 82, "finishing": 80, "shotPower": 74, "longShots": 85, "positioning": 80, "volleys": 77,
        "penalty": 72, "shortPass": 90, "vision": 90, "crossing": 75, "longPass": 86, "freekick": 78, "curve": 67,
@@ -1306,7 +1306,7 @@
        "interceptions": 75, "heading": 76, "slideTackle": 80, "strength": 81, "stamina": 67, "aggression": 76, "jump": 75, "composure": 68,
        "gkDiving": 8, "gkHandling": 11, "gkKick": 11, "gkReflex": 13, "gkPos": 8
      }},
-    {"tid": 163, "name": "루카 페레스", "nation": "아르헨티나", "club": null, "grp": "fa", "pos": "ST", "num": 22, "age": 27, "foot": "right", "height": 181, "weight": 77, "photo": "",
+    {"tid": 163, "name": "루카 페레스", "nation": "아르헨티나", "club": null, "grp": "fa", "pos": "ST", "num": 22, "age": 27, "foot": "right", "weakFoot": 3, "height": 181, "weight": 77, "photo": "",
      "fo": {
        "sprint": 79, "accel": 72, "finishing": 71, "shotPower": 80, "longShots": 79, "positioning": 77, "volleys": 73,
        "penalty": 64, "shortPass": 77, "vision": 62, "crossing": 62, "longPass": 66, "freekick": 69, "curve": 60,
@@ -1314,7 +1314,7 @@
        "interceptions": 70, "heading": 79, "slideTackle": 65, "strength": 80, "stamina": 73, "aggression": 67, "jump": 72, "composure": 67,
        "gkDiving": 12, "gkHandling": 16, "gkKick": 8, "gkReflex": 11, "gkPos": 10
      }},
-    {"tid": 164, "name": "노아 베르그", "nation": "스웨덴", "club": null, "grp": "fa", "pos": "CB", "num": 8, "age": 29, "foot": "left", "height": 185, "weight": 80, "photo": "",
+    {"tid": 164, "name": "노아 베르그", "nation": "스웨덴", "club": null, "grp": "fa", "pos": "CB", "num": 8, "age": 29, "foot": "left", "weakFoot": 3, "height": 185, "weight": 80, "photo": "",
      "fo": {
        "sprint": 81, "accel": 67, "finishing": 69, "shotPower": 80, "longShots": 73, "positioning": 71, "volleys": 69,
        "penalty": 68, "shortPass": 85, "vision": 79, "crossing": 76, "longPass": 66, "freekick": 72, "curve": 71,
@@ -1322,7 +1322,7 @@
        "interceptions": 84, "heading": 84, "slideTackle": 83, "strength": 81, "stamina": 68, "aggression": 80, "jump": 81, "composure": 76,
        "gkDiving": 12, "gkHandling": 8, "gkKick": 10, "gkReflex": 17, "gkPos": 16
      }},
-    {"tid": 165, "name": "이선 웰스", "nation": "잉글랜드", "club": null, "grp": "fa", "pos": "RB", "num": 9, "age": 25, "foot": "right", "height": 181, "weight": 70, "photo": "",
+    {"tid": 165, "name": "이선 웰스", "nation": "잉글랜드", "club": null, "grp": "fa", "pos": "RB", "num": 9, "age": 25, "foot": "right", "weakFoot": 2, "height": 181, "weight": 70, "photo": "",
      "fo": {
        "sprint": 86, "accel": 87, "finishing": 81, "shotPower": 70, "longShots": 75, "positioning": 75, "volleys": 75,
        "penalty": 73, "shortPass": 90, "vision": 68, "crossing": 88, "longPass": 75, "freekick": 78, "curve": 70,
@@ -1330,7 +1330,7 @@
        "interceptions": 82, "heading": 80, "slideTackle": 83, "strength": 73, "stamina": 83, "aggression": 74, "jump": 79, "composure": 74,
        "gkDiving": 10, "gkHandling": 15, "gkKick": 16, "gkReflex": 17, "gkPos": 8
      }},
-    {"tid": 166, "name": "하루토 미즈키", "nation": "일본", "club": null, "grp": "fa", "pos": "RW", "num": 24, "age": 20, "foot": "right", "height": 173, "weight": 75, "photo": "",
+    {"tid": 166, "name": "하루토 미즈키", "nation": "일본", "club": null, "grp": "fa", "pos": "RW", "num": 24, "age": 20, "foot": "right", "weakFoot": 3, "height": 173, "weight": 75, "photo": "",
      "fo": {
        "sprint": 77, "accel": 83, "finishing": 83, "shotPower": 69, "longShots": 81, "positioning": 77, "volleys": 76,
        "penalty": 77, "shortPass": 78, "vision": 78, "crossing": 85, "longPass": 76, "freekick": 69, "curve": 63,
@@ -1338,7 +1338,7 @@
        "interceptions": 67, "heading": 69, "slideTackle": 67, "strength": 72, "stamina": 68, "aggression": 69, "jump": 70, "composure": 64,
        "gkDiving": 18, "gkHandling": 18, "gkKick": 9, "gkReflex": 8, "gkPos": 11
      }},
-    {"tid": 167, "name": "다비드 오르테가", "nation": "스페인", "club": null, "grp": "fa", "pos": "CM", "num": 4, "age": 24, "foot": "right", "height": 181, "weight": 73, "photo": "",
+    {"tid": 167, "name": "다비드 오르테가", "nation": "스페인", "club": null, "grp": "fa", "pos": "CM", "num": 4, "age": 24, "foot": "right", "weakFoot": 1, "height": 181, "weight": 73, "photo": "",
      "fo": {
        "sprint": 66, "accel": 64, "finishing": 83, "shotPower": 64, "longShots": 79, "positioning": 78, "volleys": 67,
        "penalty": 71, "shortPass": 76, "vision": 81, "crossing": 71, "longPass": 79, "freekick": 62, "curve": 66,
@@ -1346,7 +1346,7 @@
        "interceptions": 75, "heading": 62, "slideTackle": 69, "strength": 66, "stamina": 84, "aggression": 75, "jump": 67, "composure": 70,
        "gkDiving": 10, "gkHandling": 18, "gkKick": 18, "gkReflex": 15, "gkPos": 10
      }},
-    {"tid": 168, "name": "안드레 코스타", "nation": "포르투갈", "club": null, "grp": "fa", "pos": "CDM", "num": 14, "age": 21, "foot": "right", "height": 173, "weight": 63, "photo": "",
+    {"tid": 168, "name": "안드레 코스타", "nation": "포르투갈", "club": null, "grp": "fa", "pos": "CDM", "num": 14, "age": 21, "foot": "right", "weakFoot": 2, "height": 173, "weight": 63, "photo": "",
      "fo": {
        "sprint": 66, "accel": 70, "finishing": 60, "shotPower": 60, "longShots": 74, "positioning": 70, "volleys": 63,
        "penalty": 69, "shortPass": 82, "vision": 76, "crossing": 66, "longPass": 75, "freekick": 73, "curve": 67,
@@ -1354,7 +1354,7 @@
        "interceptions": 80, "heading": 69, "slideTackle": 83, "strength": 81, "stamina": 73, "aggression": 74, "jump": 74, "composure": 74,
        "gkDiving": 13, "gkHandling": 12, "gkKick": 9, "gkReflex": 12, "gkPos": 17
      }},
-    {"tid": 169, "name": "토마스 레인", "nation": "잉글랜드", "club": null, "grp": "fa", "pos": "GK", "num": 6, "age": 27, "foot": "right", "height": 195, "weight": 95, "photo": "",
+    {"tid": 169, "name": "토마스 레인", "nation": "잉글랜드", "club": null, "grp": "fa", "pos": "GK", "num": 6, "age": 27, "foot": "right", "weakFoot": 3, "height": 195, "weight": 95, "photo": "",
      "fo": {
        "sprint": 60, "accel": 69, "finishing": 67, "shotPower": 60, "longShots": 58, "positioning": 62, "volleys": 65,
        "penalty": 56, "shortPass": 66, "vision": 57, "crossing": 58, "longPass": 63, "freekick": 69, "curve": 63,
@@ -1362,7 +1362,7 @@
        "interceptions": 63, "heading": 57, "slideTackle": 63, "strength": 63, "stamina": 57, "aggression": 64, "jump": 66, "composure": 57,
        "gkDiving": 81, "gkHandling": 83, "gkKick": 84, "gkReflex": 82, "gkPos": 80
      }},
-    {"tid": 170, "name": "주니오르 사우", "nation": "브라질", "club": null, "grp": "fa", "pos": "LW", "num": 19, "age": 21, "foot": "right", "height": 174, "weight": 63, "photo": "",
+    {"tid": 170, "name": "주니오르 사우", "nation": "브라질", "club": null, "grp": "fa", "pos": "LW", "num": 19, "age": 21, "foot": "right", "weakFoot": 4, "height": 174, "weight": 63, "photo": "",
      "fo": {
        "sprint": 78, "accel": 81, "finishing": 76, "shotPower": 72, "longShots": 79, "positioning": 79, "volleys": 78,
        "penalty": 68, "shortPass": 84, "vision": 77, "crossing": 85, "longPass": 74, "freekick": 76, "curve": 76,
@@ -1370,7 +1370,7 @@
        "interceptions": 70, "heading": 66, "slideTackle": 78, "strength": 75, "stamina": 72, "aggression": 76, "jump": 68, "composure": 70,
        "gkDiving": 18, "gkHandling": 8, "gkKick": 15, "gkReflex": 18, "gkPos": 16
      }},
-    {"tid": 171, "name": "파비오 렌치", "nation": "이탈리아", "club": null, "grp": "fa", "pos": "CM", "num": 9, "age": 21, "foot": "right", "height": 182, "weight": 71, "photo": "",
+    {"tid": 171, "name": "파비오 렌치", "nation": "이탈리아", "club": null, "grp": "fa", "pos": "CM", "num": 9, "age": 21, "foot": "right", "weakFoot": 2, "height": 182, "weight": 71, "photo": "",
      "fo": {
        "sprint": 82, "accel": 77, "finishing": 91, "shotPower": 78, "longShots": 95, "positioning": 97, "volleys": 86,
        "penalty": 88, "shortPass": 91, "vision": 91, "crossing": 86, "longPass": 94, "freekick": 88, "curve": 75,
@@ -1378,7 +1378,7 @@
        "interceptions": 88, "heading": 86, "slideTackle": 80, "strength": 81, "stamina": 89, "aggression": 78, "jump": 88, "composure": 78,
        "gkDiving": 16, "gkHandling": 12, "gkKick": 18, "gkReflex": 8, "gkPos": 10
      }},
-    {"tid": 172, "name": "오스카 린드", "nation": "스웨덴", "club": null, "grp": "fa", "pos": "CB", "num": 24, "age": 28, "foot": "right", "height": 190, "weight": 81, "photo": "",
+    {"tid": 172, "name": "오스카 린드", "nation": "스웨덴", "club": null, "grp": "fa", "pos": "CB", "num": 24, "age": 28, "foot": "right", "weakFoot": 4, "height": 190, "weight": 81, "photo": "",
      "fo": {
        "sprint": 90, "accel": 82, "finishing": 72, "shotPower": 83, "longShots": 83, "positioning": 82, "volleys": 78,
        "penalty": 72, "shortPass": 83, "vision": 74, "crossing": 76, "longPass": 82, "freekick": 72, "curve": 78,
@@ -1386,7 +1386,7 @@
        "interceptions": 89, "heading": 90, "slideTackle": 87, "strength": 81, "stamina": 81, "aggression": 91, "jump": 84, "composure": 77,
        "gkDiving": 11, "gkHandling": 8, "gkKick": 12, "gkReflex": 13, "gkPos": 14
      }},
-    {"tid": 173, "name": "라파엘 몬테로", "nation": "스페인", "club": null, "grp": "fa", "pos": "ST", "num": 11, "age": 27, "foot": "right", "height": 180, "weight": 75, "photo": "",
+    {"tid": 173, "name": "라파엘 몬테로", "nation": "스페인", "club": null, "grp": "fa", "pos": "ST", "num": 11, "age": 27, "foot": "right", "weakFoot": 3, "height": 180, "weight": 75, "photo": "",
      "fo": {
        "sprint": 81, "accel": 86, "finishing": 81, "shotPower": 80, "longShots": 85, "positioning": 82, "volleys": 86,
        "penalty": 75, "shortPass": 84, "vision": 72, "crossing": 71, "longPass": 64, "freekick": 65, "curve": 73,
@@ -1394,7 +1394,7 @@
        "interceptions": 75, "heading": 77, "slideTackle": 69, "strength": 81, "stamina": 64, "aggression": 76, "jump": 65, "composure": 71,
        "gkDiving": 10, "gkHandling": 11, "gkKick": 14, "gkReflex": 10, "gkPos": 10
      }},
-    {"tid": 174, "name": "빅토르 하르트", "nation": "독일", "club": null, "grp": "fa", "pos": "GK", "num": 21, "age": 33, "foot": "right", "height": 188, "weight": 83, "photo": "",
+    {"tid": 174, "name": "빅토르 하르트", "nation": "독일", "club": null, "grp": "fa", "pos": "GK", "num": 21, "age": 33, "foot": "right", "weakFoot": 1, "height": 188, "weight": 83, "photo": "",
      "fo": {
        "sprint": 63, "accel": 59, "finishing": 52, "shotPower": 52, "longShots": 56, "positioning": 63, "volleys": 57,
        "penalty": 60, "shortPass": 53, "vision": 52, "crossing": 52, "longPass": 62, "freekick": 61, "curve": 57,
@@ -1402,7 +1402,7 @@
        "interceptions": 52, "heading": 54, "slideTackle": 61, "strength": 58, "stamina": 50, "aggression": 61, "jump": 52, "composure": 50,
        "gkDiving": 74, "gkHandling": 79, "gkKick": 82, "gkReflex": 80, "gkPos": 77
      }},
-    {"tid": 175, "name": "엘리아스 퀸", "nation": "미국", "club": null, "grp": "fa", "pos": "RW", "num": 23, "age": 22, "foot": "right", "height": 171, "weight": 70, "photo": "",
+    {"tid": 175, "name": "엘리아스 퀸", "nation": "미국", "club": null, "grp": "fa", "pos": "RW", "num": 23, "age": 22, "foot": "right", "weakFoot": 4, "height": 171, "weight": 70, "photo": "",
      "fo": {
        "sprint": 83, "accel": 85, "finishing": 84, "shotPower": 76, "longShots": 83, "positioning": 79, "volleys": 78,
        "penalty": 71, "shortPass": 86, "vision": 85, "crossing": 83, "longPass": 69, "freekick": 77, "curve": 80,
@@ -1410,7 +1410,7 @@
        "interceptions": 80, "heading": 75, "slideTackle": 80, "strength": 80, "stamina": 80, "aggression": 73, "jump": 68, "composure": 73,
        "gkDiving": 10, "gkHandling": 11, "gkKick": 14, "gkReflex": 10, "gkPos": 11
      }},
-    {"tid": 176, "name": "사무엘 보아텡", "nation": "가나", "club": null, "grp": "fa", "pos": "CDM", "num": 21, "age": 19, "foot": "right", "height": 176, "weight": 78, "photo": "",
+    {"tid": 176, "name": "사무엘 보아텡", "nation": "가나", "club": null, "grp": "fa", "pos": "CDM", "num": 21, "age": 19, "foot": "right", "weakFoot": 1, "height": 176, "weight": 78, "photo": "",
      "fo": {
        "sprint": 74, "accel": 73, "finishing": 67, "shotPower": 64, "longShots": 67, "positioning": 75, "volleys": 63,
        "penalty": 71, "shortPass": 74, "vision": 75, "crossing": 70, "longPass": 74, "freekick": 69, "curve": 68,
@@ -1418,7 +1418,7 @@
        "interceptions": 79, "heading": 71, "slideTackle": 77, "strength": 82, "stamina": 79, "aggression": 83, "jump": 69, "composure": 70,
        "gkDiving": 13, "gkHandling": 8, "gkKick": 9, "gkReflex": 12, "gkPos": 14
      }},
-    {"tid": 177, "name": "이반 노박", "nation": "크로아티아", "club": null, "grp": "fa", "pos": "CB", "num": 19, "age": 21, "foot": "right", "height": 184, "weight": 76, "photo": "",
+    {"tid": 177, "name": "이반 노박", "nation": "크로아티아", "club": null, "grp": "fa", "pos": "CB", "num": 19, "age": 21, "foot": "right", "weakFoot": 2, "height": 184, "weight": 76, "photo": "",
      "fo": {
        "sprint": 80, "accel": 69, "finishing": 62, "shotPower": 64, "longShots": 71, "positioning": 65, "volleys": 68,
        "penalty": 67, "shortPass": 76, "vision": 70, "crossing": 75, "longPass": 76, "freekick": 66, "curve": 62,
@@ -1426,7 +1426,7 @@
        "interceptions": 76, "heading": 82, "slideTackle": 82, "strength": 80, "stamina": 69, "aggression": 83, "jump": 81, "composure": 73,
        "gkDiving": 15, "gkHandling": 13, "gkKick": 8, "gkReflex": 17, "gkPos": 11
      }},
-    {"tid": 178, "name": "세르히오 바예", "nation": "스페인", "club": null, "grp": "fa", "pos": "CAM", "num": 28, "age": 33, "foot": "right", "height": 167, "weight": 69, "photo": "",
+    {"tid": 178, "name": "세르히오 바예", "nation": "스페인", "club": null, "grp": "fa", "pos": "CAM", "num": 28, "age": 33, "foot": "right", "weakFoot": 4, "height": 167, "weight": 69, "photo": "",
      "fo": {
        "sprint": 82, "accel": 87, "finishing": 83, "shotPower": 80, "longShots": 92, "positioning": 92, "volleys": 72,
        "penalty": 84, "shortPass": 86, "vision": 85, "crossing": 75, "longPass": 90, "freekick": 79, "curve": 74,
@@ -1434,7 +1434,7 @@
        "interceptions": 79, "heading": 75, "slideTackle": 82, "strength": 82, "stamina": 72, "aggression": 80, "jump": 77, "composure": 81,
        "gkDiving": 13, "gkHandling": 14, "gkKick": 18, "gkReflex": 8, "gkPos": 9
      }},
-    {"tid": 179, "name": "알렉스 그레이", "nation": "잉글랜드", "club": null, "grp": "fa", "pos": "LB", "num": 4, "age": 23, "foot": "right", "height": 184, "weight": 79, "photo": "",
+    {"tid": 179, "name": "알렉스 그레이", "nation": "잉글랜드", "club": null, "grp": "fa", "pos": "LB", "num": 4, "age": 23, "foot": "right", "weakFoot": 3, "height": 184, "weight": 79, "photo": "",
      "fo": {
        "sprint": 90, "accel": 94, "finishing": 86, "shotPower": 84, "longShots": 74, "positioning": 88, "volleys": 75,
        "penalty": 76, "shortPass": 92, "vision": 80, "crossing": 94, "longPass": 84, "freekick": 76, "curve": 78,
@@ -1442,7 +1442,7 @@
        "interceptions": 93, "heading": 88, "slideTackle": 88, "strength": 88, "stamina": 93, "aggression": 88, "jump": 87, "composure": 83,
        "gkDiving": 10, "gkHandling": 17, "gkKick": 11, "gkReflex": 13, "gkPos": 13
      }},
-    {"tid": 180, "name": "마르코 페란티", "nation": "이탈리아", "club": null, "grp": "fa", "pos": "CM", "num": 29, "age": 22, "foot": "right", "height": 175, "weight": 68, "photo": "",
+    {"tid": 180, "name": "마르코 페란티", "nation": "이탈리아", "club": null, "grp": "fa", "pos": "CM", "num": 29, "age": 22, "foot": "right", "weakFoot": 3, "height": 175, "weight": 68, "photo": "",
      "fo": {
        "sprint": 62, "accel": 71, "finishing": 82, "shotPower": 69, "longShots": 82, "positioning": 77, "volleys": 63,
        "penalty": 64, "shortPass": 74, "vision": 81, "crossing": 68, "longPass": 75, "freekick": 62, "curve": 64,
@@ -1450,7 +1450,7 @@
        "interceptions": 80, "heading": 69, "slideTackle": 65, "strength": 65, "stamina": 73, "aggression": 61, "jump": 62, "composure": 74,
        "gkDiving": 15, "gkHandling": 13, "gkKick": 11, "gkReflex": 12, "gkPos": 18
      }},
-    {"tid": 181, "name": "유세프 아마리", "nation": "모로코", "club": null, "grp": "fa", "pos": "RW", "num": 23, "age": 23, "foot": "left", "height": 167, "weight": 67, "photo": "",
+    {"tid": 181, "name": "유세프 아마리", "nation": "모로코", "club": null, "grp": "fa", "pos": "RW", "num": 23, "age": 23, "foot": "left", "weakFoot": 5, "height": 167, "weight": 67, "photo": "",
      "fo": {
        "sprint": 75, "accel": 79, "finishing": 78, "shotPower": 68, "longShots": 79, "positioning": 74, "volleys": 65,
        "penalty": 68, "shortPass": 77, "vision": 69, "crossing": 75, "longPass": 67, "freekick": 60, "curve": 61,
@@ -1458,7 +1458,7 @@
        "interceptions": 69, "heading": 73, "slideTackle": 59, "strength": 72, "stamina": 71, "aggression": 59, "jump": 72, "composure": 67,
        "gkDiving": 13, "gkHandling": 11, "gkKick": 17, "gkReflex": 10, "gkPos": 8
      }},
-    {"tid": 182, "name": "닐스 호프만", "nation": "네덜란드", "club": null, "grp": "fa", "pos": "CB", "num": 21, "age": 27, "foot": "left", "height": 187, "weight": 77, "photo": "",
+    {"tid": 182, "name": "닐스 호프만", "nation": "네덜란드", "club": null, "grp": "fa", "pos": "CB", "num": 21, "age": 27, "foot": "left", "weakFoot": 4, "height": 187, "weight": 77, "photo": "",
      "fo": {
        "sprint": 80, "accel": 80, "finishing": 70, "shotPower": 74, "longShots": 81, "positioning": 71, "volleys": 70,
        "penalty": 67, "shortPass": 83, "vision": 71, "crossing": 75, "longPass": 74, "freekick": 75, "curve": 74,
@@ -1466,7 +1466,7 @@
        "interceptions": 83, "heading": 85, "slideTackle": 86, "strength": 86, "stamina": 69, "aggression": 87, "jump": 84, "composure": 81,
        "gkDiving": 8, "gkHandling": 13, "gkKick": 9, "gkReflex": 11, "gkPos": 15
      }},
-    {"tid": 183, "name": "박지운", "nation": "대한민국", "club": null, "grp": "fa", "pos": "ST", "num": 26, "age": 20, "foot": "right", "height": 180, "weight": 77, "photo": "",
+    {"tid": 183, "name": "박지운", "nation": "대한민국", "club": null, "grp": "fa", "pos": "ST", "num": 26, "age": 20, "foot": "right", "weakFoot": 3, "height": 180, "weight": 77, "photo": "",
      "fo": {
        "sprint": 86, "accel": 82, "finishing": 81, "shotPower": 91, "longShots": 89, "positioning": 87, "volleys": 88,
        "penalty": 69, "shortPass": 84, "vision": 81, "crossing": 77, "longPass": 74, "freekick": 68, "curve": 69,
@@ -1474,7 +1474,7 @@
        "interceptions": 79, "heading": 80, "slideTackle": 76, "strength": 82, "stamina": 75, "aggression": 81, "jump": 81, "composure": 68,
        "gkDiving": 10, "gkHandling": 15, "gkKick": 8, "gkReflex": 15, "gkPos": 13
      }},
-    {"tid": 184, "name": "김태건", "nation": "대한민국", "club": null, "grp": "fa", "pos": "CM", "num": 30, "age": 25, "foot": "right", "height": 180, "weight": 72, "photo": "",
+    {"tid": 184, "name": "김태건", "nation": "대한민국", "club": null, "grp": "fa", "pos": "CM", "num": 30, "age": 25, "foot": "right", "weakFoot": 2, "height": 180, "weight": 72, "photo": "",
      "fo": {
        "sprint": 74, "accel": 80, "finishing": 83, "shotPower": 78, "longShots": 86, "positioning": 88, "volleys": 72,
        "penalty": 71, "shortPass": 78, "vision": 83, "crossing": 73, "longPass": 85, "freekick": 77, "curve": 70,
@@ -1482,7 +1482,7 @@
        "interceptions": 81, "heading": 77, "slideTackle": 78, "strength": 72, "stamina": 89, "aggression": 70, "jump": 72, "composure": 72,
        "gkDiving": 15, "gkHandling": 10, "gkKick": 16, "gkReflex": 15, "gkPos": 8
      }},
-    {"tid": 185, "name": "이도현", "nation": "대한민국", "club": null, "grp": "fa", "pos": "LB", "num": 20, "age": 22, "foot": "left", "height": 180, "weight": 81, "photo": "",
+    {"tid": 185, "name": "이도현", "nation": "대한민국", "club": null, "grp": "fa", "pos": "LB", "num": 20, "age": 22, "foot": "left", "weakFoot": 3, "height": 180, "weight": 81, "photo": "",
      "fo": {
        "sprint": 87, "accel": 89, "finishing": 80, "shotPower": 84, "longShots": 81, "positioning": 79, "volleys": 85,
        "penalty": 73, "shortPass": 87, "vision": 73, "crossing": 94, "longPass": 73, "freekick": 77, "curve": 74,
@@ -1490,7 +1490,7 @@
        "interceptions": 92, "heading": 87, "slideTackle": 91, "strength": 82, "stamina": 89, "aggression": 74, "jump": 78, "composure": 83,
        "gkDiving": 15, "gkHandling": 8, "gkKick": 10, "gkReflex": 10, "gkPos": 18
      }},
-    {"tid": 186, "name": "최강민", "nation": "대한민국", "club": null, "grp": "fa", "pos": "GK", "num": 26, "age": 30, "foot": "left", "height": 188, "weight": 83, "photo": "",
+    {"tid": 186, "name": "최강민", "nation": "대한민국", "club": null, "grp": "fa", "pos": "GK", "num": 26, "age": 30, "foot": "left", "weakFoot": 3, "height": 188, "weight": 83, "photo": "",
      "fo": {
        "sprint": 70, "accel": 62, "finishing": 72, "shotPower": 72, "longShots": 73, "positioning": 61, "volleys": 60,
        "penalty": 61, "shortPass": 64, "vision": 70, "crossing": 64, "longPass": 68, "freekick": 65, "curve": 69,
@@ -1498,7 +1498,7 @@
        "interceptions": 70, "heading": 61, "slideTackle": 61, "strength": 73, "stamina": 62, "aggression": 67, "jump": 70, "composure": 72,
        "gkDiving": 88, "gkHandling": 93, "gkKick": 84, "gkReflex": 93, "gkPos": 86
      }},
-    {"tid": 187, "name": "정우진", "nation": "대한민국", "club": null, "grp": "fa", "pos": "CB", "num": 20, "age": 28, "foot": "right", "height": 191, "weight": 92, "photo": "",
+    {"tid": 187, "name": "정우진", "nation": "대한민국", "club": null, "grp": "fa", "pos": "CB", "num": 20, "age": 28, "foot": "right", "weakFoot": 4, "height": 191, "weight": 92, "photo": "",
      "fo": {
        "sprint": 92, "accel": 82, "finishing": 76, "shotPower": 80, "longShots": 81, "positioning": 77, "volleys": 72,
        "penalty": 83, "shortPass": 89, "vision": 82, "crossing": 73, "longPass": 84, "freekick": 79, "curve": 85,
@@ -1506,7 +1506,7 @@
        "interceptions": 88, "heading": 85, "slideTackle": 87, "strength": 89, "stamina": 83, "aggression": 90, "jump": 94, "composure": 77,
        "gkDiving": 9, "gkHandling": 18, "gkKick": 18, "gkReflex": 8, "gkPos": 10
      }},
-    {"tid": 188, "name": "한서준", "nation": "대한민국", "club": null, "grp": "fa", "pos": "RW", "num": 23, "age": 33, "foot": "right", "height": 167, "weight": 59, "photo": "",
+    {"tid": 188, "name": "한서준", "nation": "대한민국", "club": null, "grp": "fa", "pos": "RW", "num": 23, "age": 33, "foot": "right", "weakFoot": 1, "height": 167, "weight": 59, "photo": "",
      "fo": {
        "sprint": 79, "accel": 81, "finishing": 75, "shotPower": 61, "longShots": 80, "positioning": 72, "volleys": 65,
        "penalty": 63, "shortPass": 76, "vision": 77, "crossing": 80, "longPass": 65, "freekick": 66, "curve": 66,
@@ -1514,7 +1514,7 @@
        "interceptions": 64, "heading": 74, "slideTackle": 62, "strength": 71, "stamina": 65, "aggression": 63, "jump": 67, "composure": 71,
        "gkDiving": 13, "gkHandling": 15, "gkKick": 17, "gkReflex": 13, "gkPos": 14
      }},
-    {"tid": 189, "name": "윤재혁", "nation": "대한민국", "club": null, "grp": "fa", "pos": "CDM", "num": 4, "age": 21, "foot": "right", "height": 185, "weight": 80, "photo": "",
+    {"tid": 189, "name": "윤재혁", "nation": "대한민국", "club": null, "grp": "fa", "pos": "CDM", "num": 4, "age": 21, "foot": "right", "weakFoot": 4, "height": 185, "weight": 80, "photo": "",
      "fo": {
        "sprint": 75, "accel": 74, "finishing": 71, "shotPower": 77, "longShots": 72, "positioning": 71, "volleys": 76,
        "penalty": 81, "shortPass": 86, "vision": 84, "crossing": 71, "longPass": 88, "freekick": 82, "curve": 77,
